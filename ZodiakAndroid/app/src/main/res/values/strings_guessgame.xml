@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="guessgame_form_title_game">Guess the Number (1-100)</string>
+    <string name="guessgame_label_attempts">Attempts: %d</string>
+    <string name="guessgame_input_label_guess">Your guess</string>
+    <string name="guessgame_button_try">Try</string>
+    <string name="guessgame_button_new_game">New Game</string>
+</resources>

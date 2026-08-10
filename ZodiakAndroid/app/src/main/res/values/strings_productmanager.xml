@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="productmanager_form_title_add_product">Add Product</string>
+    <string name="productmanager_input_label_name">Name</string>
+    <string name="productmanager_input_label_brand">Brand</string>
+    <string name="productmanager_segment_food">Food</string>
+    <string name="productmanager_segment_electronics">Electronics</string>
+    <string name="productmanager_segment_home">Home</string>
+    <string name="productmanager_input_label_price">Price (R$)</string>
+    <string name="productmanager_button_add">Add</string>
+    <string name="productmanager_form_title_grouping">Grouping</string>
+    <string name="productmanager_info_row_avg_price">Average price</string>
+    <string name="productmanager_group_by_brand">By Brand</string>
+    <string name="productmanager_group_by_segment">By Segment</string>
+    <string name="productmanager_content_desc_remove">Remove</string>
+</resources>

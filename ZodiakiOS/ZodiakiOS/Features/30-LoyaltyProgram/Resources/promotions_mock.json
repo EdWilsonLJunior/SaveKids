@@ -1,0 +1,47 @@
+[
+  {
+    "id": "promo-001",
+    "rewardId": "reward-p01",
+    "title": "Cashback em Compras",
+    "description": "Ganhe pontos extras em todas as compras no supermercado parceiro durante o mês de junho.",
+    "imageSystemName": "cart.badge.plus",
+    "pointsCost": 500,
+    "expiresAt": "2026-06-30T23:59:59Z"
+  },
+  {
+    "id": "promo-002",
+    "rewardId": "reward-s04",
+    "title": "Viagem dos Sonhos",
+    "description": "Troque seus pontos por passagens aéreas nacionais para qualquer destino Brasil.",
+    "imageSystemName": "airplane",
+    "pointsCost": 8000,
+    "expiresAt": "2026-07-15T23:59:59Z"
+  },
+  {
+    "id": "promo-003",
+    "rewardId": "reward-d04",
+    "title": "Desconto na Fatura",
+    "description": "Use seus pontos para abater diretamente na sua próxima fatura do cartão.",
+    "imageSystemName": "creditcard",
+    "pointsCost": 1000,
+    "expiresAt": null
+  },
+  {
+    "id": "promo-004",
+    "rewardId": "reward-s01",
+    "title": "Streaming Premium",
+    "description": "Ganhe 3 meses gratuitos de serviço de streaming premium ao atingir 2.000 pontos.",
+    "imageSystemName": "play.circle.fill",
+    "pointsCost": 2000,
+    "expiresAt": "2026-08-01T23:59:59Z"
+  },
+  {
+    "id": "promo-005",
+    "rewardId": "reward-d05",
+    "title": "Restaurante Parceiro",
+    "description": "Jantar para dois com desconto de 40% em restaurantes parceiros. Reserve pelo app.",
+    "imageSystemName": "fork.knife",
+    "pointsCost": 750,
+    "expiresAt": "2026-06-20T23:59:59Z"
+  }
+]

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="personmanager_form_title_add_person">Adicionar Pessoa</string>
+    <string name="personmanager_input_label_name">Nome</string>
+    <string name="personmanager_input_label_age">Idade</string>
+    <string name="personmanager_button_add">Adicionar</string>
+    <string name="personmanager_empty_state_title">Nenhuma pessoa</string>
+    <string name="personmanager_empty_state_message">Adicione uma pessoa acima.</string>
+    <string name="personmanager_content_desc_remove">Remover</string>
+    <string name="personmanager_label_age_years">%d anos</string>
+</resources>

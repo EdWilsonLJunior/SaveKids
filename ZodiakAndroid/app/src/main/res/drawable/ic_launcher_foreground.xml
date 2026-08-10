@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Letter Z for Zodiak -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M28,28 L80,28 L28,80 L80,80 M28,28 L80,28 M28,80 L80,80"/>
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="8"
+        android:strokeLineCap="round"
+        android:pathData="M30,34 L78,34 L30,74 L78,74"/>
+</vector>

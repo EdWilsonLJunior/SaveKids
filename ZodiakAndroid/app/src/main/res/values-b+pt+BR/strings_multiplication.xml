@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="multiplication_form_title_table">Tabuada</string>
+    <string name="multiplication_input_label_number">Número</string>
+    <string name="multiplication_button_generate">Gerar Tabuada</string>
+    <string name="multiplication_button_clear">Limpar</string>
+</resources>

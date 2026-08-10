@@ -1,0 +1,19 @@
+import { IconProps } from "../IconProps.js";
+
+export const ShuffleIcon = ({
+  width = "16px",
+ height = "16px",
+  color = "currentColor", strokeWidth = 1, className,
+  ...props
+}: IconProps) => (
+  <svg viewBox="0 0 16 16" width={width} height={height} fill="none" {...props}>
+    <g id="Category=Media, Name=Shuffle">
+      <path
+        id="Vector"
+        d="M12 13.3327L14 11.3327M14 11.3327L12 9.33268M14 11.3327H11.3333C9.49238 11.3327 8 9.8403 8 7.99935C8 6.1584 6.50762 4.66602 4.66667 4.66602H2M12 2.66602L14 4.66602M14 4.66602L12 6.66601M14 4.66602L11.3333 4.66602C10.5829 4.66602 9.89044 4.91398 9.33333 5.33244M2 11.3327H4.66667C5.41707 11.3327 6.10956 11.0845 6.66667 10.666"
+        stroke={color} strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </g>
+  </svg>
+);

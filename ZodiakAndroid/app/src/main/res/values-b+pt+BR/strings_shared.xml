@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Mensagens de erro de validação compartilhadas -->
+    <string name="shared_validation_empty_field">Campo \'%1$s\' obrigatório.</string>
+    <string name="shared_validation_invalid_number">Número inválido em \'%1$s\'.</string>
+    <string name="shared_validation_out_of_range">%1$s deve estar entre %2$.0f e %3$.0f.</string>
+    <string name="shared_validation_invalid_age">Idade deve ser entre 1 e 149.</string>
+    <string name="shared_validation_invalid_grade">Nota deve estar entre 0 e 10.</string>
+    <string name="shared_validation_invalid_email">E-mail inválido.</string>
+    <string name="shared_validation_no_subjects">Adicione pelo menos uma matéria.</string>
+</resources>

@@ -1,0 +1,50 @@
+name: PR Title Lint
+
+on:
+  pull_request:
+    types:
+      - opened
+      - edited
+      - synchronize
+
+permissions:
+  pull-requests: read
+
+jobs:
+  lint-pr-title:
+    name: Validate Conventional Commit title
+    runs-on: ubuntu-latest
+    steps:
+      - uses: amannn/action-semantic-pull-request@v5
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          # Accepted commit types (mirrors release-please-config.json)
+          types: |
+            feat
+            fix
+            perf
+            refactor
+            docs
+            chore
+            test
+            ci
+            style
+          # Optional scope (e.g. feat(ios): or fix(android):)
+          requireScope: false
+          # Allow scopes limited to known platforms
+          scopes: |
+            ios
+            android
+            ds
+            ci
+            deps
+          # Minimum title length after type/scope prefix
+          subjectPattern: ^[A-Z].+$
+          subjectPatternError: |
+            The subject must start with an uppercase letter.
+            Example: "feat(ios): Add ZodiakSlider component"
+          # Allow WIP draft PRs without type prefix
+          wip: true
+          # Validate that the title doesn't end with a period
+          validateSingleCommit: false

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="voting_form_title_add_candidate">Adicionar Candidato</string>
+    <string name="voting_form_title_runoff">Segundo Turno</string>
+    <string name="voting_input_label_candidate_name">Nome do candidato</string>
+    <string name="voting_button_add">Adicionar</string>
+    <string name="voting_form_title_final_result">🏆 Resultado Final</string>
+    <string name="voting_label_elected">Eleito: %s</string>
+    <string name="voting_label_votes">Votos: %d</string>
+    <string name="voting_button_new_election">Nova Eleição</string>
+    <string name="voting_button_vote">Votar</string>
+    <string name="voting_button_finish_voting">Encerrar Votação</string>
+    <string name="voting_button_finish_runoff">Finalizar 2º Turno</string>
+</resources>

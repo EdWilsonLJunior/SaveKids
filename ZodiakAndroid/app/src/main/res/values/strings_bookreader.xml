@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="bookreader_page_indicator">Page %1$d of %2$d</string>
+    <string name="bookreader_button_previous">Previous</string>
+    <string name="bookreader_button_next">Next</string>
+</resources>

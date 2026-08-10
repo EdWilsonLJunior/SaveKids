@@ -1,0 +1,19 @@
+import { IconProps } from "../IconProps.js";
+
+export const EditPencilLineIcon = ({
+  width = "16px",
+ height = "16px",
+  color = "currentColor", strokeWidth = 1, className,
+  ...props
+}: IconProps) => (
+  <svg viewBox="0 0 16 16" width={width} height={height} fill="none" {...props}>
+    <g id="Category=Edit, Name=Edit_Pencil_Line">
+      <path
+        id="Vector"
+        d="M2.66797 13.3341H13.3346M2.66797 13.3341V10.6674L8.0013 5.33406M2.66797 13.3341L5.33464 13.334L10.668 8.00072M8.0013 5.33406L9.91372 3.42163L9.91487 3.42049C10.1781 3.15724 10.31 3.02538 10.462 2.97599C10.5959 2.93248 10.7401 2.93248 10.874 2.97599C11.0259 3.02534 11.1576 3.15705 11.4205 3.41993L12.5804 4.5798C12.8444 4.84381 12.9765 4.97588 13.0259 5.1281C13.0694 5.26199 13.0694 5.40622 13.0259 5.54012C12.9765 5.69223 12.8446 5.82409 12.581 6.08773L12.5804 6.08829L10.668 8.00072M8.0013 5.33406L10.668 8.00072"
+        stroke={color} strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </g>
+  </svg>
+);

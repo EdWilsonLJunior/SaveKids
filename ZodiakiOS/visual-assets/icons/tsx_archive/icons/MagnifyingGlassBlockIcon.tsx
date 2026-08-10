@@ -1,0 +1,18 @@
+import { IconProps } from "../IconProps.js";
+
+export const MagnifyingGlassBlockIcon = ({
+  width = "16px",
+  height = "16px",
+  color = "currentColor",
+  strokeWidth = 1,
+  className,
+  ...props
+}: IconProps) => (
+  <svg viewBox="0 0 16 16" width={width} height={height} fill="none" {...props}>
+    <path
+      d="M10.28 10.2832L14 14.0032M2.73634 4.14029C2.27031 4.86552 2 5.72848 2 6.65458C2 9.22665 4.08507 11.3117 6.65714 11.3117C9.22921 11.3117 11.3143 9.22665 11.3143 6.65458C11.3143 4.08251 9.22921 1.99744 6.65714 1.99744C5.79112 1.99744 4.98031 2.23382 4.28571 2.64558M5.42857 5.42601L6.71429 6.71459M6.71429 6.71459L7.99428 7.99744M6.71429 6.71459L5.43429 7.99744M6.71429 6.71459L8 5.42601"
+      stroke={color}
+      stroke-linecap="round"
+    />
+  </svg>
+);

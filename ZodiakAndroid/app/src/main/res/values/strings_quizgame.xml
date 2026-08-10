@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="quizgame_text_choose_theme">Choose a Theme</string>
+    <string name="quizgame_theme_swift">🦅 Swift</string>
+    <string name="quizgame_theme_movies">🎬 Movies</string>
+    <string name="quizgame_theme_history">📜 History</string>
+    <string name="quizgame_theme_geography">🌍 Geography</string>
+    <string name="quizgame_label_question_counter">Question %1$d of %2$d</string>
+    <string name="quizgame_button_confirm">Confirm</string>
+    <string name="quizgame_form_title_results">Final Results</string>
+    <string name="quizgame_label_score">%1$d / %2$d correct</string>
+    <string name="quizgame_result_correct">✅ Correct</string>
+    <string name="quizgame_result_incorrect">❌ Incorrect — %s</string>
+    <string name="quizgame_button_new_quiz">New Quiz</string>
+</resources>

@@ -1,0 +1,85 @@
+name: Release Please
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  # ─── Step 1: Release Please creates/updates the Release PR ───────────────────
+  release-please:
+    runs-on: ubuntu-latest
+    outputs:
+      release_created: ${{ steps.release.outputs.release_created }}
+      version: ${{ steps.release.outputs.version }}
+    steps:
+      - uses: google-github-actions/release-please-action@v4
+        id: release
+        with:
+          config-file: release-please-config.json
+          manifest-file: .release-please-manifest.json
+
+  # ─── Step 2: Sync native version numbers after a release is published ─────────
+  # Runs only when the Release PR is merged and a GitHub Release is created.
+  # Updates MARKETING_VERSION + CURRENT_PROJECT_VERSION in project.pbxproj
+  # and versionName + versionCode in build.gradle.kts, then pushes with [skip ci].
+  sync-native-versions:
+    needs: release-please
+    if: ${{ needs.release-please.outputs.release_created == 'true' }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+
+      - name: Sync iOS and Android version numbers
+        env:
+          VERSION: ${{ needs.release-please.outputs.version }}
+        run: |
+          echo "Syncing native versions to $VERSION"
+
+          # ── iOS: MARKETING_VERSION (6 occurrences across all build configs) ──
+          sed -i "s/MARKETING_VERSION = [0-9][0-9.]*;/MARKETING_VERSION = ${VERSION};/g" \
+            ZodiakiOS/ZodiakiOS.xcodeproj/project.pbxproj
+
+          # ── iOS: CURRENT_PROJECT_VERSION — increment build number by 1 ──────
+          CURRENT_BUILD=$(grep -m1 'CURRENT_PROJECT_VERSION = ' \
+            ZodiakiOS/ZodiakiOS.xcodeproj/project.pbxproj \
+            | sed 's/.*CURRENT_PROJECT_VERSION = \([0-9]*\).*/\1/')
+          NEW_BUILD=$((CURRENT_BUILD + 1))
+          sed -i "s/CURRENT_PROJECT_VERSION = [0-9]*/CURRENT_PROJECT_VERSION = ${NEW_BUILD}/g" \
+            ZodiakiOS/ZodiakiOS.xcodeproj/project.pbxproj
+
+          # ── Android: versionName ─────────────────────────────────────────────
+          sed -i "s/versionName = \"[0-9][0-9.]*\"/versionName = \"${VERSION}\"/" \
+            ZodiakAndroid/app/build.gradle.kts
+
+          # ── Android: versionCode — increment by 1 ────────────────────────────
+          CURRENT_CODE=$(grep 'versionCode = ' ZodiakAndroid/app/build.gradle.kts \
+            | sed 's/.*versionCode = \([0-9]*\).*/\1/')
+          NEW_CODE=$((CURRENT_CODE + 1))
+          sed -i "s/versionCode = ${CURRENT_CODE}/versionCode = ${NEW_CODE}/" \
+            ZodiakAndroid/app/build.gradle.kts
+
+          echo "iOS build number: $CURRENT_BUILD → $NEW_BUILD"
+          echo "Android versionCode: $CURRENT_CODE → $NEW_CODE"
+
+          # ── Commit and push ───────────────────────────────────────────────────
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add \
+            ZodiakiOS/ZodiakiOS.xcodeproj/project.pbxproj \
+            ZodiakAndroid/app/build.gradle.kts
+
+          # Only commit if there are actual changes
+          git diff --staged --quiet || \
+            git commit -m "chore(release): sync native version numbers to ${VERSION} [skip ci]"
+
+          git push

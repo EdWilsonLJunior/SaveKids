@@ -1,0 +1,137 @@
+[
+  {
+    "id": "reward-p01",
+    "name": "R$ 50 Shopping Voucher",
+    "description": "R$ 50 shopping voucher valid at partner supermarkets.",
+    "imageSystemName": "bag.fill",
+    "pointsCost": 500,
+    "category": "products",
+    "type": "product"
+  },
+  {
+    "id": "reward-p02",
+    "name": "Basic Food Basket",
+    "description": "Kit of essential products delivered to your home.",
+    "imageSystemName": "shippingbox.fill",
+    "pointsCost": 1200,
+    "category": "products",
+    "type": "product"
+  },
+  {
+    "id": "reward-p03",
+    "name": "Bluetooth Headphones",
+    "description": "Wireless headphones with noise cancellation.",
+    "imageSystemName": "headphones",
+    "pointsCost": 4500,
+    "category": "products",
+    "type": "product"
+  },
+  {
+    "id": "reward-d01",
+    "name": "10% Bill Discount",
+    "description": "10% discount applied to your next credit card bill.",
+    "imageSystemName": "percent",
+    "pointsCost": 800,
+    "category": "discounts",
+    "type": "discount"
+  },
+  {
+    "id": "reward-d02",
+    "name": "R$ 20 Cashback",
+    "description": "R$ 20 credited directly to your checking account.",
+    "imageSystemName": "brazilianrealsign.circle.fill",
+    "pointsCost": 600,
+    "category": "discounts",
+    "type": "discount"
+  },
+  {
+    "id": "reward-d03",
+    "name": "Annual Fee Waiver",
+    "description": "Credit card annual fee waiver for 6 months.",
+    "imageSystemName": "creditcard.fill",
+    "pointsCost": 3000,
+    "category": "discounts",
+    "type": "discount"
+  },
+  {
+    "id": "reward-d04",
+    "name": "Bill Discount",
+    "description": "Redeem R$ 30 directly against your next credit card bill.",
+    "imageSystemName": "creditcard.fill",
+    "pointsCost": 1000,
+    "category": "discounts",
+    "type": "discount"
+  },
+  {
+    "id": "reward-d05",
+    "name": "Partner Restaurant",
+    "description": "40% discount on dinner for two at partner restaurants.",
+    "imageSystemName": "fork.knife.circle.fill",
+    "pointsCost": 750,
+    "category": "discounts",
+    "type": "discount"
+  },
+  {
+    "id": "reward-s01",
+    "name": "3-Month Streaming",
+    "description": "Premium streaming service access for 3 months.",
+    "imageSystemName": "play.rectangle.fill",
+    "pointsCost": 2000,
+    "category": "services",
+    "type": "service"
+  },
+  {
+    "id": "reward-s02",
+    "name": "Travel Insurance",
+    "description": "Domestic travel insurance for 30 days.",
+    "imageSystemName": "airplane.circle.fill",
+    "pointsCost": 1500,
+    "category": "services",
+    "type": "service"
+  },
+  {
+    "id": "reward-s03",
+    "name": "1-Month Gym Access",
+    "description": "Unlimited access to a partner gym for 1 month.",
+    "imageSystemName": "figure.run.circle.fill",
+    "pointsCost": 900,
+    "category": "services",
+    "type": "service"
+  },
+  {
+    "id": "reward-s04",
+    "name": "Domestic Flight Ticket",
+    "description": "Domestic flight ticket for selected destinations in Brazil.",
+    "imageSystemName": "airplane.circle.fill",
+    "pointsCost": 8000,
+    "category": "services",
+    "type": "service"
+  },
+  {
+    "id": "reward-do01",
+    "name": "Donation — Food Bank",
+    "description": "Your points become food donated to the Food Bank.",
+    "imageSystemName": "heart.fill",
+    "pointsCost": 100,
+    "category": "donations",
+    "type": "service"
+  },
+  {
+    "id": "reward-do02",
+    "name": "Donation — Reforestation",
+    "description": "Plant native trees with your points.",
+    "imageSystemName": "leaf.fill",
+    "pointsCost": 50,
+    "category": "donations",
+    "type": "service"
+  },
+  {
+    "id": "reward-do03",
+    "name": "Donation — Animal Shelter",
+    "description": "Contribute to maintaining shelters for rescued animals.",
+    "imageSystemName": "pawprint.fill",
+    "pointsCost": 75,
+    "category": "donations",
+    "type": "service"
+  }
+]

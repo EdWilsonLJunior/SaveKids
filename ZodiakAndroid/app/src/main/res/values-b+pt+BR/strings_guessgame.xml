@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="guessgame_form_title_game">Adivinhe o Número (1-100)</string>
+    <string name="guessgame_label_attempts">Tentativas: %d</string>
+    <string name="guessgame_input_label_guess">Seu palpite</string>
+    <string name="guessgame_button_try">Tentar</string>
+    <string name="guessgame_button_new_game">Novo Jogo</string>
+</resources>

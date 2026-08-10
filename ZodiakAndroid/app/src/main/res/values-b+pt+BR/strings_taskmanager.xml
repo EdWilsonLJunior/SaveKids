@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="taskmanager_form_title_add_task">Adicionar Tarefa</string>
+    <string name="taskmanager_input_label_task">Descrição da tarefa</string>
+    <string name="taskmanager_button_add">Adicionar</string>
+    <string name="taskmanager_input_label_search">Buscar tarefas</string>
+    <string name="taskmanager_empty_state_title_no_results">Nenhuma tarefa encontrada</string>
+    <string name="taskmanager_empty_state_message_no_results">Tente outro termo de busca.</string>
+    <string name="taskmanager_empty_state_title_empty">Nenhuma tarefa</string>
+    <string name="taskmanager_empty_state_message_empty">Adicione sua primeira tarefa acima.</string>
+    <string name="taskmanager_content_desc_remove">Remover</string>
+</resources>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="studentgrades_form_title_student_data">Dados do Aluno</string>
+    <string name="studentgrades_input_label_name">Nome</string>
+    <string name="studentgrades_input_label_absences">Faltas</string>
+    <string name="studentgrades_input_label_address">Endereço</string>
+    <string name="studentgrades_input_label_phone">Telefone</string>
+    <string name="studentgrades_input_label_subject">Matéria</string>
+    <string name="studentgrades_input_label_grade">Nota</string>
+    <string name="studentgrades_button_add_subject">+ Matéria</string>
+    <string name="studentgrades_button_add_student">Adicionar Aluno</string>
+    <string name="studentgrades_info_row_average">Média</string>
+    <string name="studentgrades_info_row_status">Situação</string>
+    <string name="studentgrades_info_row_absences">Faltas</string>
+    <string name="studentgrades_status_passing">✅ Aprovado</string>
+    <string name="studentgrades_status_failing">❌ Reprovado</string>
+    <string name="studentgrades_text_critical_absences">⚠️ Faltas críticas!</string>
+    <string name="studentgrades_button_close">Fechar</string>
+    <string name="studentgrades_content_desc_remove">Remover</string>
+    <string name="studentgrades_label_avg_absences">Média: %.1f | Faltas: %d</string>
+</resources>

@@ -1,0 +1,19 @@
+import { IconProps } from "../IconProps.js";
+
+export const WaterDropIcon = ({
+  width = "16px",
+ height = "16px",
+  color = "currentColor", strokeWidth = 1, className,
+  ...props
+}: IconProps) => (
+  <svg viewBox="0 0 16 16" width={width} height={height} fill="none" {...props}>
+    <g id="Category=Environment, Name=Water_Drop">
+      <path
+        id="Vector"
+        d="M10.6655 8.92383C10.6655 9.73988 10.3494 10.5225 9.78678 11.0995C9.46738 11.4271 9.08327 11.6734 8.66536 11.8249M12.6654 9.12886C12.6654 4.74424 7.9987 1.33398 7.9987 1.33398C7.9987 1.33398 3.33203 4.74424 3.33203 9.12886C3.33203 10.4209 3.8237 11.6602 4.69887 12.5738C5.57404 13.4875 6.76107 14.0003 7.99875 14.0003C9.23643 14.0003 10.4233 13.4872 11.2985 12.5736C12.1737 11.6599 12.6654 10.4209 12.6654 9.12886Z"
+        stroke={color} strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </g>
+  </svg>
+);

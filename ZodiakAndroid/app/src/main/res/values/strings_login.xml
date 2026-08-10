@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="login_form_title_login">Sign In</string>
+    <string name="login_input_label_email">E-mail</string>
+    <string name="login_switch_label_remember_email">Remember my e-mail</string>
+    <string name="login_button_login">Sign In</string>
+    <string name="login_button_logout">Sign Out</string>
+    <string name="login_text_welcome">Welcome!</string>
+</resources>

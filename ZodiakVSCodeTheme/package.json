@@ -1,0 +1,76 @@
+{
+  "name": "zodiak-theme",
+  "displayName": "Zodiak Theme",
+  "description": "Zodiak Design System color themes for VS Code — 9 variations (6 dark, 3 light) derived from the Capgemini Zodiak DS palette. Optimized for Fira Code Nerd Font Retina with full semantic highlighting, Copilot Chat, terminal ANSI, debug, testing, and Git decorations.",
+  "version": "1.0.0",
+  "publisher": "zodiak",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": ["Themes"],
+  "keywords": ["theme", "zodiak", "capgemini", "dark", "light", "fira code"],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Zodiak Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/zodiak-dark-color-theme.json"
+      },
+      {
+        "label": "Zodiak Dark AMOLED",
+        "uiTheme": "vs-dark",
+        "path": "./themes/zodiak-dark-amoled-color-theme.json"
+      },
+      {
+        "label": "Zodiak Dark Marine",
+        "uiTheme": "vs-dark",
+        "path": "./themes/zodiak-dark-marine-color-theme.json"
+      },
+      {
+        "label": "Zodiak Dark Flame",
+        "uiTheme": "vs-dark",
+        "path": "./themes/zodiak-dark-flame-color-theme.json"
+      },
+      {
+        "label": "Zodiak Dark High Contrast",
+        "uiTheme": "hc-black",
+        "path": "./themes/zodiak-dark-hc-color-theme.json"
+      },
+      {
+        "label": "Zodiak Dark Storm",
+        "uiTheme": "vs-dark",
+        "path": "./themes/zodiak-dark-storm-color-theme.json"
+      },
+      {
+        "label": "Zodiak Light",
+        "uiTheme": "vs",
+        "path": "./themes/zodiak-light-color-theme.json"
+      },
+      {
+        "label": "Zodiak Light Soft",
+        "uiTheme": "vs",
+        "path": "./themes/zodiak-light-soft-color-theme.json"
+      },
+      {
+        "label": "Zodiak Light High Contrast",
+        "uiTheme": "hc-light",
+        "path": "./themes/zodiak-light-hc-color-theme.json"
+      }
+    ],
+    "configurationDefaults": {
+      "editor.fontFamily": "'FiraCode Nerd Font Retina', 'Fira Code', 'Cascadia Code', monospace",
+      "editor.fontSize": 14,
+      "editor.fontLigatures": "'ss01', 'ss02', 'ss03', 'ss05', 'cv14', 'cv16', 'zero'",
+      "editor.lineHeight": 24,
+      "editor.letterSpacing": 0.5,
+      "editor.fontWeight": "400",
+      "editor.renderWhitespace": "boundary",
+      "editor.guides.bracketPairs": true,
+      "editor.bracketPairColorization.enabled": true,
+      "editor.semanticHighlighting.enabled": true,
+      "terminal.integrated.fontFamily": "'FiraCode Nerd Font Retina', 'Fira Code', monospace",
+      "terminal.integrated.fontSize": 13,
+      "terminal.integrated.fontLigatures": true
+    }
+  }
+}

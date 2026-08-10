@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pixdiscount_form_title_pix">Pix Discount</string>
+    <string name="pixdiscount_input_label_amount">Amount (R$)</string>
+    <string name="pixdiscount_input_label_discount">Discount (%)</string>
+    <string name="pixdiscount_button_calculate">Calculate</string>
+    <string name="pixdiscount_form_title_result">Result</string>
+    <string name="pixdiscount_info_row_original_value">Original value</string>
+    <string name="pixdiscount_info_row_discount">Discount</string>
+    <string name="pixdiscount_info_row_pix_value">Pix value</string>
+    <string name="pixdiscount_button_clear">Clear</string>
+</resources>

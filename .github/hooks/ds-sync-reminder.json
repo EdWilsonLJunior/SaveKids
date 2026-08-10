@@ -1,0 +1,11 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "type": "command",
+        "osx": ".github/scripts/ds-change-hook.sh",
+        "timeout": 5
+      }
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="palindrome_form_title_palindrome">Check Palindrome</string>
+    <string name="palindrome_input_label_word">Enter a word or phrase</string>
+    <string name="palindrome_button_check">Check</string>
+    <string name="palindrome_result_is_palindrome">✅ It is a Palindrome!</string>
+    <string name="palindrome_result_not_palindrome">❌ Not a Palindrome</string>
+    <string name="palindrome_button_clear">Clear</string>
+</resources>

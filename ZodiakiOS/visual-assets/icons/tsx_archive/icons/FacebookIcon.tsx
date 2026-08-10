@@ -1,0 +1,19 @@
+import { IconProps } from "../IconProps.js";
+
+export const FacebookIcon = ({
+  width = "16px",
+ height = "16px",
+  color = "currentColor", strokeWidth = 1, className,
+  ...props
+}: IconProps) => (
+  <svg viewBox="0 0 16 16" width={width} height={height} fill="none" {...props}>
+    <g id="Category=Social Media, Name=Facebook">
+      <path
+        id="Vector"
+        d="M4.66699 6.66667V9.33333H6.66699V14H9.33366V9.33333H11.3337L12.0003 6.66667H9.33366V5.33333C9.33366 5.15652 9.4039 4.98695 9.52892 4.86193C9.65395 4.7369 9.82351 4.66667 10.0003 4.66667H12.0003V2H10.0003C9.11627 2 8.26842 2.35119 7.6433 2.97631C7.01818 3.60143 6.66699 4.44928 6.66699 5.33333V6.66667H4.66699Z"
+        stroke={color} strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </g>
+  </svg>
+);

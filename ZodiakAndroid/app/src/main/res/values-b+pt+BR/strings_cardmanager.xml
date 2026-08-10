@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cardmanager_form_title_new_card">Novo Cartão</string>
+    <string name="cardmanager_input_label_bank">Banco</string>
+    <string name="cardmanager_input_label_brand">Bandeira (Visa, Mastercard…)</string>
+    <string name="cardmanager_input_label_last_digits">Últimos 4 dígitos</string>
+    <string name="cardmanager_input_label_limit">Limite (R$)</string>
+    <string name="cardmanager_label_theme">Tema</string>
+    <string name="cardmanager_button_add_card">Adicionar Cartão</string>
+    <string name="cardmanager_content_desc_remove">Remover</string>
+    <string name="cardmanager_info_row_brand">Bandeira</string>
+    <string name="cardmanager_info_row_limit">Limite</string>
+    <string name="cardmanager_info_row_last_digits">Últimos dígitos</string>
+    <string name="cardmanager_info_row_due_date">Vencimento</string>
+    <string name="cardmanager_button_close">Fechar</string>
+    <string name="cardmanager_info_row_theme">Tema</string>
+    <string name="cardmanager_label_card_limit">Limite: R$ %.0f</string>
+</resources>

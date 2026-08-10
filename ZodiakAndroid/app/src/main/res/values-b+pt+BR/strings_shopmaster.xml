@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="shopmaster_fab_cart">Carrinho (%d)</string>
+    <string name="shopmaster_input_label_search">Buscar produtos</string>
+    <string name="shopmaster_filter_all">Todos</string>
+    <string name="shopmaster_category_electronics">Eletrônicos</string>
+    <string name="shopmaster_category_food">Alimentos</string>
+    <string name="shopmaster_category_home">Casa</string>
+    <string name="shopmaster_text_no_products">Nenhum produto encontrado.</string>
+    <string name="shopmaster_button_add_to_cart">+ Carrinho</string>
+    <string name="shopmaster_sheet_title_cart">Carrinho</string>
+    <string name="shopmaster_text_cart_empty">Carrinho vazio.</string>
+    <string name="shopmaster_label_cart_item">Qtd: %1$d | R$ %2$.2f</string>
+    <string name="shopmaster_label_cart_total">Total: R$ %.2f</string>
+    <string name="shopmaster_button_clear_cart">Limpar Carrinho</string>
+</resources>

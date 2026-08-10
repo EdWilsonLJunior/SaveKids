@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="temperatureconverter_form_title_converter">Convert Temperature</string>
+    <string name="temperatureconverter_chip_celsius_to_f">°C → °F</string>
+    <string name="temperatureconverter_chip_fahrenheit_to_c">°F → °C</string>
+    <string name="temperatureconverter_input_label_celsius">Celsius (°C)</string>
+    <string name="temperatureconverter_input_label_fahrenheit">Fahrenheit (°F)</string>
+    <string name="temperatureconverter_button_convert">Convert</string>
+    <string name="temperatureconverter_form_title_result">Result</string>
+    <string name="temperatureconverter_info_row_input">Input</string>
+    <string name="temperatureconverter_info_row_result">Result</string>
+    <string name="temperatureconverter_button_clear">Clear</string>
+</resources>

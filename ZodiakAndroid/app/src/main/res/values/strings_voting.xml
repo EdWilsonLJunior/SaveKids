@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="voting_form_title_add_candidate">Add Candidate</string>
+    <string name="voting_form_title_runoff">Runoff</string>
+    <string name="voting_input_label_candidate_name">Candidate name</string>
+    <string name="voting_button_add">Add</string>
+    <string name="voting_form_title_final_result">🏆 Final Result</string>
+    <string name="voting_label_elected">Elected: %s</string>
+    <string name="voting_label_votes">Votes: %d</string>
+    <string name="voting_button_new_election">New Election</string>
+    <string name="voting_button_vote">Vote</string>
+    <string name="voting_button_finish_voting">End Voting</string>
+    <string name="voting_button_finish_runoff">Finish Runoff</string>
+</resources>

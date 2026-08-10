@@ -1,0 +1,14 @@
+<svg
+    viewBox="0 0 16 16"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+  <g id="Category=Arrow, Name=Arrow_Left_Right">
+  <path
+        d="M10.6663 8.66683L12.6663 10.6668M12.6663 10.6668L10.6663 12.6668M12.6663 10.6668H3.33301M5.33301 7.3335L3.33301 5.3335M3.33301 5.3335L5.33301 3.3335M3.33301 5.3335H12.6663"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+  </g>
+  </svg>

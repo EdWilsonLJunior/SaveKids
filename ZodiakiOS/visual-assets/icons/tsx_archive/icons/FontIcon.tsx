@@ -1,0 +1,19 @@
+import { IconProps } from "../IconProps.js";
+
+export const FontIcon = ({
+  width = "16px",
+ height = "16px",
+  color = "currentColor", strokeWidth = 1, className,
+  ...props
+}: IconProps) => (
+  <svg viewBox="0 0 16 16" width={width} height={height} fill="none" {...props}>
+    <g id="Category=Edit, Name=Font">
+      <path
+        id="Vector"
+        d="M8.66667 12L5.33333 4L2 12M7.33333 9.33333H3.33333M14 12V10M14 10V8M14 10C14 11.1046 13.1046 12 12 12C10.8954 12 10 11.1046 10 10C10 8.89543 10.8954 8 12 8C13.1046 8 14 8.89543 14 10Z"
+        stroke={color} strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </g>
+  </svg>
+);

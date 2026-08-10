@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="grades_form_title_calculate">Calcular Notas</string>
+    <string name="grades_input_label_student_name">Nome do Aluno</string>
+    <string name="grades_input_label_grade1">Nota 1</string>
+    <string name="grades_input_label_grade2">Nota 2</string>
+    <string name="grades_input_label_grade3">Nota 3</string>
+    <string name="grades_button_calculate">Calcular</string>
+    <string name="grades_form_title_result">Resultado</string>
+    <string name="grades_info_row_student">Aluno</string>
+    <string name="grades_info_row_grade1">Nota 1</string>
+    <string name="grades_info_row_grade2">Nota 2</string>
+    <string name="grades_info_row_grade3">Nota 3</string>
+    <string name="grades_info_row_average">Média</string>
+    <string name="grades_info_row_status">Situação</string>
+    <string name="grades_status_passing">✅ Aprovado</string>
+    <string name="grades_status_failing">❌ Reprovado</string>
+    <string name="grades_button_clear">Limpar</string>
+</resources>

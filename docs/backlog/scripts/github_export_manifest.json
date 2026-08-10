@@ -1,0 +1,1640 @@
+[
+  {
+    "source": "00-foundations/aspect-ratios.md",
+    "number": 4,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/4",
+    "node_id": "I_kwDOScjXas8AAAABCdxomw",
+    "priority": "P1",
+    "layer": "foundation",
+    "platform": "ios"
+  },
+  {
+    "source": "00-foundations/blurs.md",
+    "number": 5,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/5",
+    "node_id": "I_kwDOScjXas8AAAABCdxovA",
+    "priority": "P1",
+    "layer": "foundation",
+    "platform": "ios"
+  },
+  {
+    "source": "00-foundations/borders.md",
+    "number": 6,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/6",
+    "node_id": "I_kwDOScjXas8AAAABCdxo3A",
+    "priority": "P0",
+    "layer": "foundation",
+    "platform": "ios"
+  },
+  {
+    "source": "00-foundations/colors.md",
+    "number": 7,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/7",
+    "node_id": "I_kwDOScjXas8AAAABCdxo_w",
+    "priority": "P0",
+    "layer": "foundation",
+    "platform": "ios"
+  },
+  {
+    "source": "00-foundations/defaults.md",
+    "number": 8,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/8",
+    "node_id": "I_kwDOScjXas8AAAABCdxpHQ",
+    "priority": "P1",
+    "layer": "foundation",
+    "platform": "ios"
+  },
+  {
+    "source": "00-foundations/flags.md",
+    "number": 9,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/9",
+    "node_id": "I_kwDOScjXas8AAAABCdxpQw",
+    "priority": "P1",
+    "layer": "foundation",
+    "platform": "ios"
+  },
+  {
+    "source": "00-foundations/gradients.md",
+    "number": 10,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/10",
+    "node_id": "I_kwDOScjXas8AAAABCdxpZg",
+    "priority": "P1",
+    "layer": "foundation",
+    "platform": "ios"
+  },
+  {
+    "source": "00-foundations/grid.md",
+    "number": 11,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/11",
+    "node_id": "I_kwDOScjXas8AAAABCdxpig",
+    "priority": "P0",
+    "layer": "foundation",
+    "platform": "ios"
+  },
+  {
+    "source": "00-foundations/hit-target.md",
+    "number": 12,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/12",
+    "node_id": "I_kwDOScjXas8AAAABCdxprQ",
+    "priority": "P0",
+    "layer": "foundation",
+    "platform": "ios"
+  },
+  {
+    "source": "00-foundations/icons.md",
+    "number": 13,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/13",
+    "node_id": "I_kwDOScjXas8AAAABCdxpyw",
+    "priority": "P0",
+    "layer": "foundation",
+    "platform": "ios"
+  },
+  {
+    "source": "00-foundations/logo.md",
+    "number": 14,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/14",
+    "node_id": "I_kwDOScjXas8AAAABCdxp7g",
+    "priority": "P1",
+    "layer": "foundation",
+    "platform": "ios"
+  },
+  {
+    "source": "00-foundations/motion.md",
+    "number": 15,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/15",
+    "node_id": "I_kwDOScjXas8AAAABCdxqCA",
+    "priority": "P1",
+    "layer": "foundation",
+    "platform": "ios"
+  },
+  {
+    "source": "00-foundations/opacity.md",
+    "number": 16,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/16",
+    "node_id": "I_kwDOScjXas8AAAABCdxqIw",
+    "priority": "P1",
+    "layer": "foundation",
+    "platform": "ios"
+  },
+  {
+    "source": "00-foundations/radii.md",
+    "number": 17,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/17",
+    "node_id": "I_kwDOScjXas8AAAABCdxqUA",
+    "priority": "P0",
+    "layer": "foundation",
+    "platform": "ios"
+  },
+  {
+    "source": "00-foundations/shadows.md",
+    "number": 18,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/18",
+    "node_id": "I_kwDOScjXas8AAAABCdxqbA",
+    "priority": "P0",
+    "layer": "foundation",
+    "platform": "ios"
+  },
+  {
+    "source": "00-foundations/sizing.md",
+    "number": 19,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/19",
+    "node_id": "I_kwDOScjXas8AAAABCdxqiQ",
+    "priority": "P0",
+    "layer": "foundation",
+    "platform": "ios"
+  },
+  {
+    "source": "00-foundations/spacing.md",
+    "number": 20,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/20",
+    "node_id": "I_kwDOScjXas8AAAABCdxqrg",
+    "priority": "P0",
+    "layer": "foundation",
+    "platform": "ios"
+  },
+  {
+    "source": "00-foundations/typography.md",
+    "number": 21,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/21",
+    "node_id": "I_kwDOScjXas8AAAABCdxqyw",
+    "priority": "P0",
+    "layer": "foundation",
+    "platform": "ios"
+  },
+  {
+    "source": "01-theme/zodiak-theme.md",
+    "number": 22,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/22",
+    "node_id": "I_kwDOScjXas8AAAABCdxq8Q",
+    "priority": "P0",
+    "layer": "theme",
+    "platform": "ios"
+  },
+  {
+    "source": "02-atoms/avatar.md",
+    "number": 23,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/23",
+    "node_id": "I_kwDOScjXas8AAAABCdxrrQ",
+    "priority": "P1",
+    "layer": "atom",
+    "platform": "ios"
+  },
+  {
+    "source": "02-atoms/badge.md",
+    "number": 24,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/24",
+    "node_id": "I_kwDOScjXas8AAAABCdxr0w",
+    "priority": "P1",
+    "layer": "atom",
+    "platform": "ios"
+  },
+  {
+    "source": "02-atoms/breadcrumb-pagination.md",
+    "number": 25,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/25",
+    "node_id": "I_kwDOScjXas8AAAABCdxsAg",
+    "priority": "P2",
+    "layer": "atom",
+    "platform": "ios"
+  },
+  {
+    "source": "02-atoms/button-arrow.md",
+    "number": 26,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/26",
+    "node_id": "I_kwDOScjXas8AAAABCdxsIQ",
+    "priority": "P1",
+    "layer": "atom",
+    "platform": "ios"
+  },
+  {
+    "source": "02-atoms/button-filter.md",
+    "number": 27,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/27",
+    "node_id": "I_kwDOScjXas8AAAABCdxsQw",
+    "priority": "P1",
+    "layer": "atom",
+    "platform": "ios"
+  },
+  {
+    "source": "02-atoms/button-icon.md",
+    "number": 28,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/28",
+    "node_id": "I_kwDOScjXas8AAAABCdxspw",
+    "priority": "P0",
+    "layer": "atom",
+    "platform": "ios"
+  },
+  {
+    "source": "02-atoms/button-media.md",
+    "number": 29,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/29",
+    "node_id": "I_kwDOScjXas8AAAABCdxsyw",
+    "priority": "P1",
+    "layer": "atom",
+    "platform": "ios"
+  },
+  {
+    "source": "02-atoms/button-menu.md",
+    "number": 30,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/30",
+    "node_id": "I_kwDOScjXas8AAAABCdxs8Q",
+    "priority": "P1",
+    "layer": "atom",
+    "platform": "ios"
+  },
+  {
+    "source": "02-atoms/button-nav.md",
+    "number": 31,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/31",
+    "node_id": "I_kwDOScjXas8AAAABCdxtEA",
+    "priority": "P1",
+    "layer": "atom",
+    "platform": "ios"
+  },
+  {
+    "source": "02-atoms/button-regular.md",
+    "number": 32,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/32",
+    "node_id": "I_kwDOScjXas8AAAABCdxtRw",
+    "priority": "P0",
+    "layer": "atom",
+    "platform": "ios"
+  },
+  {
+    "source": "02-atoms/button-system-warning.md",
+    "number": 33,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/33",
+    "node_id": "I_kwDOScjXas8AAAABCdxtZw",
+    "priority": "P1",
+    "layer": "atom",
+    "platform": "ios"
+  },
+  {
+    "source": "02-atoms/button-system.md",
+    "number": 34,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/34",
+    "node_id": "I_kwDOScjXas8AAAABCdxtiQ",
+    "priority": "P1",
+    "layer": "atom",
+    "platform": "ios"
+  },
+  {
+    "source": "02-atoms/button-video-preview.md",
+    "number": 35,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/35",
+    "node_id": "I_kwDOScjXas8AAAABCdxtrA",
+    "priority": "P2",
+    "layer": "atom",
+    "platform": "ios"
+  },
+  {
+    "source": "02-atoms/button-warning.md",
+    "number": 36,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/36",
+    "node_id": "I_kwDOScjXas8AAAABCdxtyg",
+    "priority": "P1",
+    "layer": "atom",
+    "platform": "ios"
+  },
+  {
+    "source": "02-atoms/checkbox.md",
+    "number": 37,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/37",
+    "node_id": "I_kwDOScjXas8AAAABCdxt7Q",
+    "priority": "P0",
+    "layer": "atom",
+    "platform": "ios"
+  },
+  {
+    "source": "02-atoms/divider.md",
+    "number": 38,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/38",
+    "node_id": "I_kwDOScjXas8AAAABCdxuJA",
+    "priority": "P0",
+    "layer": "atom",
+    "platform": "ios"
+  },
+  {
+    "source": "02-atoms/eyebrow.md",
+    "number": 39,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/39",
+    "node_id": "I_kwDOScjXas8AAAABCdxuQw",
+    "priority": "P1",
+    "layer": "atom",
+    "platform": "ios"
+  },
+  {
+    "source": "02-atoms/flag-view.md",
+    "number": 40,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/40",
+    "node_id": "I_kwDOScjXas8AAAABCdxuYA",
+    "priority": "P1",
+    "layer": "atom",
+    "platform": "ios"
+  },
+  {
+    "source": "02-atoms/icon-view.md",
+    "number": 41,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/41",
+    "node_id": "I_kwDOScjXas8AAAABCdxuiQ",
+    "priority": "P0",
+    "layer": "atom",
+    "platform": "ios"
+  },
+  {
+    "source": "02-atoms/list.md",
+    "number": 42,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/42",
+    "node_id": "I_kwDOScjXas8AAAABCdxvFg",
+    "priority": "P1",
+    "layer": "atom",
+    "platform": "ios"
+  },
+  {
+    "source": "02-atoms/logo-view.md",
+    "number": 43,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/43",
+    "node_id": "I_kwDOScjXas8AAAABCdxvWQ",
+    "priority": "P1",
+    "layer": "atom",
+    "platform": "ios"
+  },
+  {
+    "source": "02-atoms/mini-menu.md",
+    "number": 44,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/44",
+    "node_id": "I_kwDOScjXas8AAAABCdxwFQ",
+    "priority": "P2",
+    "layer": "atom",
+    "platform": "ios"
+  },
+  {
+    "source": "02-atoms/password-field.md",
+    "number": 45,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/45",
+    "node_id": "I_kwDOScjXas8AAAABCdxwQQ",
+    "priority": "P0",
+    "layer": "atom",
+    "platform": "ios"
+  },
+  {
+    "source": "02-atoms/progress-indicator.md",
+    "number": 46,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/46",
+    "node_id": "I_kwDOScjXas8AAAABCdxwZQ",
+    "priority": "P0",
+    "layer": "atom",
+    "platform": "ios"
+  },
+  {
+    "source": "02-atoms/radio-button.md",
+    "number": 47,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/47",
+    "node_id": "I_kwDOScjXas8AAAABCdxwgw",
+    "priority": "P0",
+    "layer": "atom",
+    "platform": "ios"
+  },
+  {
+    "source": "02-atoms/rating.md",
+    "number": 48,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/48",
+    "node_id": "I_kwDOScjXas8AAAABCdxwoQ",
+    "priority": "P2",
+    "layer": "atom",
+    "platform": "ios"
+  },
+  {
+    "source": "02-atoms/search-field.md",
+    "number": 49,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/49",
+    "node_id": "I_kwDOScjXas8AAAABCdxw0A",
+    "priority": "P1",
+    "layer": "atom",
+    "platform": "ios"
+  },
+  {
+    "source": "02-atoms/slider-counter.md",
+    "number": 50,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/50",
+    "node_id": "I_kwDOScjXas8AAAABCdxxFA",
+    "priority": "P2",
+    "layer": "atom",
+    "platform": "ios"
+  },
+  {
+    "source": "02-atoms/tabs.md",
+    "number": 51,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/51",
+    "node_id": "I_kwDOScjXas8AAAABCdxxNA",
+    "priority": "P0",
+    "layer": "atom",
+    "platform": "ios"
+  },
+  {
+    "source": "02-atoms/text-field.md",
+    "number": 52,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/52",
+    "node_id": "I_kwDOScjXas8AAAABCdxxZg",
+    "priority": "P0",
+    "layer": "atom",
+    "platform": "ios"
+  },
+  {
+    "source": "02-atoms/text-link.md",
+    "number": 53,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/53",
+    "node_id": "I_kwDOScjXas8AAAABCdxxsg",
+    "priority": "P1",
+    "layer": "atom",
+    "platform": "ios"
+  },
+  {
+    "source": "02-atoms/text.md",
+    "number": 54,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/54",
+    "node_id": "I_kwDOScjXas8AAAABCdxx_w",
+    "priority": "P0",
+    "layer": "atom",
+    "platform": "ios"
+  },
+  {
+    "source": "02-atoms/tooltip.md",
+    "number": 55,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/55",
+    "node_id": "I_kwDOScjXas8AAAABCdxyRw",
+    "priority": "P1",
+    "layer": "atom",
+    "platform": "ios"
+  },
+  {
+    "source": "03-molecules/accordion.md",
+    "number": 56,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/56",
+    "node_id": "I_kwDOScjXas8AAAABCdxylg",
+    "priority": "P1",
+    "layer": "molecule",
+    "platform": "ios"
+  },
+  {
+    "source": "03-molecules/alert.md",
+    "number": 57,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/57",
+    "node_id": "I_kwDOScjXas8AAAABCdxytw",
+    "priority": "P1",
+    "layer": "molecule",
+    "platform": "ios"
+  },
+  {
+    "source": "03-molecules/author.md",
+    "number": 58,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/58",
+    "node_id": "I_kwDOScjXas8AAAABCdxy5A",
+    "priority": "P1",
+    "layer": "molecule",
+    "platform": "ios"
+  },
+  {
+    "source": "03-molecules/chip-group.md",
+    "number": 59,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/59",
+    "node_id": "I_kwDOScjXas8AAAABCdxzDA",
+    "priority": "P1",
+    "layer": "molecule",
+    "platform": "ios"
+  },
+  {
+    "source": "03-molecules/combobox.md",
+    "number": 60,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/60",
+    "node_id": "I_kwDOScjXas8AAAABCdxzMg",
+    "priority": "P1",
+    "layer": "molecule",
+    "platform": "ios"
+  },
+  {
+    "source": "03-molecules/counter-control.md",
+    "number": 61,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/61",
+    "node_id": "I_kwDOScjXas8AAAABCdxzrA",
+    "priority": "P1",
+    "layer": "molecule",
+    "platform": "ios"
+  },
+  {
+    "source": "03-molecules/dropdown.md",
+    "number": 62,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/62",
+    "node_id": "I_kwDOScjXas8AAAABCdxzxg",
+    "priority": "P1",
+    "layer": "molecule",
+    "platform": "ios"
+  },
+  {
+    "source": "03-molecules/input-wizard.md",
+    "number": 63,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/63",
+    "node_id": "I_kwDOScjXas8AAAABCdxz7w",
+    "priority": "P2",
+    "layer": "molecule",
+    "platform": "ios"
+  },
+  {
+    "source": "03-molecules/labelled-field.md",
+    "number": 64,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/64",
+    "node_id": "I_kwDOScjXas8AAAABCdx0HA",
+    "priority": "P0",
+    "layer": "molecule",
+    "platform": "ios"
+  },
+  {
+    "source": "03-molecules/multiselect.md",
+    "number": 65,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/65",
+    "node_id": "I_kwDOScjXas8AAAABCdx0Qg",
+    "priority": "P1",
+    "layer": "molecule",
+    "platform": "ios"
+  },
+  {
+    "source": "03-molecules/notice.md",
+    "number": 66,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/66",
+    "node_id": "I_kwDOScjXas8AAAABCdx0YQ",
+    "priority": "P0",
+    "layer": "molecule",
+    "platform": "ios"
+  },
+  {
+    "source": "03-molecules/phone-input.md",
+    "number": 67,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/67",
+    "node_id": "I_kwDOScjXas8AAAABCdx0gg",
+    "priority": "P1",
+    "layer": "molecule",
+    "platform": "ios"
+  },
+  {
+    "source": "03-molecules/quick-access-bar.md",
+    "number": 68,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/68",
+    "node_id": "I_kwDOScjXas8AAAABCdx0nw",
+    "priority": "P1",
+    "layer": "molecule",
+    "platform": "ios"
+  },
+  {
+    "source": "03-molecules/result-card.md",
+    "number": 69,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/69",
+    "node_id": "I_kwDOScjXas8AAAABCdx0vQ",
+    "priority": "P1",
+    "layer": "molecule",
+    "platform": "ios"
+  },
+  {
+    "source": "03-molecules/slide-to-submit.md",
+    "number": 70,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/70",
+    "node_id": "I_kwDOScjXas8AAAABCdx04Q",
+    "priority": "P1",
+    "layer": "molecule",
+    "platform": "ios"
+  },
+  {
+    "source": "03-molecules/status-chip.md",
+    "number": 71,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/71",
+    "node_id": "I_kwDOScjXas8AAAABCdx0-g",
+    "priority": "P1",
+    "layer": "molecule",
+    "platform": "ios"
+  },
+  {
+    "source": "03-molecules/step-indicator.md",
+    "number": 72,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/72",
+    "node_id": "I_kwDOScjXas8AAAABCdx1Pw",
+    "priority": "P1",
+    "layer": "molecule",
+    "platform": "ios"
+  },
+  {
+    "source": "03-molecules/switch.md",
+    "number": 73,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/73",
+    "node_id": "I_kwDOScjXas8AAAABCdx11w",
+    "priority": "P0",
+    "layer": "molecule",
+    "platform": "ios"
+  },
+  {
+    "source": "04-organisms/action-compositions/link-ribbon.md",
+    "number": 74,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/74",
+    "node_id": "I_kwDOScjXas8AAAABCdx17g",
+    "priority": "P1",
+    "layer": "organism",
+    "platform": "ios"
+  },
+  {
+    "source": "04-organisms/action-compositions/professional-contact.md",
+    "number": 75,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/75",
+    "node_id": "I_kwDOScjXas8AAAABCdx2Eg",
+    "priority": "P1",
+    "layer": "organism",
+    "platform": "ios"
+  },
+  {
+    "source": "04-organisms/action-compositions/share-story.md",
+    "number": 76,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/76",
+    "node_id": "I_kwDOScjXas8AAAABCdx2Og",
+    "priority": "P1",
+    "layer": "organism",
+    "platform": "ios"
+  },
+  {
+    "source": "04-organisms/banner.md",
+    "number": 77,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/77",
+    "node_id": "I_kwDOScjXas8AAAABCdx2YQ",
+    "priority": "P1",
+    "layer": "organism",
+    "platform": "ios"
+  },
+  {
+    "source": "04-organisms/card-grid.md",
+    "number": 78,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/78",
+    "node_id": "I_kwDOScjXas8AAAABCdx2cw",
+    "priority": "P1",
+    "layer": "organism",
+    "platform": "ios"
+  },
+  {
+    "source": "04-organisms/card-variants/author.md",
+    "number": 79,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/79",
+    "node_id": "I_kwDOScjXas8AAAABCdx2lg",
+    "priority": "P1",
+    "layer": "organism",
+    "platform": "ios"
+  },
+  {
+    "source": "04-organisms/card-variants/horizontal.md",
+    "number": 80,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/80",
+    "node_id": "I_kwDOScjXas8AAAABCdx2uA",
+    "priority": "P1",
+    "layer": "organism",
+    "platform": "ios"
+  },
+  {
+    "source": "04-organisms/card-variants/reveal.md",
+    "number": 81,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/81",
+    "node_id": "I_kwDOScjXas8AAAABCdx22A",
+    "priority": "P1",
+    "layer": "organism",
+    "platform": "ios"
+  },
+  {
+    "source": "04-organisms/card-variants/short-facts.md",
+    "number": 82,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/82",
+    "node_id": "I_kwDOScjXas8AAAABCdx2-g",
+    "priority": "P1",
+    "layer": "organism",
+    "platform": "ios"
+  },
+  {
+    "source": "04-organisms/card-variants/tall.md",
+    "number": 83,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/83",
+    "node_id": "I_kwDOScjXas8AAAABCdx3EQ",
+    "priority": "P1",
+    "layer": "organism",
+    "platform": "ios"
+  },
+  {
+    "source": "04-organisms/card-variants/typographic.md",
+    "number": 84,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/84",
+    "node_id": "I_kwDOScjXas8AAAABCdx3Lg",
+    "priority": "P1",
+    "layer": "organism",
+    "platform": "ios"
+  },
+  {
+    "source": "04-organisms/download-button.md",
+    "number": 85,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/85",
+    "node_id": "I_kwDOScjXas8AAAABCdx3RA",
+    "priority": "P1",
+    "layer": "organism",
+    "platform": "ios"
+  },
+  {
+    "source": "04-organisms/empty-state.md",
+    "number": 86,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/86",
+    "node_id": "I_kwDOScjXas8AAAABCdx3Zg",
+    "priority": "P1",
+    "layer": "organism",
+    "platform": "ios"
+  },
+  {
+    "source": "04-organisms/form-container.md",
+    "number": 87,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/87",
+    "node_id": "I_kwDOScjXas8AAAABCdx3jQ",
+    "priority": "P1",
+    "layer": "organism",
+    "platform": "ios"
+  },
+  {
+    "source": "04-organisms/form-in-drawer.md",
+    "number": 88,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/88",
+    "node_id": "I_kwDOScjXas8AAAABCdx3qw",
+    "priority": "P1",
+    "layer": "organism",
+    "platform": "ios"
+  },
+  {
+    "source": "04-organisms/hero.md",
+    "number": 89,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/89",
+    "node_id": "I_kwDOScjXas8AAAABCdx3zg",
+    "priority": "P1",
+    "layer": "organism",
+    "platform": "ios"
+  },
+  {
+    "source": "04-organisms/image-compositions/carousel.md",
+    "number": 90,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/90",
+    "node_id": "I_kwDOScjXas8AAAABCdx4Aw",
+    "priority": "P1",
+    "layer": "organism",
+    "platform": "ios"
+  },
+  {
+    "source": "04-organisms/image-compositions/image-block.md",
+    "number": 91,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/91",
+    "node_id": "I_kwDOScjXas8AAAABCdx4nQ",
+    "priority": "P1",
+    "layer": "organism",
+    "platform": "ios"
+  },
+  {
+    "source": "04-organisms/image-compositions/image-text-symmetrical.md",
+    "number": 92,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/92",
+    "node_id": "I_kwDOScjXas8AAAABCdx4vg",
+    "priority": "P1",
+    "layer": "organism",
+    "platform": "ios"
+  },
+  {
+    "source": "04-organisms/image-compositions/masonry-grid.md",
+    "number": 93,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/93",
+    "node_id": "I_kwDOScjXas8AAAABCdx5Ng",
+    "priority": "P1",
+    "layer": "organism",
+    "platform": "ios"
+  },
+  {
+    "source": "04-organisms/info-row.md",
+    "number": 94,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/94",
+    "node_id": "I_kwDOScjXas8AAAABCdx5jA",
+    "priority": "P1",
+    "layer": "organism",
+    "platform": "ios"
+  },
+  {
+    "source": "04-organisms/listings.md",
+    "number": 95,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/95",
+    "node_id": "I_kwDOScjXas8AAAABCdx5rQ",
+    "priority": "P1",
+    "layer": "organism",
+    "platform": "ios"
+  },
+  {
+    "source": "04-organisms/login-form.md",
+    "number": 96,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/96",
+    "node_id": "I_kwDOScjXas8AAAABCdx5zQ",
+    "priority": "P1",
+    "layer": "organism",
+    "platform": "ios"
+  },
+  {
+    "source": "04-organisms/media-blocks/image-banner.md",
+    "number": 97,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/97",
+    "node_id": "I_kwDOScjXas8AAAABCdx55Q",
+    "priority": "P1",
+    "layer": "organism",
+    "platform": "ios"
+  },
+  {
+    "source": "04-organisms/media-blocks/podcast-card.md",
+    "number": 98,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/98",
+    "node_id": "I_kwDOScjXas8AAAABCdx6Bw",
+    "priority": "P1",
+    "layer": "organism",
+    "platform": "ios"
+  },
+  {
+    "source": "04-organisms/media-blocks/podcast-large.md",
+    "number": 99,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/99",
+    "node_id": "I_kwDOScjXas8AAAABCdx6MQ",
+    "priority": "P1",
+    "layer": "organism",
+    "platform": "ios"
+  },
+  {
+    "source": "04-organisms/media-blocks/video-and-text.md",
+    "number": 100,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/100",
+    "node_id": "I_kwDOScjXas8AAAABCdx6Tw",
+    "priority": "P1",
+    "layer": "organism",
+    "platform": "ios"
+  },
+  {
+    "source": "04-organisms/media-blocks/video-banner.md",
+    "number": 101,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/101",
+    "node_id": "I_kwDOScjXas8AAAABCdx6cA",
+    "priority": "P1",
+    "layer": "organism",
+    "platform": "ios"
+  },
+  {
+    "source": "04-organisms/modal.md",
+    "number": 102,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/102",
+    "node_id": "I_kwDOScjXas8AAAABCdx6kg",
+    "priority": "P0",
+    "layer": "organism",
+    "platform": "ios"
+  },
+  {
+    "source": "04-organisms/notification-banner.md",
+    "number": 103,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/103",
+    "node_id": "I_kwDOScjXas8AAAABCdx6sA",
+    "priority": "P0",
+    "layer": "organism",
+    "platform": "ios"
+  },
+  {
+    "source": "04-organisms/pin.md",
+    "number": 104,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/104",
+    "node_id": "I_kwDOScjXas8AAAABCdx6yw",
+    "priority": "P1",
+    "layer": "organism",
+    "platform": "ios"
+  },
+  {
+    "source": "04-organisms/share.md",
+    "number": 105,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/105",
+    "node_id": "I_kwDOScjXas8AAAABCdx67w",
+    "priority": "P1",
+    "layer": "organism",
+    "platform": "ios"
+  },
+  {
+    "source": "04-organisms/show-more.md",
+    "number": 106,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/106",
+    "node_id": "I_kwDOScjXas8AAAABCdx7Eg",
+    "priority": "P1",
+    "layer": "organism",
+    "platform": "ios"
+  },
+  {
+    "source": "04-organisms/skeleton-loader.md",
+    "number": 107,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/107",
+    "node_id": "I_kwDOScjXas8AAAABCdx7Mg",
+    "priority": "P1",
+    "layer": "organism",
+    "platform": "ios"
+  },
+  {
+    "source": "04-organisms/toast.md",
+    "number": 108,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/108",
+    "node_id": "I_kwDOScjXas8AAAABCdx7Ug",
+    "priority": "P1",
+    "layer": "organism",
+    "platform": "ios"
+  },
+  {
+    "source": "04-organisms/typographic/headline-section.md",
+    "number": 109,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/109",
+    "node_id": "I_kwDOScjXas8AAAABCdx7cw",
+    "priority": "P1",
+    "layer": "organism",
+    "platform": "ios"
+  },
+  {
+    "source": "04-organisms/typographic/key-figures.md",
+    "number": 110,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/110",
+    "node_id": "I_kwDOScjXas8AAAABCdx7ig",
+    "priority": "P1",
+    "layer": "organism",
+    "platform": "ios"
+  },
+  {
+    "source": "04-organisms/typographic/preamble.md",
+    "number": 111,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/111",
+    "node_id": "I_kwDOScjXas8AAAABCdx7pA",
+    "priority": "P1",
+    "layer": "organism",
+    "platform": "ios"
+  },
+  {
+    "source": "04-organisms/typographic/quote.md",
+    "number": 112,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/112",
+    "node_id": "I_kwDOScjXas8AAAABCdx8Jw",
+    "priority": "P1",
+    "layer": "organism",
+    "platform": "ios"
+  },
+  {
+    "source": "04-organisms/typographic/text-block.md",
+    "number": 113,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/113",
+    "node_id": "I_kwDOScjXas8AAAABCdx8WQ",
+    "priority": "P1",
+    "layer": "organism",
+    "platform": "ios"
+  },
+  {
+    "source": "05-templates/activity-template.md",
+    "number": 114,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/114",
+    "node_id": "I_kwDOScjXas8AAAABCdx8gw",
+    "priority": "P1",
+    "layer": "template",
+    "platform": "ios"
+  },
+  {
+    "source": "05-templates/adaptive-template.md",
+    "number": 115,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/115",
+    "node_id": "I_kwDOScjXas8AAAABCdx8pw",
+    "priority": "P0",
+    "layer": "template",
+    "platform": "ios"
+  },
+  {
+    "source": "05-templates/layout-grid.md",
+    "number": 116,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/116",
+    "node_id": "I_kwDOScjXas8AAAABCdx8ww",
+    "priority": "P0",
+    "layer": "template",
+    "platform": "ios"
+  },
+  {
+    "source": "05-templates/viewport.md",
+    "number": 117,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/117",
+    "node_id": "I_kwDOScjXas8AAAABCdx89Q",
+    "priority": "P1",
+    "layer": "template",
+    "platform": "ios"
+  },
+  {
+    "source": "06-utils/accessibility-helpers.md",
+    "number": 118,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/118",
+    "node_id": "I_kwDOScjXas8AAAABCdx9Fg",
+    "priority": "P0",
+    "layer": "utils",
+    "platform": "ios"
+  },
+  {
+    "source": "06-utils/extensions.md",
+    "number": 119,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/119",
+    "node_id": "I_kwDOScjXas8AAAABCdx9OQ",
+    "priority": "P1",
+    "layer": "utils",
+    "platform": "ios"
+  },
+  {
+    "source": "06-utils/font-modifier.md",
+    "number": 120,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/120",
+    "node_id": "I_kwDOScjXas8AAAABCdx9Vw",
+    "priority": "P0",
+    "layer": "utils",
+    "platform": "ios"
+  },
+  {
+    "source": "06-utils/global-scroll-input-configurator.md",
+    "number": 121,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/121",
+    "node_id": "I_kwDOScjXas8AAAABCdx9eA",
+    "priority": "P2",
+    "layer": "utils",
+    "platform": "ios"
+  },
+  {
+    "source": "06-utils/preview-helpers.md",
+    "number": 122,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/122",
+    "node_id": "I_kwDOScjXas8AAAABCdx9kg",
+    "priority": "P2",
+    "layer": "utils",
+    "platform": "ios"
+  },
+  {
+    "source": "06-utils/view-modifiers.md",
+    "number": 123,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/123",
+    "node_id": "I_kwDOScjXas8AAAABCdx9rw",
+    "priority": "P1",
+    "layer": "utils",
+    "platform": "ios"
+  },
+  {
+    "source": "GAPS.md",
+    "number": 124,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/124",
+    "node_id": "I_kwDOScjXas8AAAABCdx90g",
+    "priority": "P0",
+    "layer": "gap",
+    "platform": "cross-platform"
+  },
+  {
+    "source": "GAPS.md",
+    "number": 125,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/125",
+    "node_id": "I_kwDOScjXas8AAAABCdx98g",
+    "priority": "P0",
+    "layer": "gap",
+    "platform": "cross-platform"
+  },
+  {
+    "source": "GAPS.md",
+    "number": 126,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/126",
+    "node_id": "I_kwDOScjXas8AAAABCdx-DA",
+    "priority": "P0",
+    "layer": "gap",
+    "platform": "cross-platform"
+  },
+  {
+    "source": "GAPS.md",
+    "number": 127,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/127",
+    "node_id": "I_kwDOScjXas8AAAABCdx-Jw",
+    "priority": "P0",
+    "layer": "gap",
+    "platform": "cross-platform"
+  },
+  {
+    "source": "GAPS.md",
+    "number": 128,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/128",
+    "node_id": "I_kwDOScjXas8AAAABCdx-QQ",
+    "priority": "P1",
+    "layer": "gap",
+    "platform": "cross-platform"
+  },
+  {
+    "source": "GAPS.md",
+    "number": 129,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/129",
+    "node_id": "I_kwDOScjXas8AAAABCdx-Ww",
+    "priority": "P1",
+    "layer": "gap",
+    "platform": "cross-platform"
+  },
+  {
+    "source": "GAPS.md",
+    "number": 130,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/130",
+    "node_id": "I_kwDOScjXas8AAAABCdx-bQ",
+    "priority": "P2",
+    "layer": "gap",
+    "platform": "cross-platform"
+  },
+  {
+    "source": "GAPS.md",
+    "number": 131,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/131",
+    "node_id": "I_kwDOScjXas8AAAABCdx-kQ",
+    "priority": "P0",
+    "layer": "gap",
+    "platform": "cross-platform"
+  },
+  {
+    "source": "GAPS.md",
+    "number": 132,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/132",
+    "node_id": "I_kwDOScjXas8AAAABCdx-qQ",
+    "priority": "P1",
+    "layer": "gap",
+    "platform": "cross-platform"
+  },
+  {
+    "source": "GAPS.md",
+    "number": 133,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/133",
+    "node_id": "I_kwDOScjXas8AAAABCdx-yA",
+    "priority": "P1",
+    "layer": "gap",
+    "platform": "cross-platform"
+  },
+  {
+    "source": "GAPS.md",
+    "number": 134,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/134",
+    "node_id": "I_kwDOScjXas8AAAABCdx-4w",
+    "priority": "P2",
+    "layer": "gap",
+    "platform": "cross-platform"
+  },
+  {
+    "source": "GAPS.md",
+    "number": 135,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/135",
+    "node_id": "I_kwDOScjXas8AAAABCdx-_Q",
+    "priority": "P0",
+    "layer": "gap",
+    "platform": "cross-platform"
+  },
+  {
+    "source": "GAPS.md",
+    "number": 136,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/136",
+    "node_id": "I_kwDOScjXas8AAAABCdx_Ew",
+    "priority": "P0",
+    "layer": "gap",
+    "platform": "cross-platform"
+  },
+  {
+    "source": "GAPS.md",
+    "number": 137,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/137",
+    "node_id": "I_kwDOScjXas8AAAABCdx_JA",
+    "priority": "P1",
+    "layer": "gap",
+    "platform": "cross-platform"
+  },
+  {
+    "source": "GAPS.md",
+    "number": 138,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/138",
+    "node_id": "I_kwDOScjXas8AAAABCdx_SA",
+    "priority": "P1",
+    "layer": "gap",
+    "platform": "cross-platform"
+  },
+  {
+    "source": "GAPS.md",
+    "number": 139,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/139",
+    "node_id": "I_kwDOScjXas8AAAABCdx_Zw",
+    "priority": "P0",
+    "layer": "gap",
+    "platform": "cross-platform"
+  },
+  {
+    "source": "GAPS.md",
+    "number": 140,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/140",
+    "node_id": "I_kwDOScjXas8AAAABCdx_hA",
+    "priority": "P1",
+    "layer": "gap",
+    "platform": "cross-platform"
+  },
+  {
+    "source": "GAPS.md",
+    "number": 141,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/141",
+    "node_id": "I_kwDOScjXas8AAAABCdx_mw",
+    "priority": "P2",
+    "layer": "gap",
+    "platform": "cross-platform"
+  },
+  {
+    "source": "GAPS.md",
+    "number": 142,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/142",
+    "node_id": "I_kwDOScjXas8AAAABCdx_uQ",
+    "priority": "P2",
+    "layer": "gap",
+    "platform": "cross-platform"
+  },
+  {
+    "source": "GAPS.md",
+    "number": 143,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/143",
+    "node_id": "I_kwDOScjXas8AAAABCdx_1A",
+    "priority": "P1",
+    "layer": "gap",
+    "platform": "cross-platform"
+  },
+  {
+    "source": "GAPS.md",
+    "number": 144,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/144",
+    "node_id": "I_kwDOScjXas8AAAABCdx__g",
+    "priority": "P1",
+    "layer": "gap",
+    "platform": "cross-platform"
+  },
+  {
+    "source": "GAPS.md",
+    "number": 145,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/145",
+    "node_id": "I_kwDOScjXas8AAAABCdyAHg",
+    "priority": "P0",
+    "layer": "gap",
+    "platform": "cross-platform"
+  },
+  {
+    "source": "GAPS.md",
+    "number": 146,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/146",
+    "node_id": "I_kwDOScjXas8AAAABCdyAMA",
+    "priority": "P0",
+    "layer": "gap",
+    "platform": "cross-platform"
+  },
+  {
+    "source": "GAPS.md",
+    "number": 147,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/147",
+    "node_id": "I_kwDOScjXas8AAAABCdyASQ",
+    "priority": "P1",
+    "layer": "gap",
+    "platform": "cross-platform"
+  },
+  {
+    "source": "GAPS.md",
+    "number": 148,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/148",
+    "node_id": "I_kwDOScjXas8AAAABCdyAXw",
+    "priority": "P1",
+    "layer": "gap",
+    "platform": "cross-platform"
+  },
+  {
+    "source": "GAPS.md",
+    "number": 149,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/149",
+    "node_id": "I_kwDOScjXas8AAAABCdyAfQ",
+    "priority": "P1",
+    "layer": "gap",
+    "platform": "cross-platform"
+  },
+  {
+    "source": "GAPS.md",
+    "number": 150,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/150",
+    "node_id": "I_kwDOScjXas8AAAABCdyAlQ",
+    "priority": "P2",
+    "layer": "gap",
+    "platform": "cross-platform"
+  },
+  {
+    "source": "GAPS.md",
+    "number": 151,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/151",
+    "node_id": "I_kwDOScjXas8AAAABCdyAsw",
+    "priority": "P2",
+    "layer": "gap",
+    "platform": "cross-platform"
+  },
+  {
+    "source": "GAPS.md",
+    "number": 152,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/152",
+    "node_id": "I_kwDOScjXas8AAAABCdyA2g",
+    "priority": "P1",
+    "layer": "gap",
+    "platform": "cross-platform"
+  },
+  {
+    "source": "GAPS.md",
+    "number": 153,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/153",
+    "node_id": "I_kwDOScjXas8AAAABCdyA_A",
+    "priority": "P1",
+    "layer": "gap",
+    "platform": "cross-platform"
+  },
+  {
+    "source": "GAPS.md",
+    "number": 154,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/154",
+    "node_id": "I_kwDOScjXas8AAAABCdyBFA",
+    "priority": "P1",
+    "layer": "gap",
+    "platform": "cross-platform"
+  },
+  {
+    "source": "GAPS.md",
+    "number": 155,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/155",
+    "node_id": "I_kwDOScjXas8AAAABCdyBpQ",
+    "priority": "P1",
+    "layer": "gap",
+    "platform": "cross-platform"
+  },
+  {
+    "source": "GAPS.md",
+    "number": 156,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/156",
+    "node_id": "I_kwDOScjXas8AAAABCdyBww",
+    "priority": "P1",
+    "layer": "gap",
+    "platform": "cross-platform"
+  },
+  {
+    "source": "GAPS.md",
+    "number": 157,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/157",
+    "node_id": "I_kwDOScjXas8AAAABCdyB0A",
+    "priority": "P0",
+    "layer": "gap",
+    "platform": "cross-platform"
+  },
+  {
+    "source": "GAPS.md",
+    "number": 158,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/158",
+    "node_id": "I_kwDOScjXas8AAAABCdyB7w",
+    "priority": "P1",
+    "layer": "gap",
+    "platform": "cross-platform"
+  },
+  {
+    "source": "GAPS.md",
+    "number": 159,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/159",
+    "node_id": "I_kwDOScjXas8AAAABCdyCKw",
+    "priority": "P1",
+    "layer": "gap",
+    "platform": "cross-platform"
+  },
+  {
+    "source": "GAPS.md",
+    "number": 160,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/160",
+    "node_id": "I_kwDOScjXas8AAAABCdyCTA",
+    "priority": "P1",
+    "layer": "gap",
+    "platform": "cross-platform"
+  },
+  {
+    "source": "GAPS.md",
+    "number": 161,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/161",
+    "node_id": "I_kwDOScjXas8AAAABCdyCsw",
+    "priority": "P1",
+    "layer": "gap",
+    "platform": "cross-platform"
+  },
+  {
+    "source": "GAPS.md",
+    "number": 162,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/162",
+    "node_id": "I_kwDOScjXas8AAAABCdyDGg",
+    "priority": "P1",
+    "layer": "gap",
+    "platform": "cross-platform"
+  },
+  {
+    "source": "GAPS.md",
+    "number": 163,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/163",
+    "node_id": "I_kwDOScjXas8AAAABCdyDNw",
+    "priority": "P2",
+    "layer": "gap",
+    "platform": "cross-platform"
+  },
+  {
+    "source": "GAPS.md",
+    "number": 164,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/164",
+    "node_id": "I_kwDOScjXas8AAAABCdyZ2Q",
+    "priority": "P2",
+    "layer": "gap",
+    "platform": "cross-platform"
+  },
+  {
+    "source": "GAPS.md",
+    "number": 165,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/165",
+    "node_id": "I_kwDOScjXas8AAAABCdyavg",
+    "priority": "P2",
+    "layer": "gap",
+    "platform": "cross-platform"
+  },
+  {
+    "source": "GAPS.md",
+    "number": 166,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/166",
+    "node_id": "I_kwDOScjXas8AAAABCdybQQ",
+    "priority": "P1",
+    "layer": "gap",
+    "platform": "cross-platform"
+  },
+  {
+    "source": "GAPS.md",
+    "number": 167,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/167",
+    "node_id": "I_kwDOScjXas8AAAABCdycQw",
+    "priority": "P1",
+    "layer": "gap",
+    "platform": "cross-platform"
+  },
+  {
+    "source": "GAPS.md",
+    "number": 168,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/168",
+    "node_id": "I_kwDOScjXas8AAAABCdyc2Q",
+    "priority": "P1",
+    "layer": "gap",
+    "platform": "cross-platform"
+  },
+  {
+    "source": "GAPS.md",
+    "number": 169,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/169",
+    "node_id": "I_kwDOScjXas8AAAABCdydWg",
+    "priority": "P0",
+    "layer": "gap",
+    "platform": "cross-platform"
+  },
+  {
+    "source": "GAPS.md",
+    "number": 170,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/170",
+    "node_id": "I_kwDOScjXas8AAAABCdyeDw",
+    "priority": "P2",
+    "layer": "gap",
+    "platform": "cross-platform"
+  },
+  {
+    "source": "GAPS.md",
+    "number": 171,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/171",
+    "node_id": "I_kwDOScjXas8AAAABCdyefA",
+    "priority": "P2",
+    "layer": "gap",
+    "platform": "cross-platform"
+  },
+  {
+    "source": "GAPS.md",
+    "number": 172,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/172",
+    "node_id": "I_kwDOScjXas8AAAABCdye3w",
+    "priority": "P0",
+    "layer": "gap",
+    "platform": "cross-platform"
+  },
+  {
+    "source": "GAPS.md",
+    "number": 173,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/173",
+    "node_id": "I_kwDOScjXas8AAAABCdyf4g",
+    "priority": "P1",
+    "layer": "gap",
+    "platform": "cross-platform"
+  },
+  {
+    "source": "GAPS.md",
+    "number": 174,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/174",
+    "node_id": "I_kwDOScjXas8AAAABCdygTg",
+    "priority": "P1",
+    "layer": "gap",
+    "platform": "cross-platform"
+  },
+  {
+    "source": "GAPS.md",
+    "number": 175,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/175",
+    "node_id": "I_kwDOScjXas8AAAABCdygsg",
+    "priority": "P0",
+    "layer": "gap",
+    "platform": "cross-platform"
+  },
+  {
+    "source": "GAPS.md",
+    "number": 176,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/176",
+    "node_id": "I_kwDOScjXas8AAAABCdyhEQ",
+    "priority": "P0",
+    "layer": "gap",
+    "platform": "cross-platform"
+  },
+  {
+    "source": "GAPS.md",
+    "number": 177,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/177",
+    "node_id": "I_kwDOScjXas8AAAABCdyhiA",
+    "priority": "P1",
+    "layer": "gap",
+    "platform": "cross-platform"
+  },
+  {
+    "source": "GAPS.md",
+    "number": 178,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/178",
+    "node_id": "I_kwDOScjXas8AAAABCdyh7w",
+    "priority": "P1",
+    "layer": "gap",
+    "platform": "cross-platform"
+  },
+  {
+    "source": "GAPS.md",
+    "number": 179,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/179",
+    "node_id": "I_kwDOScjXas8AAAABCdyiUg",
+    "priority": "P1",
+    "layer": "gap",
+    "platform": "cross-platform"
+  },
+  {
+    "source": "GAPS.md",
+    "number": 180,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/180",
+    "node_id": "I_kwDOScjXas8AAAABCdyitA",
+    "priority": "P2",
+    "layer": "gap",
+    "platform": "cross-platform"
+  },
+  {
+    "source": "GAPS.md",
+    "number": 181,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/181",
+    "node_id": "I_kwDOScjXas8AAAABCdyjEQ",
+    "priority": "P1",
+    "layer": "gap",
+    "platform": "cross-platform"
+  },
+  {
+    "source": "GAPS.md",
+    "number": 182,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/182",
+    "node_id": "I_kwDOScjXas8AAAABCdyjcA",
+    "priority": "P1",
+    "layer": "gap",
+    "platform": "cross-platform"
+  },
+  {
+    "source": "GAPS.md",
+    "number": 183,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/183",
+    "node_id": "I_kwDOScjXas8AAAABCdykYw",
+    "priority": "P1",
+    "layer": "gap",
+    "platform": "cross-platform"
+  },
+  {
+    "source": "GAPS.md",
+    "number": 184,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/184",
+    "node_id": "I_kwDOScjXas8AAAABCdykyA",
+    "priority": "P0",
+    "layer": "gap",
+    "platform": "cross-platform"
+  },
+  {
+    "source": "GAPS.md",
+    "number": 185,
+    "url": "https://github.com/mflipe/zodiak-mobile/issues/185",
+    "node_id": "I_kwDOScjXas8AAAABCdylPQ",
+    "priority": "P1",
+    "layer": "gap",
+    "platform": "cross-platform"
+  }
+]

@@ -1,0 +1,19 @@
+import { IconProps } from "../IconProps.js";
+
+export const ChartBarVerticalIcon = ({
+  width = "16px",
+ height = "16px",
+  color = "currentColor", strokeWidth = 1, className,
+  ...props
+}: IconProps) => (
+  <svg viewBox="0 0 16 16" width={width} height={height} fill="none" {...props}>
+    <g id="Category=Interface, Name=Chart_Bar_Vertical">
+      <path
+        id="Vector"
+        d="M6 7.33268V13.3327M6 7.33268H3.06641C2.69304 7.33268 2.50654 7.33268 2.36393 7.40534C2.23849 7.46926 2.13658 7.57117 2.07266 7.69661C2 7.83922 2 8.02605 2 8.39941V13.3327H6M6 7.33268V3.73275C6 3.35938 6 3.17256 6.07266 3.02995C6.13658 2.90451 6.23849 2.80259 6.36393 2.73868C6.50654 2.66602 6.69304 2.66602 7.06641 2.66602H8.93307C9.30644 2.66602 9.49352 2.66602 9.63613 2.73868C9.76157 2.80259 9.86317 2.90451 9.92708 3.02995C9.99975 3.17256 10 3.35938 10 3.73275V5.33268M6 13.3327H10M10 13.3327L14 13.3327V6.39941C14 6.02605 13.9997 5.83922 13.9271 5.69661C13.8632 5.57117 13.762 5.46926 13.6365 5.40534C13.4939 5.33268 13.3067 5.33268 12.9333 5.33268H10M10 13.3327V5.33268"
+        stroke={color} strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </g>
+  </svg>
+);

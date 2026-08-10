@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="taskmanager_form_title_add_task">Add Task</string>
+    <string name="taskmanager_input_label_task">Task description</string>
+    <string name="taskmanager_button_add">Add</string>
+    <string name="taskmanager_input_label_search">Search tasks</string>
+    <string name="taskmanager_empty_state_title_no_results">No tasks found</string>
+    <string name="taskmanager_empty_state_message_no_results">Try a different search term.</string>
+    <string name="taskmanager_empty_state_title_empty">No tasks</string>
+    <string name="taskmanager_empty_state_message_empty">Add your first task above.</string>
+    <string name="taskmanager_content_desc_remove">Remove</string>
+</resources>

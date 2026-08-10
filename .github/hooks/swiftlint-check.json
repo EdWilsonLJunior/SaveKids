@@ -1,0 +1,11 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "type": "command",
+        "osx": ".github/scripts/swiftlint-check.sh",
+        "timeout": 30
+      }
+    ]
+  }
+}

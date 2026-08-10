@@ -1,0 +1,19 @@
+import { IconProps } from "../IconProps.js";
+
+export const TrashEmptyIcon = ({
+  width = "16px",
+ height = "16px",
+  color = "currentColor", strokeWidth = 1, className,
+  ...props
+}: IconProps) => (
+  <svg viewBox="0 0 16 16" width={width} height={height} fill="none" {...props}>
+    <g id="Category=Interface, Name=Trash_Empty">
+      <path
+        id="Vector"
+        d="M4.0013 4V11.8667C4.0013 12.6134 4.0013 12.9865 4.14663 13.2717C4.27446 13.5226 4.47828 13.727 4.72917 13.8548C5.0141 14 5.3873 14 6.13258 14H9.87003C10.6153 14 10.988 14 11.2729 13.8548C11.5238 13.727 11.7283 13.5226 11.8561 13.2717C12.0013 12.9868 12.0013 12.614 12.0013 11.8687V4M4.0013 4H5.33464M4.0013 4H2.66797M5.33464 4H10.668M5.33464 4C5.33464 3.37874 5.33464 3.06827 5.43613 2.82324C5.57145 2.49654 5.83085 2.23682 6.15755 2.10149C6.40258 2 6.71338 2 7.33464 2H8.66797C9.28922 2 9.59985 2 9.84488 2.10149C10.1716 2.23682 10.4311 2.49654 10.5664 2.82324C10.6679 3.06827 10.668 3.37875 10.668 4M10.668 4H12.0013M12.0013 4H13.3346"
+        stroke={color} strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </g>
+  </svg>
+);

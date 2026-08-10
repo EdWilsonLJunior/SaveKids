@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="grades_form_title_calculate">Calculate Grades</string>
+    <string name="grades_input_label_student_name">Student Name</string>
+    <string name="grades_input_label_grade1">Grade 1</string>
+    <string name="grades_input_label_grade2">Grade 2</string>
+    <string name="grades_input_label_grade3">Grade 3</string>
+    <string name="grades_button_calculate">Calculate</string>
+    <string name="grades_form_title_result">Result</string>
+    <string name="grades_info_row_student">Student</string>
+    <string name="grades_info_row_grade1">Grade 1</string>
+    <string name="grades_info_row_grade2">Grade 2</string>
+    <string name="grades_info_row_grade3">Grade 3</string>
+    <string name="grades_info_row_average">Average</string>
+    <string name="grades_info_row_status">Status</string>
+    <string name="grades_status_passing">✅ Passing</string>
+    <string name="grades_status_failing">❌ Failing</string>
+    <string name="grades_button_clear">Clear</string>
+</resources>

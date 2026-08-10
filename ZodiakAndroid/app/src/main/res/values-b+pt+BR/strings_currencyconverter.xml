@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="currencyconverter_form_title_converter">Converter Moeda</string>
+    <string name="currencyconverter_input_label_amount">Valor</string>
+    <string name="currencyconverter_dropdown_label_from">De</string>
+    <string name="currencyconverter_content_desc_swap">Trocar</string>
+    <string name="currencyconverter_dropdown_label_to">Para</string>
+    <string name="currencyconverter_button_convert">Converter</string>
+    <string name="currencyconverter_form_title_result">Resultado</string>
+    <string name="currencyconverter_button_clear">Limpar</string>
+</resources>

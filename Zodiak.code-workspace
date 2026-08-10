@@ -1,0 +1,21 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"java.configuration.updateBuildConfiguration": "disabled",
+		"java.compile.nullAnalysis.mode": "automatic",
+		"markdown.styles": [".vscode/zodiak-markdown.css"],
+		"workbench.colorTheme": "Zodiak Dark AMOLED",
+		"editor.fontFamily": "'FiraCode Nerd Font Retina', 'Fira Code', 'Cascadia Code', monospace",
+		"editor.fontSize": 14,
+		"editor.lineHeight": 24,
+		"editor.letterSpacing": 0.5,
+		"editor.fontLigatures": "'ss01', 'ss02', 'ss03', 'ss05', 'cv14', 'cv16', 'zero'",
+		"terminal.integrated.fontFamily": "'FiraCode Nerd Font Retina', 'Fira Code', 'Cascadia Code', monospace",
+		"terminal.integrated.fontSize": 13,
+		"editor.semanticHighlighting.enabled": true
+	}
+}

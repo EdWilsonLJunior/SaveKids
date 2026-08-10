@@ -1,0 +1,1432 @@
+{
+  "icons": [
+    {
+      "name": "ArrowDownIcon",
+      "category": "Arrow",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "ArrowDownLeftIcon",
+      "category": "Arrow",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "ArrowDownRightIcon",
+      "category": "Arrow",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "ArrowDownUpIcon",
+      "category": "Arrow",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "ArrowLeftIcon",
+      "category": "Arrow",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "ArrowLeftRightIcon",
+      "category": "Arrow",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "ArrowRightIcon",
+      "category": "Arrow",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "ArrowUndoDownLeftIcon",
+      "category": "Arrow",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "ArrowUndoDownRightIcon",
+      "category": "Arrow",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "ArrowUndoUpLeftIcon",
+      "category": "Arrow",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "ArrowUndoUpRightIcon",
+      "category": "Arrow",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "ArrowUpIcon",
+      "category": "Arrow",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "ArrowUpLeftIcon",
+      "category": "Arrow",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "ArrowUpRightIcon",
+      "category": "Arrow",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "ArrowsReload01Icon",
+      "category": "Arrow",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "ArrowsReload02Icon",
+      "category": "Arrow",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "ChevronDownIcon",
+      "category": "Arrow",
+      "recommendedForButtons": false
+    },
+    {
+      "name": "ChevronFirstPageIcon",
+      "category": "Arrow",
+      "recommendedForButtons": false
+    },
+    {
+      "name": "ChevronLastPageIcon",
+      "category": "Arrow",
+      "recommendedForButtons": false
+    },
+    {
+      "name": "ChevronLeftIcon",
+      "category": "Arrow",
+      "recommendedForButtons": false
+    },
+    {
+      "name": "ChevronRightIcon",
+      "category": "Arrow",
+      "recommendedForButtons": false
+    },
+    {
+      "name": "ChevronUpIcon",
+      "category": "Arrow",
+      "recommendedForButtons": false
+    },
+    {
+      "name": "ExpandIcon",
+      "category": "Arrow",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "ShrinkIcon",
+      "category": "Arrow",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "UnfoldLessIcon",
+      "category": "Arrow",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "UnfoldMoreIcon",
+      "category": "Arrow",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "AlarmIcon",
+      "category": "Calendar",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "CalendarAddIcon",
+      "category": "Calendar",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "CalendarCloseIcon",
+      "category": "Calendar",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "CalendarDaysIcon",
+      "category": "Calendar",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "CalendarOkIcon",
+      "category": "Calendar",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "CalendarWeekIcon",
+      "category": "Calendar",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "ClockIcon",
+      "category": "Calendar",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "BellIcon",
+      "category": "Communication",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "BellNotificationIcon",
+      "category": "Communication",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "BellOffIcon",
+      "category": "Communication",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "BellRingIcon",
+      "category": "Communication",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "ChatCircleAddIcon",
+      "category": "Communication",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "ChatCircleCheckIcon",
+      "category": "Communication",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "ChatCircleCloseIcon",
+      "category": "Communication",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "ChatCircleDotsIcon",
+      "category": "Communication",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "ChatCircleIcon",
+      "category": "Communication",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "ChatCircleRemoveIcon",
+      "category": "Communication",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "ChatConversationCircleIcon",
+      "category": "Communication",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "HatConversationCircleIcon",
+      "category": "Communication",
+      "recommendedForButtons": false
+    },
+    {
+      "name": "MailIcon",
+      "category": "Communication",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "MailOpenIcon",
+      "category": "Communication",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "PaperPlaneIcon",
+      "category": "Communication",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "PhoneIcon",
+      "category": "Communication",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "ShareAndroidIcon",
+      "category": "Communication",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "ShareIcon",
+      "category": "Communication",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "ShareiOSExportIcon",
+      "category": "Communication",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "AddPlusIcon",
+      "category": "Edit",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "AddToQueueIcon",
+      "category": "Edit",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "BoldIcon",
+      "category": "Edit",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "CopyIcon",
+      "category": "Edit",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "CropIcon",
+      "category": "Edit",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "DoubleQuotesIcon",
+      "category": "Edit",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "EditPencilIcon",
+      "category": "Edit",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "EditPencilLineIcon",
+      "category": "Edit",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "FigmaIcon",
+      "category": "Social Media",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "FontIcon",
+      "category": "Edit",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "HideIcon",
+      "category": "Edit",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "ItalicIcon",
+      "category": "Edit",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "LayersIcon",
+      "category": "Edit",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "ListAddIcon",
+      "category": "Edit",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "ListCheckIcon",
+      "category": "Edit",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "ListChecklistIcon",
+      "category": "Edit",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "ListOrderedIcon",
+      "category": "Edit",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "ListRemoveIcon",
+      "category": "Edit",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "MentionIcon",
+      "category": "Edit",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "MoveIcon",
+      "category": "Edit",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "PaperclipAttachmentTiltIcon",
+      "category": "Edit",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "ParagraphIcon",
+      "category": "Edit",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "RedoIcon",
+      "category": "Edit",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "RemoveMinusIcon",
+      "category": "Edit",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "RulerIcon",
+      "category": "Edit",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "SelectMultipleIcon",
+      "category": "Edit",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "ShowIcon",
+      "category": "Edit",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "SortAscendingIcon",
+      "category": "Edit",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "SortDescendingIcon",
+      "category": "Edit",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "StrikethroughIcon",
+      "category": "Edit",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "SwatchesPaletteIcon",
+      "category": "Edit",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "TableAddIcon",
+      "category": "Edit",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "TableIcon",
+      "category": "Edit",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "TableRemoveIcon",
+      "category": "Edit",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "TextAlignCenterIcon",
+      "category": "Edit",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "TextAlignJustifyIcon",
+      "category": "Edit",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "TextAlignLeftIcon",
+      "category": "Edit",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "TextAlignRightIcon",
+      "category": "Edit",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "TextIcon",
+      "category": "Edit",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "UnderlineIcon",
+      "category": "Edit",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "UndoIcon",
+      "category": "Edit",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "BulbIcon",
+      "category": "Environment",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "CoffeeIcon",
+      "category": "Environment",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "CoffeeToGoIcon",
+      "category": "Environment",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "CookieIcon",
+      "category": "Environment",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "CupcakeIcon",
+      "category": "Environment",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "FirstAidIcon",
+      "category": "Environment",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "LeafIcon",
+      "category": "Environment",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "MoonIcon",
+      "category": "Environment",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "PlanetIcon",
+      "category": "Environment",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "PuzzleIcon",
+      "category": "Environment",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "RainbowIcon",
+      "category": "Environment",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "SunIcon",
+      "category": "Environment",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "WaterDropIcon",
+      "category": "Environment",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "ArchiveIcon",
+      "category": "File",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "CloudAddIcon",
+      "category": "File",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "CloudCheckIcon",
+      "category": "File",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "CloudCloseIcon",
+      "category": "File",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "CloudDownloadIcon",
+      "category": "File",
+      "recommendedForButtons": false
+    },
+    {
+      "name": "CloudIcon",
+      "category": "File",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "CloudOffIcon",
+      "category": "File",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "CloudRemoveIcon",
+      "category": "File",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "CloudUploadIcon",
+      "category": "File",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "DownloadPackageIcon",
+      "category": "File",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "FileAddIcon",
+      "category": "File",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "FileBlankIcon",
+      "category": "File",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "FileCheckIcon",
+      "category": "File",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "FileCloseIcon",
+      "category": "File",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "FileCodeIcon",
+      "category": "File",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "FileDocumentIcon",
+      "category": "File",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "FileDownloadIcon",
+      "category": "File",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "FileEditIcon",
+      "category": "File",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "FileRemoveIcon",
+      "category": "File",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "FileSearchIcon",
+      "category": "File",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "FileUploadIcon",
+      "category": "File",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "FilesIcon",
+      "category": "File",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "FolderAddIcon",
+      "category": "File",
+      "recommendedForButtons": false
+    },
+    {
+      "name": "FolderCheckIcon",
+      "category": "File",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "FolderCloseIcon",
+      "category": "File",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "FolderCodeIcon",
+      "category": "File",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "FolderDocumentIcon",
+      "category": "File",
+      "recommendedForButtons": false
+    },
+    {
+      "name": "FolderDownloadIcon",
+      "category": "File",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "FolderEditIcon",
+      "category": "File",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "FolderIcon",
+      "category": "File",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "FolderOpenIcon",
+      "category": "File",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "FolderRemoveIcon",
+      "category": "File",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "FolderSearchIcon",
+      "category": "File",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "FolderUploadIcon",
+      "category": "File",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "FoldersIcon",
+      "category": "File",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "NoteEditIcon",
+      "category": "File",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "NoteIcon",
+      "category": "File",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "NoteSearchIcon",
+      "category": "File",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "NotebookIcon",
+      "category": "File",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "BookOpenIcon",
+      "category": "Interface",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "BookmarkIcon",
+      "category": "Interface",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "ChartBarVerticalIcon",
+      "category": "Interface",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "ChartLineIcon",
+      "category": "Interface",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "ChartPieIcon",
+      "category": "Interface",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "CheckAllIcon",
+      "category": "Interface",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "CheckIcon",
+      "category": "Interface",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "CheckboxCheckIcon",
+      "category": "Interface",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "CheckboxUncheckedIcon",
+      "category": "Interface",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "CommandIcon",
+      "category": "Interface",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "CreditCardIcon",
+      "category": "Interface",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "DownloadIcon",
+      "category": "Interface",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "ExternalLinkIcon",
+      "category": "Interface",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "GiftIcon",
+      "category": "Interface",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "HeartIcon",
+      "category": "Interface",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "LabelIcon",
+      "category": "Interface",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "LinkBreakIcon",
+      "category": "Interface",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "LinkIcon",
+      "category": "Interface",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "LockIcon",
+      "category": "Interface",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "LockOpenIcon",
+      "category": "Interface",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "LogOutIcon",
+      "category": "Interface",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "MagnifyingGlassMinusIcon",
+      "category": "Interface",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "MagnifyingGlassPlusIcon",
+      "category": "Interface",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "MagnifyingGlassBlockIcon",
+      "category": "Interface",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "RadioFillIcon",
+      "category": "Interface",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "RadioUncheckedIcon",
+      "category": "Interface",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "SearchMagnifyingGlassIcon",
+      "category": "Interface",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "SettingsIcon",
+      "category": "Interface",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "ShoppingBagIcon",
+      "category": "Interface",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "ShoppingCartIcon",
+      "category": "Interface",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "FilterIcon",
+      "category": "Interface",
+      "recommendedForButtons": false
+    },
+    {
+      "name": "StarIcon",
+      "category": "Interface",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "SuitcaseIcon",
+      "category": "Interface",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "SwitchLeftIcon",
+      "category": "Interface",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "SwitchRightIcon",
+      "category": "Interface",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "TagIcon",
+      "category": "Interface",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "TicketVoucherIcon",
+      "category": "Interface",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "TrashEmptyIcon",
+      "category": "Interface",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "TrashFullIcon",
+      "category": "Interface",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "TrendingDownIcon",
+      "category": "Interface",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "TrendingUpIcon",
+      "category": "Interface",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "ForwardIcon",
+      "category": "Media",
+      "recommendedForButtons": true,
+      "audioVideoButton": true
+    },
+    {
+      "name": "HeadphonesIcon",
+      "category": "Media",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "ImageIcon",
+      "category": "Media",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "PauseFilledIcon",
+      "category": "Media",
+      "recommendedForButtons": true,
+      "audioVideoButton": true
+    },
+    {
+      "name": "PauseIcon",
+      "category": "Media",
+      "recommendedForButtons": false,
+      "audioVideoButton": true
+    },
+    {
+      "name": "PlayFilledIcon",
+      "category": "Media",
+      "recommendedForButtons": false,
+      "audioVideoButton": true
+    },
+    {
+      "name": "PlayIcon",
+      "category": "Media",
+      "recommendedForButtons": true,
+      "audioVideoButton": true
+    },
+    {
+      "name": "RewindIcon",
+      "category": "Media",
+      "recommendedForButtons": true,
+      "audioVideoButton": true
+    },
+    {
+      "name": "ShuffleIcon",
+      "category": "Media",
+      "recommendedForButtons": true,
+      "audioVideoButton": true
+    },
+    {
+      "name": "SkipBackIcon",
+      "category": "Media",
+      "recommendedForButtons": true,
+      "audioVideoButton": true
+    },
+    {
+      "name": "SkipForwardIcon",
+      "category": "Media",
+      "recommendedForButtons": true,
+      "audioVideoButton": true
+    },
+    {
+      "name": "SpeedIcon",
+      "category": "Media",
+      "recommendedForButtons": false,
+      "audioVideoButton": true
+    },
+    {
+      "name": "StopFilledIcon",
+      "category": "Media",
+      "recommendedForButtons": false,
+      "audioVideoButton": true
+    },
+    {
+      "name": "StopIcon",
+      "category": "Media",
+      "recommendedForButtons": true,
+      "audioVideoButton": true
+    },
+    {
+      "name": "VolumeMaxIcon",
+      "category": "Media",
+      "recommendedForButtons": true,
+      "audioVideoButton": true
+    },
+    {
+      "name": "VolumeMinIcon",
+      "category": "Media",
+      "recommendedForButtons": true,
+      "audioVideoButton": true
+    },
+    {
+      "name": "VolumeOffIcon",
+      "category": "Media",
+      "recommendedForButtons": true,
+      "audioVideoButton": true
+    },
+    {
+      "name": "CloseIcon",
+      "category": "Menu",
+      "recommendedForButtons": true,
+      "audioVideoButton": true
+    },
+    {
+      "name": "HamburgerIcon",
+      "category": "Menu",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "MoreGridIcon",
+      "category": "Menu",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "MoreHorizontalIcon",
+      "category": "Menu",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "MoreVerticalIcon",
+      "category": "Menu",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "BuildingIcon",
+      "category": "Navigation",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "CompassIcon",
+      "category": "Navigation",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "FlagIcon",
+      "category": "Navigation",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "GlobeIcon",
+      "category": "Navigation",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "HouseIcon",
+      "category": "Navigation",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "MapIcon",
+      "category": "Navigation",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "MapPinIcon",
+      "category": "Navigation",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "NavigationIcon",
+      "category": "Navigation",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "AppleIcon",
+      "category": "Social Media",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "ApplePodcastsIcon",
+      "category": "Social Media",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "FacebookIcon",
+      "category": "Social Media",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "GithubIcon",
+      "category": "Social Media",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "GlassdoorIcon",
+      "category": "Social Media",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "GoogleIcon",
+      "category": "Social Media",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "GooglePodcastsIcon",
+      "category": "Social Media",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "InstagramIcon",
+      "category": "Social Media",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "LinkedinIcon",
+      "category": "Social Media",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "MessengerIcon",
+      "category": "Social Media",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "OpenAIChatGPTIcon",
+      "category": "Social Media",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "SlackIcon",
+      "category": "Social Media",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "SlideShareIcon",
+      "category": "Social Media",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "SoundcloudIcon",
+      "category": "Social Media",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "SpotifyIcon",
+      "category": "Social Media",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "TeamsIcon",
+      "category": "Social Media",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "ThreadsIcon",
+      "category": "Social Media",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "TikTokIcon",
+      "category": "Social Media",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "WeChatIcon",
+      "category": "Social Media",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "WeiboIcon",
+      "category": "Social Media",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "WhatsappIcon",
+      "category": "Social Media",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "WindowsIcon",
+      "category": "Social Media",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "XIcon",
+      "category": "Social Media",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "YoutubeIcon",
+      "category": "Social Media",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "CameraIcon",
+      "category": "System",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "CodeIcon",
+      "category": "System",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "DataIcon",
+      "category": "System",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "DesktopTowerIcon",
+      "category": "System",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "DevicesIcon",
+      "category": "System",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "KeyboardIcon",
+      "category": "System",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "LaptopIcon",
+      "category": "System",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "MobileButtonIcon",
+      "category": "System",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "MonitorIcon",
+      "category": "System",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "MonitorPlayIcon",
+      "category": "System",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "MouseIcon",
+      "category": "System",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "PrinterIcon",
+      "category": "System",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "QRCodeIcon",
+      "category": "System",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "SaveIcon",
+      "category": "System",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "TabletButtonIcon",
+      "category": "System",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "WifiHighIcon",
+      "category": "System",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "WifiOffIcon",
+      "category": "System",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "WifiProblemIcon",
+      "category": "System",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "Backward15Icon",
+      "category": "Media",
+      "recommendedForButtons": false,
+      "audioVideoButton": true
+    },
+    {
+      "name": "Forward15Icon",
+      "category": "Media",
+      "recommendedForButtons": false,
+      "audioVideoButton": true
+    },
+    {
+      "name": "UserAddIcon",
+      "category": "User",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "UserCardIdIcon",
+      "category": "User",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "UserCheckIcon",
+      "category": "User",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "UserCloseIcon",
+      "category": "User",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "UserIcon",
+      "category": "User",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "UserRemoveIcon",
+      "category": "User",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "UserVoiceIcon",
+      "category": "User",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "UsersIcon",
+      "category": "User",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "CircleCheckIcon",
+      "category": "Warning",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "CircleHelpIcon",
+      "category": "Warning",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "InfoIcon",
+      "category": "Warning",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "OctagonWarningIcon",
+      "category": "Warning",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "AIIcon",
+      "category": "AI",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "AIContentIcon",
+      "category": "AI",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "AIBrainIcon",
+      "category": "AI",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "BotIcon",
+      "category": "AI",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "AIEditingIcon",
+      "category": "AI",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "AISearchIcon",
+      "category": "AI",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "AIGenerateIcon",
+      "category": "AI",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "AILibraryIcon",
+      "category": "AI",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "AIImageIcon",
+      "category": "AI",
+      "recommendedForButtons": true
+    },
+    {
+      "name": "AIMagicWandIcon",
+      "category": "AI",
+      "recommendedForButtons": true
+    }
+  ]
+}

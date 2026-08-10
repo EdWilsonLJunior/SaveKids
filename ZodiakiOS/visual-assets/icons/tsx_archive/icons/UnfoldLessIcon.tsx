@@ -1,0 +1,19 @@
+import { IconProps } from "../IconProps.js";
+
+export const UnfoldLessIcon = ({
+  width = "16px",
+ height = "16px",
+  color = "currentColor", strokeWidth = 1, className,
+  ...props
+}: IconProps) => (
+  <svg viewBox="0 0 16 16" width={width} height={height} fill="none" {...props}>
+    <g id="Category=Arrow, Name=Unfold_Less">
+      <path
+        id="Vector"
+        d="M5.33203 12.6673L7.9987 10.0007L10.6654 12.6673M10.6654 3.33398L7.9987 6.00065L5.33203 3.33398"
+        stroke={color} strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </g>
+  </svg>
+);

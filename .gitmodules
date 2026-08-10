@@ -1,0 +1,3 @@
+[submodule ".github/hig-doctor"]
+	path = .github/hig-doctor
+	url = https://github.com/raintree-technology/hig-doctor

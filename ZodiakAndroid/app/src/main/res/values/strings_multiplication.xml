@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="multiplication_form_title_table">Multiplication Table</string>
+    <string name="multiplication_input_label_number">Number</string>
+    <string name="multiplication_button_generate">Generate Table</string>
+    <string name="multiplication_button_clear">Clear</string>
+</resources>
