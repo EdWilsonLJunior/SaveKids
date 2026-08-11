@@ -30,7 +30,7 @@ class FakeSaveKidsRepository : SaveKidsRepository {
             completedMissions = 0,
             totalMissions = 2,
             redeemedRewards = 0,
-            totalRewards = 1,
+            totalRewards = 3,
         )
     )
     private val goalsState = MutableStateFlow<List<GoalModel>>(emptyList())
@@ -63,7 +63,23 @@ class FakeSaveKidsRepository : SaveKidsRepository {
                 requiredXp = 90,
                 active = true,
                 redeemed = false,
-            )
+            ),
+            RewardModel(
+                id = 2,
+                title = "Troféu da Família",
+                description = "Exige mais XP do que a carteira inicial possui",
+                requiredXp = 240,
+                active = true,
+                redeemed = false,
+            ),
+            RewardModel(
+                id = 3,
+                title = "Selo desativado",
+                description = "Recompensa fora de circulação",
+                requiredXp = 30,
+                active = false,
+                redeemed = false,
+            ),
         )
     )
     private val historyState = MutableStateFlow<List<HistoryEventModel>>(emptyList())
@@ -161,6 +177,7 @@ class FakeSaveKidsRepository : SaveKidsRepository {
         val reward = rewardsState.value.firstOrNull { it.id == id }
             ?: return Result.failure(IllegalArgumentException("Recompensa não encontrada."))
         val current = dashboardState.value
+        if (!reward.active) return Result.failure(IllegalStateException("Recompensa inativa."))
         if (reward.redeemed) return Result.failure(IllegalStateException("Recompensa já resgatada."))
         if (current.xp < reward.requiredXp) return Result.failure(IllegalStateException("XP insuficiente para resgatar."))
         if (current.xp < 10) return Result.failure(IllegalStateException("XP insuficiente para concluir o resgate."))
