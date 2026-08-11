@@ -174,6 +174,20 @@ class SaveKidsMissionsRepositoryTest {
     }
 
     @Test
+    fun `CT-020 carteira nao inicializada falha sem consumir a missao`() = runTest {
+        coEvery { missionDao.findById(1) } returns missaoDisponivel
+        coEvery { walletDao.getWallet() } returns null
+
+        val resultado = repository.completeMission(1)
+
+        assertTrue(resultado.isFailure)
+        assertEquals("Carteira não inicializada.", resultado.exceptionOrNull()?.message)
+        // A missao nao pode ficar concluida sem que a recompensa tenha sido paga.
+        coVerify(exactly = 0) { missionDao.update(any()) }
+        coVerify(exactly = 0) { historyDao.insert(any()) }
+    }
+
+    @Test
     fun `CT-019 concluir missao ja concluida falha sem creditar recompensa novamente`() = runTest {
         coEvery { missionDao.findById(1) } returns missaoDisponivel.copy(status = MissionStatus.COMPLETED)
 

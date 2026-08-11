@@ -413,8 +413,10 @@ class SaveKidsRepositoryImpl @Inject constructor(
             return@withContext Result.failure(IllegalStateException("Missão já concluída."))
         }
 
-        missionDao.update(mission.copy(status = MissionStatus.COMPLETED))
+        // A carteira e validada antes de marcar a missao como concluida:
+        // do contrario a missao seria consumida sem pagar a recompensa.
         val wallet = walletDao.getWallet() ?: return@withContext Result.failure(IllegalStateException("Carteira não inicializada."))
+        missionDao.update(mission.copy(status = MissionStatus.COMPLETED))
         val xpAfter = wallet.xp + mission.rewardXp
         val level = GamificationRules.levelForXp(xpAfter)
         walletDao.upsert(
