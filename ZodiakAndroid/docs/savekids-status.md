@@ -97,6 +97,9 @@ Este documento descreve o que ja foi implementado no projeto Save Kids, onde cad
 - Como:
   - Status por enum (AVAILABLE/IN_PROGRESS/COMPLETED).
   - Ao concluir: soma XP e, se aplicavel, valor em carteira.
+  - A carteira e validada antes de marcar a missao como concluida, para que a
+    missao nunca seja consumida sem pagar a recompensa.
+  - Observacao: IN_PROGRESS existe no enum mas nao e atribuido em nenhum fluxo atual.
 
 ### 2.8 Recompensas
 
@@ -189,25 +192,64 @@ Este documento descreve o que ja foi implementado no projeto Save Kids, onde cad
 
 - Testes implementados:
   - app/src/test/kotlin/com/zodiak/android/feature/savekids/SaveKidsMvpCasesTest.kt
+  - app/src/test/kotlin/com/zodiak/android/feature/savekids/SaveKidsMissionsViewModelTest.kt
+  - app/src/test/kotlin/com/zodiak/android/feature/savekids/SaveKidsMissionsRepositoryTest.kt
   - app/src/test/kotlin/com/zodiak/android/feature/savekids/FakeSaveKidsRepository.kt
 
-- Casos cobertos:
+- Casos MVP (SaveKidsMvpCasesTest, via FakeSaveKidsRepository):
   - CT-001 login.
   - CT-002 criar meta.
   - CT-003 registrar economia.
   - CT-004 resgatar recompensa.
 
+- Stack de missoes / camada ViewModel (SaveKidsMissionsViewModelTest):
+  - CT-005 carga inicial expoe missoes e encerra loading.
+  - CT-006 concluir missao marca status e emite mensagem de sucesso.
+  - CT-007 concluir missao nao afeta as demais missoes.
+  - CT-008 concluir missao credita XP e dinheiro na carteira.
+  - CT-009 concluir missao registra evento no historico.
+  - CT-010 concluir missao ja concluida retorna erro e nao credita XP novamente.
+  - CT-011 concluir missao inexistente retorna erro.
+  - CT-012 clearMessages limpa sucesso e erro.
+
+- Stack de missoes / regra de negocio real (SaveKidsMissionsRepositoryTest):
+  - Exercita SaveKidsRepositoryImpl.completeMission com os DAOs do Room mockados
+    (mockk), ou seja, testa a logica de producao e nao o fake.
+  - CT-013 concluir missao persiste status COMPLETED.
+  - CT-014 concluir missao credita XP e recompensa em dinheiro na carteira.
+  - CT-015 concluir missao recalcula nivel ao cruzar faixa de XP.
+  - CT-016 concluir missao mantem nivel quando XP nao cruza faixa.
+  - CT-017 concluir missao registra evento no historico.
+  - CT-018 concluir missao inexistente falha sem tocar carteira ou historico.
+  - CT-019 concluir missao ja concluida falha sem creditar recompensa novamente.
+  - CT-020 carteira nao inicializada falha sem consumir a missao.
+
+- Como executar:
+  - ./gradlew :app:testDebugUnitTest --tests "com.zodiak.android.feature.savekids.*"
+
+- Observacao de manutencao:
+  - FakeSaveKidsRepository precisa implementar a interface SaveKidsRepository por
+    completo. Um metodo faltando (foi o caso de clearAuthentication) quebra a
+    compilacao de todo o source set de teste e derruba tambem os casos ja existentes.
+
 - O que ainda falta (recomendado):
+  - mesma cobertura de ViewModel + repositorio para a stack de recompensas;
   - testes de integracao para fluxo completo de avatar/PokeAPI;
   - testes adicionais para erros de rede e fallback de avatar;
-  - cobertura estendida dos ViewModels restantes.
+  - cobertura estendida dos ViewModels restantes (metas, cofrinho, home, avatar).
 
 ## 4) Itens parcialmente atendidos / lacunas reais
 
 1. Build por terminal no Windows (wrapper)
 - Situacao: o repositorio possui gradlew, sem gradlew.bat.
-- Impacto: em Windows puro, execucao por terminal pode exigir Android Studio (ou shell Unix compatível).
-- Status: Parcial (na pratica, execução via Android Studio funciona).
+- Impacto: no PowerShell/cmd puro o wrapper nao roda; e preciso um shell Unix
+  compativel (Git Bash) ou o proprio Android Studio.
+- Pre-requisito: local.properties com sdk.dir apontando para o Android SDK. O
+  arquivo esta no .gitignore, entao cada integrante precisa gerar o seu (o Android
+  Studio cria automaticamente ao abrir o projeto).
+- Validado: ./gradlew :app:testDebugUnitTest roda pelo Git Bash com o local.properties
+  configurado.
+- Status: Parcial (contornavel; adicionar gradlew.bat resolveria de vez).
 
 2. Evidencias visuais de entrega
 - Situacao: README cita evidencias visuais a completar.
@@ -227,7 +269,8 @@ Este documento descreve o que ja foi implementado no projeto Save Kids, onde cad
 - [x] Regras de gamificacao implementadas.
 - [x] Arquitetura MVVM explicita.
 - [x] Uso do Design System Zodiak.
-- [x] Testes CT-001..CT-004.
+- [x] Testes CT-001..CT-004 (casos MVP).
+- [x] Testes CT-005..CT-020 (stack de missoes: ViewModel + repositorio).
 - [ ] Evidencias visuais finais (prints/gifs) para entrega.
 - [ ] Cobertura adicional de testes (recomendado, nao bloqueante no MVP).
 
