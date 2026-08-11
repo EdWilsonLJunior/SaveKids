@@ -28,7 +28,7 @@ class FakeSaveKidsRepository : SaveKidsRepository {
             levelTitle = "Aprendiz Econômico",
             topGoals = emptyList(),
             completedMissions = 0,
-            totalMissions = 1,
+            totalMissions = 2,
             redeemedRewards = 0,
             totalRewards = 1,
         )
@@ -43,7 +43,15 @@ class FakeSaveKidsRepository : SaveKidsRepository {
                 rewardXp = 50,
                 rewardMoney = 5.0,
                 status = MissionStatus.AVAILABLE,
-            )
+            ),
+            MissionModel(
+                id = 2,
+                title = "Caça ao desperdício",
+                description = "Encontre algo sendo desperdiçado em casa",
+                rewardXp = 30,
+                rewardMoney = 0.0,
+                status = MissionStatus.AVAILABLE,
+            ),
         )
     )
     private val rewardsState = MutableStateFlow(
@@ -76,8 +84,13 @@ class FakeSaveKidsRepository : SaveKidsRepository {
     fun goalsSnapshot(): List<GoalModel> = goalsState.value
     fun historySnapshot(): List<HistoryEventModel> = historyState.value
     fun rewardsSnapshot(): List<RewardModel> = rewardsState.value
+    fun missionsSnapshot(): List<MissionModel> = missionsState.value
 
     override suspend fun ensureSeedData() = Unit
+
+    override suspend fun clearAuthentication() {
+        sessionState.value = SaveKidsSession()
+    }
 
     override suspend fun login(username: String, password: String): Result<Unit> {
         if (username.lowercase() == "teste" && password.lowercase() == "teste") {

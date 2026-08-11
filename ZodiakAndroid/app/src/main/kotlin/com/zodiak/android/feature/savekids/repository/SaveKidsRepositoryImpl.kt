@@ -189,10 +189,14 @@ class SaveKidsRepositoryImpl @Inject constructor(
                 if (missionDao.getMissions().isEmpty()) {
                     missionDao.insertAll(
                         listOf(
-                            SaveKidsMissionEntity(title = "Guardar hoje", description = "Coloque pelo menos R$ 5 no cofrinho hoje.", rewardXp = 28, rewardMoney = 5.0, status = MissionStatus.COMPLETED),
+                            SaveKidsMissionEntity(title = "Guardar hoje", description = "Coloque pelo menos R$ 5 no cofrinho hoje.", rewardXp = 28, rewardMoney = 5.0, status = MissionStatus.AVAILABLE),
                             SaveKidsMissionEntity(title = "Missão da casa", description = "Ajude em uma tarefa simples e receba recompensa.", rewardXp = 42, rewardMoney = 10.0, status = MissionStatus.AVAILABLE),
                             SaveKidsMissionEntity(title = "Sem gasto por impulso", description = "Espere 24h antes de pedir algo novo.", rewardXp = 36, rewardMoney = 0.0, status = MissionStatus.AVAILABLE),
                             SaveKidsMissionEntity(title = "Desafio em família", description = "Compare quem economizou mais na semana.", rewardXp = 58, rewardMoney = 15.0, status = MissionStatus.AVAILABLE),
+                            SaveKidsMissionEntity(title = "Lista de prioridades", description = "Escreva 3 coisas que você quer comprar e escolha só 1 pra pedir primeiro.", rewardXp = 34, rewardMoney = 0.0, status = MissionStatus.AVAILABLE),
+                            SaveKidsMissionEntity(title = "Caça ao desperdício", description = "Encontre algo em casa sendo desperdiçado (água, luz, comida) e ajude a corrigir.", rewardXp = 30, rewardMoney = 0.0, status = MissionStatus.AVAILABLE),
+                            SaveKidsMissionEntity(title = "Comparador de preços", description = "Compare o preço do mesmo produto em dois lugares antes de comprar.", rewardXp = 32, rewardMoney = 0.0, status = MissionStatus.AVAILABLE),
+                            SaveKidsMissionEntity(title = "Gesto solidário", description = "Doe um brinquedo ou parte do que economizou para alguém que precisa.", rewardXp = 45, rewardMoney = 0.0, status = MissionStatus.AVAILABLE),
                         )
                     )
                 }
@@ -211,7 +215,7 @@ class SaveKidsRepositoryImpl @Inject constructor(
                 if (rewardDao.getRewards().isEmpty()) {
                     rewardDao.insertAll(
                         listOf(
-                            SaveKidsRewardEntity(title = "Distintivo Primeiros Passos", description = "Desbloqueia um selo para mostrar início da jornada.", requiredXp = 30, active = true, redeemed = true),
+                            SaveKidsRewardEntity(title = "Distintivo Primeiros Passos", description = "Desbloqueia um selo para mostrar início da jornada.", requiredXp = 30, active = true, redeemed = false),
                             SaveKidsRewardEntity(title = "Modo Super Foco", description = "Libera um cartão comemorativo da meta em andamento.", requiredXp = 90, active = true, redeemed = false),
                             SaveKidsRewardEntity(title = "Passe de Evolução", description = "Mostra evolução avançada do avatar.", requiredXp = 150, active = true, redeemed = false),
                             SaveKidsRewardEntity(title = "Troféu da Família", description = "Reconhece quem lidera o ranking mensal.", requiredXp = 240, active = true, redeemed = false),
