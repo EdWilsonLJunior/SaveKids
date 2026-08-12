@@ -97,6 +97,9 @@ Este documento descreve o que ja foi implementado no projeto Save Kids, onde cad
 - Como:
   - Status por enum (AVAILABLE/IN_PROGRESS/COMPLETED).
   - Ao concluir: soma XP e, se aplicavel, valor em carteira.
+  - A carteira e validada antes de marcar a missao como concluida, para que a
+    missao nunca seja consumida sem pagar a recompensa.
+  - Observacao: IN_PROGRESS existe no enum mas nao e atribuido em nenhum fluxo atual.
 
 ### 2.8 Recompensas
 
@@ -108,8 +111,18 @@ Este documento descreve o que ja foi implementado no projeto Save Kids, onde cad
   - app/src/main/kotlin/com/zodiak/android/feature/savekids/repository/SaveKidsRepositoryImpl.kt
 - Como:
   - Exige XP minimo.
-  - Impede resgatar item ja resgatado.
-  - Debita XP no resgate.
+  - Impede resgatar item ja resgatado e recompensa inativa.
+  - Debita XP no resgate. O custo e fixo (10 XP) e independe do requiredXp da
+    recompensa, entao um item de 240 XP custa o mesmo que um de 30 XP.
+  - Como o debito reduz o XP total, um resgate pode rebaixar o nivel da crianca
+    caso o XP caia abaixo da faixa atual (coberto por CT-034).
+- Pontos de atencao conhecidos:
+  - A tela decide exibir o botao de resgate comparando apenas currentXp com
+    requiredXp e ignora o campo active. Uma recompensa inativa aparece resgatavel
+    e so falha depois do clique (coberto por CT-028).
+  - O custo de resgate esta como constante privada em SaveKidsRepositoryImpl
+    (rewardRedemptionCostXp) e nao em GamificationRules, onde estao as demais
+    regras de XP.
 
 ### 2.9 Historico
 
@@ -189,25 +202,92 @@ Este documento descreve o que ja foi implementado no projeto Save Kids, onde cad
 
 - Testes implementados:
   - app/src/test/kotlin/com/zodiak/android/feature/savekids/SaveKidsMvpCasesTest.kt
+  - app/src/test/kotlin/com/zodiak/android/feature/savekids/SaveKidsMissionsViewModelTest.kt
+  - app/src/test/kotlin/com/zodiak/android/feature/savekids/SaveKidsMissionsRepositoryTest.kt
+  - app/src/test/kotlin/com/zodiak/android/feature/savekids/SaveKidsRewardsViewModelTest.kt
+  - app/src/test/kotlin/com/zodiak/android/feature/savekids/SaveKidsRewardsRepositoryTest.kt
   - app/src/test/kotlin/com/zodiak/android/feature/savekids/FakeSaveKidsRepository.kt
 
-- Casos cobertos:
+- Casos MVP (SaveKidsMvpCasesTest, via FakeSaveKidsRepository):
   - CT-001 login.
   - CT-002 criar meta.
   - CT-003 registrar economia.
   - CT-004 resgatar recompensa.
 
+- Stack de missoes / camada ViewModel (SaveKidsMissionsViewModelTest):
+  - CT-005 carga inicial expoe missoes e encerra loading.
+  - CT-006 concluir missao marca status e emite mensagem de sucesso.
+  - CT-007 concluir missao nao afeta as demais missoes.
+  - CT-008 concluir missao credita XP e dinheiro na carteira.
+  - CT-009 concluir missao registra evento no historico.
+  - CT-010 concluir missao ja concluida retorna erro e nao credita XP novamente.
+  - CT-011 concluir missao inexistente retorna erro.
+  - CT-012 clearMessages limpa sucesso e erro.
+
+- Stack de missoes / regra de negocio real (SaveKidsMissionsRepositoryTest):
+  - Exercita SaveKidsRepositoryImpl.completeMission com os DAOs do Room mockados
+    (mockk), ou seja, testa a logica de producao e nao o fake.
+  - CT-013 concluir missao persiste status COMPLETED.
+  - CT-014 concluir missao credita XP e recompensa em dinheiro na carteira.
+  - CT-015 concluir missao recalcula nivel ao cruzar faixa de XP.
+  - CT-016 concluir missao mantem nivel quando XP nao cruza faixa.
+  - CT-017 concluir missao registra evento no historico.
+  - CT-018 concluir missao inexistente falha sem tocar carteira ou historico.
+  - CT-019 concluir missao ja concluida falha sem creditar recompensa novamente.
+  - CT-020 carteira nao inicializada falha sem consumir a missao.
+
+- Stack de recompensas / camada ViewModel (SaveKidsRewardsViewModelTest):
+  - CT-021 carga inicial expoe recompensas e XP atual.
+  - CT-022 resgatar recompensa marca redeemed e emite mensagem de sucesso.
+  - CT-023 resgate reflete o novo XP no estado da tela.
+  - CT-024 resgatar nao afeta as demais recompensas.
+  - CT-025 resgatar registra evento no historico.
+  - CT-026 resgatar recompensa ja resgatada retorna erro.
+  - CT-027 resgatar sem XP suficiente retorna erro.
+  - CT-028 recompensa inativa e exibida mas falha ao resgatar.
+  - CT-029 resgatar recompensa inexistente retorna erro.
+  - CT-030 clearMessages limpa sucesso e erro.
+
+- Stack de recompensas / regra de negocio real (SaveKidsRewardsRepositoryTest):
+  - Exercita SaveKidsRepositoryImpl.redeemReward com os DAOs do Room mockados.
+  - CT-031 resgatar recompensa persiste flag redeemed.
+  - CT-032 resgatar debita custo fixo de XP e nao o requiredXp.
+  - CT-033 resgatar nao altera o saldo em dinheiro.
+  - CT-034 resgatar pode rebaixar o nivel ao cair de faixa de XP.
+  - CT-035 resgatar registra evento no historico com XP negativo.
+  - CT-036 recompensa inexistente falha sem efeito colateral.
+  - CT-037 recompensa inativa falha mesmo com XP suficiente.
+  - CT-038 recompensa ja resgatada falha sem debitar XP novamente.
+  - CT-039 XP abaixo do requiredXp falha sem consumir a recompensa.
+  - CT-040 XP suficiente para desbloquear mas abaixo do custo de resgate falha.
+  - CT-041 carteira nao inicializada falha sem consumir a recompensa.
+
+- Como executar:
+  - ./gradlew :app:testDebugUnitTest --tests "com.zodiak.android.feature.savekids.*"
+  - Total atual: 41 testes.
+
+- Observacao de manutencao:
+  - FakeSaveKidsRepository precisa implementar a interface SaveKidsRepository por
+    completo. Um metodo faltando (foi o caso de clearAuthentication) quebra a
+    compilacao de todo o source set de teste e derruba tambem os casos ja existentes.
+
 - O que ainda falta (recomendado):
   - testes de integracao para fluxo completo de avatar/PokeAPI;
   - testes adicionais para erros de rede e fallback de avatar;
-  - cobertura estendida dos ViewModels restantes.
+  - cobertura estendida dos ViewModels restantes (metas, cofrinho, home, avatar).
 
 ## 4) Itens parcialmente atendidos / lacunas reais
 
 1. Build por terminal no Windows (wrapper)
 - Situacao: o repositorio possui gradlew, sem gradlew.bat.
-- Impacto: em Windows puro, execucao por terminal pode exigir Android Studio (ou shell Unix compatível).
-- Status: Parcial (na pratica, execução via Android Studio funciona).
+- Impacto: no PowerShell/cmd puro o wrapper nao roda; e preciso um shell Unix
+  compativel (Git Bash) ou o proprio Android Studio.
+- Pre-requisito: local.properties com sdk.dir apontando para o Android SDK. O
+  arquivo esta no .gitignore, entao cada integrante precisa gerar o seu (o Android
+  Studio cria automaticamente ao abrir o projeto).
+- Validado: ./gradlew :app:testDebugUnitTest roda pelo Git Bash com o local.properties
+  configurado.
+- Status: Parcial (contornavel; adicionar gradlew.bat resolveria de vez).
 
 2. Evidencias visuais de entrega
 - Situacao: README cita evidencias visuais a completar.
@@ -227,7 +307,9 @@ Este documento descreve o que ja foi implementado no projeto Save Kids, onde cad
 - [x] Regras de gamificacao implementadas.
 - [x] Arquitetura MVVM explicita.
 - [x] Uso do Design System Zodiak.
-- [x] Testes CT-001..CT-004.
+- [x] Testes CT-001..CT-004 (casos MVP).
+- [x] Testes CT-005..CT-020 (stack de missoes: ViewModel + repositorio).
+- [x] Testes CT-021..CT-041 (stack de recompensas: ViewModel + repositorio).
 - [ ] Evidencias visuais finais (prints/gifs) para entrega.
 - [ ] Cobertura adicional de testes (recomendado, nao bloqueante no MVP).
 

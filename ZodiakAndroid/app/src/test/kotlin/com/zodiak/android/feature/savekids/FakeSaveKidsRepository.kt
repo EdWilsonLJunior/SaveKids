@@ -28,9 +28,9 @@ class FakeSaveKidsRepository : SaveKidsRepository {
             levelTitle = "Aprendiz Econômico",
             topGoals = emptyList(),
             completedMissions = 0,
-            totalMissions = 1,
+            totalMissions = 2,
             redeemedRewards = 0,
-            totalRewards = 1,
+            totalRewards = 3,
         )
     )
     private val goalsState = MutableStateFlow<List<GoalModel>>(emptyList())
@@ -43,7 +43,15 @@ class FakeSaveKidsRepository : SaveKidsRepository {
                 rewardXp = 50,
                 rewardMoney = 5.0,
                 status = MissionStatus.AVAILABLE,
-            )
+            ),
+            MissionModel(
+                id = 2,
+                title = "Caça ao desperdício",
+                description = "Encontre algo sendo desperdiçado em casa",
+                rewardXp = 30,
+                rewardMoney = 0.0,
+                status = MissionStatus.AVAILABLE,
+            ),
         )
     )
     private val rewardsState = MutableStateFlow(
@@ -55,7 +63,23 @@ class FakeSaveKidsRepository : SaveKidsRepository {
                 requiredXp = 90,
                 active = true,
                 redeemed = false,
-            )
+            ),
+            RewardModel(
+                id = 2,
+                title = "Troféu da Família",
+                description = "Exige mais XP do que a carteira inicial possui",
+                requiredXp = 240,
+                active = true,
+                redeemed = false,
+            ),
+            RewardModel(
+                id = 3,
+                title = "Selo desativado",
+                description = "Recompensa fora de circulação",
+                requiredXp = 30,
+                active = false,
+                redeemed = false,
+            ),
         )
     )
     private val historyState = MutableStateFlow<List<HistoryEventModel>>(emptyList())
@@ -76,8 +100,13 @@ class FakeSaveKidsRepository : SaveKidsRepository {
     fun goalsSnapshot(): List<GoalModel> = goalsState.value
     fun historySnapshot(): List<HistoryEventModel> = historyState.value
     fun rewardsSnapshot(): List<RewardModel> = rewardsState.value
+    fun missionsSnapshot(): List<MissionModel> = missionsState.value
 
     override suspend fun ensureSeedData() = Unit
+
+    override suspend fun clearAuthentication() {
+        sessionState.value = SaveKidsSession()
+    }
 
     override suspend fun login(username: String, password: String): Result<Unit> {
         if (username.lowercase() == "teste" && password.lowercase() == "teste") {
@@ -148,6 +177,7 @@ class FakeSaveKidsRepository : SaveKidsRepository {
         val reward = rewardsState.value.firstOrNull { it.id == id }
             ?: return Result.failure(IllegalArgumentException("Recompensa não encontrada."))
         val current = dashboardState.value
+        if (!reward.active) return Result.failure(IllegalStateException("Recompensa inativa."))
         if (reward.redeemed) return Result.failure(IllegalStateException("Recompensa já resgatada."))
         if (current.xp < reward.requiredXp) return Result.failure(IllegalStateException("XP insuficiente para resgatar."))
         if (current.xp < 10) return Result.failure(IllegalStateException("XP insuficiente para concluir o resgate."))
