@@ -193,10 +193,10 @@ class SaveKidsRepositoryImpl @Inject constructor(
                             SaveKidsMissionEntity(title = "Missão da casa", description = "Ajude em uma tarefa simples e receba recompensa.", rewardXp = 42, rewardMoney = 10.0, status = MissionStatus.AVAILABLE),
                             SaveKidsMissionEntity(title = "Sem gasto por impulso", description = "Espere 24h antes de pedir algo novo.", rewardXp = 36, rewardMoney = 0.0, status = MissionStatus.AVAILABLE),
                             SaveKidsMissionEntity(title = "Desafio em família", description = "Compare quem economizou mais na semana.", rewardXp = 58, rewardMoney = 15.0, status = MissionStatus.AVAILABLE),
-                            SaveKidsMissionEntity(title = "Lista de prioridades", description = "Escreva 3 coisas que você quer comprar e escolha só 1 pra pedir primeiro.", rewardXp = 34, rewardMoney = 0.0, status = MissionStatus.AVAILABLE),
-                            SaveKidsMissionEntity(title = "Caça ao desperdício", description = "Encontre algo em casa sendo desperdiçado (água, luz, comida) e ajude a corrigir.", rewardXp = 30, rewardMoney = 0.0, status = MissionStatus.AVAILABLE),
-                            SaveKidsMissionEntity(title = "Comparador de preços", description = "Compare o preço do mesmo produto em dois lugares antes de comprar.", rewardXp = 32, rewardMoney = 0.0, status = MissionStatus.AVAILABLE),
-                            SaveKidsMissionEntity(title = "Gesto solidário", description = "Doe um brinquedo ou parte do que economizou para alguém que precisa.", rewardXp = 45, rewardMoney = 0.0, status = MissionStatus.AVAILABLE),
+                            SaveKidsMissionEntity(title = "Lista de prioridades", description = "Escreva 3 coisas que você quer comprar e escolha só 1 pra pedir primeiro.", rewardXp = 34, rewardMoney = 6.0, status = MissionStatus.AVAILABLE),
+                            SaveKidsMissionEntity(title = "Caça ao desperdício", description = "Encontre algo em casa sendo desperdiçado (água, luz, comida) e ajude a corrigir.", rewardXp = 30, rewardMoney = 5.0, status = MissionStatus.AVAILABLE),
+                            SaveKidsMissionEntity(title = "Comparador de preços", description = "Compare o preço do mesmo produto em dois lugares antes de comprar.", rewardXp = 32, rewardMoney = 6.0, status = MissionStatus.AVAILABLE),
+                            SaveKidsMissionEntity(title = "Gesto solidário", description = "Doe um brinquedo ou parte do que economizou para alguém que precisa.", rewardXp = 45, rewardMoney = 10.0, status = MissionStatus.AVAILABLE),
                         )
                     )
                 }
