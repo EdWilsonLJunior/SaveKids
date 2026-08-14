@@ -18,6 +18,7 @@ import javax.inject.Inject
 
 data class SaveKidsHomeUiState(
     val isLoading: Boolean = true,
+    val isUpdatingProfile: Boolean = false,
     val profile: SaveKidsProfile? = null,
     val dashboard: DashboardModel? = null,
     val avatar: PokemonAvatarModel? = null,
@@ -69,6 +70,24 @@ class SaveKidsHomeViewModel @Inject constructor(
                 _uiState.update {
                     it.copy(
                         errorMessage = result.exceptionOrNull()?.message ?: "Não foi possível atualizar avatar.",
+                    )
+                }
+            }
+        }
+    }
+
+    fun updateProfile(name: String, avatarPokemonId: Int) {
+        viewModelScope.launch {
+            _uiState.update { it.copy(isUpdatingProfile = true, errorMessage = null) }
+            val result = repository.updateProfile(name, avatarPokemonId)
+            if (result.isSuccess) {
+                _uiState.update { it.copy(isUpdatingProfile = false) }
+                refreshAvatar()
+            } else {
+                _uiState.update {
+                    it.copy(
+                        isUpdatingProfile = false,
+                        errorMessage = result.exceptionOrNull()?.message ?: "N\u00e3o foi poss\u00edvel atualizar o perfil.",
                     )
                 }
             }
