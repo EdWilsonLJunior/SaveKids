@@ -250,27 +250,14 @@ class SaveKidsRepositoryImpl @Inject constructor(
     }
 
     override suspend fun completeProfile(name: String, avatarPokemonId: Int): Result<Unit> = withContext(Dispatchers.IO) {
-        val cleanName = name.trim()
-        if (cleanName.length !in 3..30) {
-            return@withContext Result.failure(IllegalArgumentException("Informe um nome válido entre 3 e 30 caracteres."))
+        val profile = validateProfile(name, avatarPokemonId).getOrElse { error ->
+            return@withContext Result.failure(error)
         }
-
-        val avatarOption = StarterAvatarOptions.firstOrNull { it.pokemonId == avatarPokemonId }
-            ?: return@withContext Result.failure(IllegalArgumentException("Selecione um avatar."))
-
-        profileDao.upsert(
-            SaveKidsProfileEntity(
-                id = 1,
-                childName = cleanName,
-                avatarPokemonId = avatarPokemonId,
-                avatarTeamName = avatarOption.teamName,
-            )
-        )
-        sessionDataStore.saveProfile(cleanName, avatarPokemonId, avatarOption.teamName)
+        saveProfile(profile)
         historyDao.insert(
             SaveKidsHistoryEventEntity(
                 title = "Login realizado",
-                details = "$cleanName entrou no Save Kids.",
+                details = "${profile.childName} entrou no Save Kids.",
                 type = HistoryEventType.LOGIN,
                 amount = 0.0,
                 xpDelta = 0,
@@ -278,6 +265,46 @@ class SaveKidsRepositoryImpl @Inject constructor(
             )
         )
         Result.success(Unit)
+    }
+
+    override suspend fun updateProfile(name: String, avatarPokemonId: Int): Result<Unit> = withContext(Dispatchers.IO) {
+        val profile = validateProfile(name, avatarPokemonId).getOrElse { error ->
+            return@withContext Result.failure(error)
+        }
+        saveProfile(profile)
+        Result.success(Unit)
+    }
+
+    private suspend fun saveProfile(profile: SaveKidsProfile) {
+        profileDao.upsert(
+            SaveKidsProfileEntity(
+                id = 1,
+                childName = profile.childName,
+                avatarPokemonId = profile.avatarPokemonId,
+                avatarTeamName = profile.avatarTeamName,
+            )
+        )
+        sessionDataStore.saveProfile(
+            profile.childName,
+            profile.avatarPokemonId,
+            profile.avatarTeamName,
+        )
+    }
+
+    private fun validateProfile(name: String, avatarPokemonId: Int): Result<SaveKidsProfile> {
+        val cleanName = name.trim()
+        if (cleanName.length !in 3..30) {
+            return Result.failure(IllegalArgumentException("Informe um nome v\u00e1lido entre 3 e 30 caracteres."))
+        }
+        val avatarOption = StarterAvatarOptions.firstOrNull { it.pokemonId == avatarPokemonId }
+            ?: return Result.failure(IllegalArgumentException("Selecione um avatar."))
+        return Result.success(
+            SaveKidsProfile(
+                childName = cleanName,
+                avatarPokemonId = avatarPokemonId,
+                avatarTeamName = avatarOption.teamName,
+            )
+        )
     }
 
     override suspend fun addDeposit(amount: Double): Result<Unit> = withContext(Dispatchers.IO) {

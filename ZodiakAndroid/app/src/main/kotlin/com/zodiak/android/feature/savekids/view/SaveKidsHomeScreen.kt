@@ -14,20 +14,29 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.AlertDialog
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.zodiak.android.R
 import com.zodiak.android.design_system.atoms.ZodiakButton
+import com.zodiak.android.design_system.atoms.ZodiakOutlinedButton
+import com.zodiak.android.design_system.molecules.ZodiakChipGroup
+import com.zodiak.android.design_system.molecules.ZodiakInputField
 import com.zodiak.android.design_system.organisms.ZodiakHeroCard
-import com.zodiak.android.design_system.organisms.ZodiakEmptyState
 import com.zodiak.android.design_system.organisms.ZodiakLineChartPlaceholder
 import com.zodiak.android.design_system.organisms.ZodiakSectionCard
 import com.zodiak.android.design_system.organisms.ZodiakStatTile
+import com.zodiak.android.feature.savekids.model.SaveKidsProfile
+import com.zodiak.android.feature.savekids.model.StarterAvatarOptions
 import com.zodiak.android.design_system.theme.ZodiakSpacing
-import com.zodiak.android.feature.savekids.navigation.SaveKidsAvatarRankingRoute
 import com.zodiak.android.feature.savekids.navigation.SaveKidsHomeRoute
 import com.zodiak.android.feature.savekids.navigation.SaveKidsHistoryRoute
 import com.zodiak.android.feature.savekids.navigation.SaveKidsPiggyBankRoute
@@ -42,6 +51,7 @@ fun SaveKidsHomeScreen(
     viewModel: SaveKidsHomeViewModel = hiltViewModel(),
 ) {
     val state by viewModel.uiState.collectAsStateWithLifecycle()
+    var isProfileEditorOpen by rememberSaveable { mutableStateOf(false) }
 
     Scaffold { padding ->
         LazyColumn(
@@ -78,7 +88,7 @@ fun SaveKidsHomeScreen(
                         avatarName = avatarDisplayName,
                         avatarMeta = "${dashboard.xp} XP",
                         actionLabel = "Editar",
-                        onActionClick = { onNavigate(SaveKidsAvatarRankingRoute) },
+                        onActionClick = { isProfileEditorOpen = true },
                         avatarVisual = {
                             SaveKidsPokemonAvatar(
                                 imageUrl = state.avatar?.spriteUrl,
@@ -223,4 +233,88 @@ fun SaveKidsHomeScreen(
             }
         }
     }
+
+    state.profile?.takeIf { isProfileEditorOpen }?.let { profile ->
+        SaveKidsProfileEditorDialog(
+            profile = profile,
+            isSaving = state.isUpdatingProfile,
+            onDismiss = { isProfileEditorOpen = false },
+            onSave = { name, avatarPokemonId ->
+                viewModel.updateProfile(name, avatarPokemonId)
+                isProfileEditorOpen = false
+            },
+        )
+    }
+}
+
+@Composable
+private fun SaveKidsProfileEditorDialog(
+    profile: SaveKidsProfile,
+    isSaving: Boolean,
+    onDismiss: () -> Unit,
+    onSave: (String, Int) -> Unit,
+) {
+    var childName by rememberSaveable(profile.childName) { mutableStateOf(profile.childName) }
+    var selectedAvatarId by rememberSaveable(profile.avatarPokemonId) {
+        mutableStateOf(profile.avatarPokemonId)
+    }
+    val isNameValid = childName.trim().length in 3..30
+    val selectedAvatar = StarterAvatarOptions.firstOrNull { it.pokemonId == selectedAvatarId }
+        ?: StarterAvatarOptions.first()
+
+    AlertDialog(
+        onDismissRequest = onDismiss,
+        title = { Text(stringResource(R.string.feature_savekids_profile_edit_title)) },
+        text = {
+            Column(verticalArrangement = Arrangement.spacedBy(ZodiakSpacing.s16)) {
+                ZodiakInputField(
+                    value = childName,
+                    onValueChange = { childName = it },
+                    label = stringResource(R.string.feature_savekids_profile_name_label),
+                    errorMessage = if (childName.isNotEmpty() && !isNameValid) {
+                        stringResource(R.string.feature_savekids_profile_name_error)
+                    } else {
+                        null
+                    },
+                    modifier = Modifier.fillMaxWidth(),
+                )
+                Column(verticalArrangement = Arrangement.spacedBy(ZodiakSpacing.s8)) {
+                    Text(
+                        stringResource(R.string.feature_savekids_profile_team_label),
+                        style = MaterialTheme.typography.labelLarge,
+                    )
+                    ZodiakChipGroup(
+                        items = StarterAvatarOptions,
+                        selectedItem = selectedAvatar,
+                        onSelect = { selectedAvatarId = it.pokemonId },
+                        label = { it.teamName.removePrefix("Time ") },
+                    )
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.Center,
+                    ) {
+                        SaveKidsPokemonAvatar(
+                            imageUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${selectedAvatar.pokemonId}.png",
+                            contentDescription = selectedAvatar.teamName,
+                            size = 96.dp,
+                        )
+                    }
+                }
+            }
+        },
+        confirmButton = {
+            ZodiakButton(
+                text = stringResource(R.string.feature_savekids_profile_save_action),
+                onClick = { onSave(childName, selectedAvatarId) },
+                enabled = isNameValid && !isSaving,
+            )
+        },
+        dismissButton = {
+            ZodiakOutlinedButton(
+                text = stringResource(R.string.shared_action_cancel),
+                onClick = onDismiss,
+                enabled = !isSaving,
+            )
+        },
+    )
 }
