@@ -40,16 +40,23 @@ class SaveKidsHomeViewModel @Inject constructor(
             combine(repository.profile, repository.dashboard, repository.history) { profile, dashboard, history ->
                 Triple(profile, dashboard, history)
             }.collect { state ->
+                val profile = state.first
+                val dashboard = state.second
+                val history = state.third
+
+                val currentAvatar = _uiState.value.avatar
+                val shouldRefreshAvatar = profile != null && (currentAvatar == null || currentAvatar.currentXp != dashboard.xp)
+
                 _uiState.update {
                     it.copy(
                         isLoading = false,
-                        profile = state.first,
-                        dashboard = state.second,
-                        recentEvents = state.third.take(3),
+                        profile = profile,
+                        dashboard = dashboard,
+                        recentEvents = history.take(3),
                         errorMessage = null,
                     )
                 }
-                if (state.first != null && _uiState.value.avatar == null) {
+                if (shouldRefreshAvatar) {
                     refreshAvatar()
                 }
             }

@@ -127,6 +127,12 @@ class FakeSaveKidsRepository : SaveKidsRepository {
         return Result.success(Unit)
     }
 
+    override suspend fun updateProfile(name: String, avatarPokemonId: Int): Result<Unit> {
+        val profile = profileState.value ?: return Result.failure(IllegalStateException("Perfil não inicializado"))
+        profileState.value = profile.copy(childName = name, avatarPokemonId = avatarPokemonId)
+        return Result.success(Unit)
+    }
+
     override suspend fun addDeposit(amount: Double): Result<Unit> {
         if (amount <= 0.0 || amount > 10000.0) {
             return Result.failure(IllegalArgumentException("O valor deve ser maior que zero e até R$ 10.000."))
