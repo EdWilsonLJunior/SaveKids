@@ -5,6 +5,7 @@ import com.zodiak.android.feature.savekids.viewmodel.SaveKidsGoalsViewModel
 import com.zodiak.android.feature.savekids.viewmodel.SaveKidsLoginViewModel
 import com.zodiak.android.feature.savekids.viewmodel.SaveKidsPiggyBankViewModel
 import com.zodiak.android.feature.savekids.viewmodel.SaveKidsRewardsViewModel
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.test.advanceUntilIdle
 import kotlinx.coroutines.test.runTest
 import org.junit.jupiter.api.Assertions.assertEquals
@@ -25,6 +26,21 @@ class SaveKidsMvpCasesTest {
     }
 
     @Test
+    fun `CT-000 cadastro ativa fluxo de criacao e avanca para perfil`() = runTest {
+        val vm = SaveKidsLoginViewModel(repository)
+
+        vm.onToggleRegistration()
+        vm.onFamilyNameChange("Família Silva")
+        vm.onUsernameChange("teste")
+        vm.onPasswordChange("teste")
+        vm.registerAccount()
+        advanceUntilIdle()
+
+        assertTrue(vm.uiState.value.authStepDone)
+        assertTrue(!vm.uiState.value.isRegistrationMode)
+    }
+
+    @Test
     fun `CT-001 login com sucesso`() = runTest {
         val vm = SaveKidsLoginViewModel(repository)
 
@@ -37,6 +53,21 @@ class SaveKidsMvpCasesTest {
         vm.saveProfile()
         advanceUntilIdle()
 
+        assertTrue(vm.uiState.value.success)
+    }
+
+    @Test
+    fun `CT-001-b sessao salva nao e removida ao iniciar o login`() = runTest {
+        repository.login("teste", "teste")
+        advanceUntilIdle()
+        repository.completeProfile("Luna", 25)
+        advanceUntilIdle()
+
+        val vm = SaveKidsLoginViewModel(repository)
+        advanceUntilIdle()
+
+        assertTrue(repository.session.first().authenticated)
+        assertTrue(repository.session.first().profileCompleted)
         assertTrue(vm.uiState.value.success)
     }
 
