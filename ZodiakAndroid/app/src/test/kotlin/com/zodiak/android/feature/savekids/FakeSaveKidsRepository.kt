@@ -141,6 +141,7 @@ class FakeSaveKidsRepository : SaveKidsRepository {
         val gainedXp = amount.toInt()
         dashboardState.value = current.copy(balance = current.balance + amount, xp = current.xp + gainedXp)
         pushHistory("Economia adicionada", "Depósito registrado", HistoryEventType.DEPOSIT_ADDED, amount, gainedXp)
+        applyContributionToActiveGoal(amount)
         return Result.success(Unit)
     }
 
@@ -176,6 +177,9 @@ class FakeSaveKidsRepository : SaveKidsRepository {
             completedMissions = current.completedMissions + 1,
         )
         pushHistory("Missão concluída", mission.title, HistoryEventType.MISSION_COMPLETED, mission.rewardMoney, mission.rewardXp)
+        if (mission.rewardMoney > 0) {
+            applyContributionToActiveGoal(mission.rewardMoney)
+        }
         return Result.success(Unit)
     }
 
@@ -232,5 +236,25 @@ class FakeSaveKidsRepository : SaveKidsRepository {
                 createdAt = System.currentTimeMillis(),
             )
         ) + historyState.value
+    }
+
+    private fun applyContributionToActiveGoal(amount: Double) {
+        if (amount <= 0) return
+        val goals = goalsState.value
+        val activeGoal = goals.firstOrNull { !it.completed } ?: return
+        val nextAmount = activeGoal.currentAmount + amount
+        val completed = nextAmount >= activeGoal.targetAmount
+        val updatedGoal = activeGoal.copy(
+            currentAmount = minOf(nextAmount, activeGoal.targetAmount),
+            completed = completed,
+        )
+        goalsState.value = goals.map { if (it.id == updatedGoal.id) updatedGoal else it }
+        dashboardState.value = dashboardState.value.copy(topGoals = goalsState.value.take(3))
+
+        if (completed && !activeGoal.completed) {
+            val current = dashboardState.value
+            dashboardState.value = current.copy(xp = current.xp + 50)
+            pushHistory("Meta concluída", updatedGoal.name, HistoryEventType.GOAL_COMPLETED, 0.0, 50)
+        }
     }
 }
