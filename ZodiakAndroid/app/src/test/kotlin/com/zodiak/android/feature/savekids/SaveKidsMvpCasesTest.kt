@@ -88,4 +88,22 @@ class SaveKidsMvpCasesTest {
         assertEquals(beforeXp - 10, afterXp)
         assertTrue(reward.redeemed)
     }
+
+    @Test
+    fun `CT-005 completar missao com recompensa em dinheiro atualiza meta`() = runTest {
+        // Setup: Criar uma meta
+        repository.createGoal("Teste Meta", 100.0)
+        advanceUntilIdle()
+
+        // Setup: Verificar missao 1 tem rewardMoney = 5.0
+        val mission = repository.missionsSnapshot().first { it.id == 1L }
+        assertEquals(5.0, mission.rewardMoney)
+
+        val vm = com.zodiak.android.feature.savekids.viewmodel.SaveKidsMissionsViewModel(repository)
+        vm.completeMission(1)
+        advanceUntilIdle()
+
+        val goal = repository.goalsSnapshot().first()
+        assertEquals(5.0, goal.currentAmount)
+    }
 }

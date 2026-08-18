@@ -79,8 +79,8 @@ fun SaveKidsHomeScreen(
 
                 val dashboard = state.dashboard
                 if (dashboard != null) {
-                    val avatarDisplayName = (state.profile?.avatarTeamName ?: "Pikachu")
-                        .removePrefix("Time ")
+                    val avatarDisplayName = state.avatar?.currentStageName
+                        ?: (state.profile?.avatarTeamName ?: "Pikachu").removePrefix("Time ")
                     ZodiakHeroCard(
                         title = "$childName, seu avatar evolui junto com suas economias.",
                         subtitle = "Guarde dinheiro, complete missões e ganhe XP para evoluir seu Pokémon.",

@@ -338,48 +338,7 @@ class SaveKidsRepositoryImpl @Inject constructor(
             )
         )
 
-        val firstOpenGoal = goalDao.observeGoals().first().firstOrNull { !it.completed }
-        if (firstOpenGoal != null) {
-            val nextAmount = firstOpenGoal.currentAmount + amount
-            val completed = nextAmount >= firstOpenGoal.targetAmount
-            val updatedGoal = firstOpenGoal.copy(
-                currentAmount = minOf(nextAmount, firstOpenGoal.targetAmount),
-                completed = completed,
-            )
-            goalDao.update(updatedGoal)
-            historyDao.insert(
-                SaveKidsHistoryEventEntity(
-                    title = "Meta atualizada",
-                    details = "Progresso da meta ${updatedGoal.name} atualizado.",
-                    type = HistoryEventType.GOAL_UPDATED,
-                    amount = amount,
-                    xpDelta = 0,
-                    createdAt = System.currentTimeMillis(),
-                )
-            )
-            if (completed && !firstOpenGoal.completed) {
-                val walletAfterGoal = walletDao.getWallet() ?: finalWallet
-                val xpAfterBonus = walletAfterGoal.xp + GamificationRules.XP_COMPLETE_GOAL
-                val levelAfterGoal = GamificationRules.levelForXp(xpAfterBonus)
-                walletDao.upsert(
-                    walletAfterGoal.copy(
-                        xp = xpAfterBonus,
-                        level = levelAfterGoal.level,
-                        updatedAt = System.currentTimeMillis(),
-                    )
-                )
-                historyDao.insert(
-                    SaveKidsHistoryEventEntity(
-                        title = "Meta concluída",
-                        details = "Parabéns! A meta ${updatedGoal.name} foi concluída.",
-                        type = HistoryEventType.GOAL_COMPLETED,
-                        amount = 0.0,
-                        xpDelta = GamificationRules.XP_COMPLETE_GOAL,
-                        createdAt = System.currentTimeMillis(),
-                    )
-                )
-            }
-        }
+        applyContributionToActiveGoal(amount)
 
         if (levelUp) {
             historyDao.insert(
@@ -465,6 +424,10 @@ class SaveKidsRepositoryImpl @Inject constructor(
                 createdAt = System.currentTimeMillis(),
             )
         )
+
+        if (mission.rewardMoney > 0) {
+            applyContributionToActiveGoal(mission.rewardMoney)
+        }
 
         Result.success(Unit)
     }
@@ -553,6 +516,55 @@ class SaveKidsRepositoryImpl @Inject constructor(
         return pokemon.sprites.other?.officialArtwork?.front_default
             ?: pokemon.sprites.front_default
             ?: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png"
+    }
+
+    private suspend fun applyContributionToActiveGoal(amount: Double) {
+        if (amount <= 0) return
+        val firstOpenGoal = goalDao.observeGoals().first().firstOrNull { !it.completed } ?: return
+
+        val nextAmount = firstOpenGoal.currentAmount + amount
+        val completed = nextAmount >= firstOpenGoal.targetAmount
+        val updatedGoal = firstOpenGoal.copy(
+            currentAmount = minOf(nextAmount, firstOpenGoal.targetAmount),
+            completed = completed,
+        )
+        goalDao.update(updatedGoal)
+
+        historyDao.insert(
+            SaveKidsHistoryEventEntity(
+                title = "Meta atualizada",
+                details = "Progresso da meta ${updatedGoal.name} atualizado.",
+                type = HistoryEventType.GOAL_UPDATED,
+                amount = amount,
+                xpDelta = 0,
+                createdAt = System.currentTimeMillis(),
+            )
+        )
+
+        if (completed && !firstOpenGoal.completed) {
+            val wallet = walletDao.getWallet()
+            if (wallet != null) {
+                val xpAfterBonus = wallet.xp + GamificationRules.XP_COMPLETE_GOAL
+                val levelInfo = GamificationRules.levelForXp(xpAfterBonus)
+                walletDao.upsert(
+                    wallet.copy(
+                        xp = xpAfterBonus,
+                        level = levelInfo.level,
+                        updatedAt = System.currentTimeMillis(),
+                    )
+                )
+                historyDao.insert(
+                    SaveKidsHistoryEventEntity(
+                        title = "Meta concluída",
+                        details = "Parabéns! A meta ${updatedGoal.name} foi concluída.",
+                        type = HistoryEventType.GOAL_COMPLETED,
+                        amount = 0.0,
+                        xpDelta = GamificationRules.XP_COMPLETE_GOAL,
+                        createdAt = System.currentTimeMillis(),
+                    )
+                )
+            }
+        }
     }
 
     private fun flattenEvolution(node: EvolutionNodeDto): List<String> {
