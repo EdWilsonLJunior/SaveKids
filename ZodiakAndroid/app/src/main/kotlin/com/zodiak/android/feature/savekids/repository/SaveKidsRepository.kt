@@ -31,4 +31,5 @@ interface SaveKidsRepository {
     suspend fun completeMission(id: Long): Result<Unit>
     suspend fun redeemReward(id: Long): Result<Unit>
     suspend fun refreshAvatar(): Result<PokemonAvatarModel>
+    suspend fun withdrawMoney(amount: Double): Result<Unit>
 }

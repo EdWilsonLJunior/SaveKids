@@ -93,6 +93,9 @@ class SaveKidsMvpCasesTest {
         val vm = SaveKidsPiggyBankViewModel(repository)
         vm.onAmountChange("10")
         vm.submitDeposit()
+        assertTrue(vm.uiState.value.showDepositPixModal)
+        
+        vm.confirmDeposit()
         advanceUntilIdle()
 
         val updated = repository.dashboardStateSnapshot()
@@ -136,5 +139,52 @@ class SaveKidsMvpCasesTest {
 
         val goal = repository.goalsSnapshot().first()
         assertEquals(5.0, goal.currentAmount)
+    }
+
+    @Test
+    fun `CT-006 realizar saque reduz saldo e XP`() = runTest {
+        repository.addDeposit(50.0)
+        advanceUntilIdle()
+        
+        val before = repository.dashboardStateSnapshot()
+        
+        repository.withdrawMoney(10.0)
+        advanceUntilIdle()
+        
+        val after = repository.dashboardStateSnapshot()
+        assertEquals(before.balance - 10.0, after.balance)
+        assertEquals(before.xp - 10, after.xp)
+    }
+
+    @Test
+    fun `CT-007 realizar saque reduz progresso da meta ativa`() = runTest {
+        repository.createGoal("Meta", 100.0)
+        repository.addDeposit(50.0)
+        advanceUntilIdle()
+        
+        val goalBefore = repository.goalsSnapshot().first()
+        assertEquals(50.0, goalBefore.currentAmount)
+        
+        repository.withdrawMoney(10.0)
+        advanceUntilIdle()
+        
+        val goalAfter = repository.goalsSnapshot().first()
+        assertEquals(40.0, goalAfter.currentAmount)
+    }
+
+    @Test
+    fun `CT-009 tentativa de saque com cofrinho vazio exibe erro especifico`() = runTest {
+        // Garantir saldo zero
+        val balance = repository.dashboardStateSnapshot().balance
+        if (balance > 0) {
+            repository.withdrawMoney(balance)
+        }
+        advanceUntilIdle()
+        
+        val vm = SaveKidsPiggyBankViewModel(repository)
+        vm.onWithdrawAmountChange("10")
+        vm.requestWithdrawal()
+        
+        assertEquals("Não é possível realizar essa ação. Não há valor no cofrinho", vm.uiState.value.errorMessage)
     }
 }
