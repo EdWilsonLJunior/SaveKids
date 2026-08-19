@@ -512,6 +512,56 @@ class SaveKidsRepositoryImpl @Inject constructor(
         Result.success(avatar)
     }
 
+    override suspend fun withdrawMoney(amount: Double): Result<Unit> = withContext(Dispatchers.IO) {
+        if (amount <= 0.0) {
+            return@withContext Result.failure(IllegalArgumentException("O valor do saque deve ser maior que zero."))
+        }
+
+        val wallet = walletDao.getWallet() ?: return@withContext Result.failure(IllegalStateException("Carteira não inicializada."))
+        if (wallet.balance < amount) {
+            return@withContext Result.failure(IllegalStateException("Saldo insuficiente no cofrinho."))
+        }
+
+        val lostXp = amount.toInt() * GamificationRules.XP_LOSS_PER_REAL_WITHDRAWN
+        val updatedWallet = wallet.copy(
+            balance = wallet.balance - amount,
+            xp = maxOf(0, wallet.xp - lostXp),
+            updatedAt = System.currentTimeMillis()
+        )
+        val levelInfo = GamificationRules.levelForXp(updatedWallet.xp)
+        walletDao.upsert(updatedWallet.copy(level = levelInfo.level))
+
+        historyDao.insert(
+            SaveKidsHistoryEventEntity(
+                title = "Saque realizado",
+                details = "Dinheiro retirado do cofrinho.",
+                type = HistoryEventType.GOAL_UPDATED, // Reusing existing type or could add WITHDRAWAL
+                amount = -amount,
+                xpDelta = -lostXp,
+                createdAt = System.currentTimeMillis(),
+            )
+        )
+
+        // Reduzir progresso da meta ativa se houver
+        val firstOpenGoal = goalDao.observeGoals().first().firstOrNull { !it.completed }
+        if (firstOpenGoal != null) {
+            val nextAmount = maxOf(0.0, firstOpenGoal.currentAmount - amount)
+            goalDao.update(firstOpenGoal.copy(currentAmount = nextAmount))
+            historyDao.insert(
+                SaveKidsHistoryEventEntity(
+                    title = "Meta atualizada",
+                    details = "Saque afetou o progresso da meta ${firstOpenGoal.name}.",
+                    type = HistoryEventType.GOAL_UPDATED,
+                    amount = -amount,
+                    xpDelta = 0,
+                    createdAt = System.currentTimeMillis(),
+                )
+            )
+        }
+
+        Result.success(Unit)
+    }
+
     private fun resolveSpriteUrl(pokemon: PokemonDto): String {
         return pokemon.sprites.other?.officialArtwork?.front_default
             ?: pokemon.sprites.front_default
