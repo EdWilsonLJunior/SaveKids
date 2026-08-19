@@ -8,6 +8,7 @@ object GamificationRules {
     const val XP_CREATE_GOAL = 20
     const val XP_COMPLETE_MISSION = 50
     const val XP_COMPLETE_GOAL = 100
+    const val XP_LOSS_PER_REAL_WITHDRAWN = 1
 
     fun levelForXp(xp: Int): LevelInfo {
         return SaveKidsLevels.lastOrNull { xp >= it.requiredXp } ?: SaveKidsLevels.first()

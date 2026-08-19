@@ -217,6 +217,29 @@ class FakeSaveKidsRepository : SaveKidsRepository {
         )
     }
 
+    override suspend fun withdrawMoney(amount: Double): Result<Unit> {
+        if (amount <= 0.0) return Result.failure(IllegalArgumentException("Valor inválido"))
+        val current = dashboardState.value
+        if (current.balance < amount) return Result.failure(IllegalStateException("Saldo insuficiente"))
+
+        val lostXp = amount.toInt()
+        dashboardState.value = current.copy(
+            balance = current.balance - amount,
+            xp = maxOf(0, current.xp - lostXp)
+        )
+        pushHistory("Saque realizado", "Saque do cofrinho", HistoryEventType.GOAL_UPDATED, -amount, -lostXp)
+
+        val goals = goalsState.value
+        val activeGoal = goals.firstOrNull { !it.completed }
+        if (activeGoal != null) {
+            val updatedGoal = activeGoal.copy(currentAmount = maxOf(0.0, activeGoal.currentAmount - amount))
+            goalsState.value = goals.map { if (it.id == updatedGoal.id) updatedGoal else it }
+            dashboardState.value = dashboardState.value.copy(topGoals = goalsState.value.take(3))
+        }
+
+        return Result.success(Unit)
+    }
+
     private fun pushHistory(
         title: String,
         details: String,

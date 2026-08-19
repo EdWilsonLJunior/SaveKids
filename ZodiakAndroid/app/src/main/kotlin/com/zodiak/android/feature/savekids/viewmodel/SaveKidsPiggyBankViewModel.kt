@@ -14,10 +14,15 @@ import javax.inject.Inject
 
 data class SaveKidsPiggyBankUiState(
     val amountText: String = "",
+    val withdrawAmountText: String = "",
     val dashboard: DashboardModel? = null,
     val isLoading: Boolean = true,
     val errorMessage: String? = null,
     val successMessage: String? = null,
+    val showPixModal: Boolean = false,
+    val isProcessingWithdrawal: Boolean = false,
+    val showDepositPixModal: Boolean = false,
+    val isProcessingDeposit: Boolean = false,
 )
 
 @HiltViewModel
@@ -39,31 +44,105 @@ class SaveKidsPiggyBankViewModel @Inject constructor(
 
     fun onAmountChange(value: String) = _uiState.update { it.copy(amountText = value, errorMessage = null, successMessage = null) }
 
+    fun onWithdrawAmountChange(value: String) = _uiState.update { 
+        it.copy(withdrawAmountText = value, errorMessage = null, successMessage = null) 
+    }
+
     fun applyQuickAmount(value: Int) = _uiState.update {
         it.copy(amountText = value.toString(), errorMessage = null, successMessage = null)
     }
 
     fun submitDeposit() {
+        val amount = _uiState.value.amountText.replace(',', '.').toDoubleOrNull()
+        if (amount == null || amount <= 0) {
+            _uiState.update { it.copy(errorMessage = "Informe um valor válido para depósito.") }
+            return
+        }
+        _uiState.update { it.copy(showDepositPixModal = true, errorMessage = null, successMessage = null) }
+    }
+
+    fun confirmDeposit() {
         viewModelScope.launch {
-            val amount = _uiState.value.amountText.replace(',', '.').toDoubleOrNull()
-            if (amount == null) {
-                _uiState.update { it.copy(errorMessage = "Informe um valor válido.") }
-                return@launch
-            }
+            _uiState.update { it.copy(isProcessingDeposit = true) }
+            val amount = _uiState.value.amountText.replace(',', '.').toDoubleOrNull() ?: 0.0
+            
+            // Simular atraso de processamento do Pix
+            kotlinx.coroutines.delay(1500)
+            
             val result = repository.addDeposit(amount)
             if (result.isSuccess) {
                 _uiState.update {
                     it.copy(
                         amountText = "",
-                        successMessage = "Depósito registrado com sucesso.",
-                        errorMessage = null,
+                        successMessage = "Depósito de R$ ${"%.2f".format(amount)} registrado com sucesso!",
+                        showDepositPixModal = false,
+                        isProcessingDeposit = false,
                     )
                 }
             } else {
-                _uiState.update { it.copy(errorMessage = result.exceptionOrNull()?.message ?: "Falha ao registrar depósito.") }
+                _uiState.update { 
+                    it.copy(
+                        errorMessage = result.exceptionOrNull()?.message ?: "Falha ao registrar depósito.",
+                        showDepositPixModal = false,
+                        isProcessingDeposit = false,
+                    )
+                }
             }
         }
     }
+
+    fun dismissDepositPixModal() = _uiState.update { it.copy(showDepositPixModal = false) }
+
+    fun requestWithdrawal() {
+        val balance = _uiState.value.dashboard?.balance ?: 0.0
+        if (balance <= 0) {
+            _uiState.update { it.copy(errorMessage = "Não é possível realizar essa ação. Não há valor no cofrinho") }
+            return
+        }
+
+        val amount = _uiState.value.withdrawAmountText.replace(',', '.').toDoubleOrNull()
+        if (amount == null || amount <= 0) {
+            _uiState.update { it.copy(errorMessage = "Informe um valor de saque válido.") }
+            return
+        }
+        if (amount > balance) {
+            _uiState.update { it.copy(errorMessage = "Saldo insuficiente para o saque.") }
+            return
+        }
+        _uiState.update { it.copy(showPixModal = true, errorMessage = null, successMessage = null) }
+    }
+
+    fun confirmWithdrawal() {
+        viewModelScope.launch {
+            _uiState.update { it.copy(isProcessingWithdrawal = true) }
+            val amount = _uiState.value.withdrawAmountText.replace(',', '.').toDoubleOrNull() ?: 0.0
+            
+            // Simular atraso de processamento do Pix
+            kotlinx.coroutines.delay(1500)
+            
+            val result = repository.withdrawMoney(amount)
+            if (result.isSuccess) {
+                _uiState.update {
+                    it.copy(
+                        withdrawAmountText = "",
+                        successMessage = "Saque de ${amount.toString()} via Pix realizado com sucesso!",
+                        showPixModal = false,
+                        isProcessingWithdrawal = false,
+                    )
+                }
+            } else {
+                _uiState.update {
+                    it.copy(
+                        errorMessage = result.exceptionOrNull()?.message ?: "Falha ao realizar saque.",
+                        showPixModal = false,
+                        isProcessingWithdrawal = false,
+                    )
+                }
+            }
+        }
+    }
+
+    fun dismissPixModal() = _uiState.update { it.copy(showPixModal = false) }
 
     fun clearMessages() = _uiState.update { it.copy(errorMessage = null, successMessage = null) }
 }
