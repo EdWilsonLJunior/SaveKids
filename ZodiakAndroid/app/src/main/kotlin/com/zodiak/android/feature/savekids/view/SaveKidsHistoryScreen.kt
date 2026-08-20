@@ -14,6 +14,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -70,7 +71,7 @@ fun SaveKidsHistoryScreen(
                         subtitle = historyDateFormat.format(Date(event.createdAt)),
                     ) {
                         Row(horizontalArrangement = Arrangement.spacedBy(ZodiakSpacing.s8)) {
-                            ZodiakMiniBadge(event.type.name.lowercase().replaceFirstChar { it.uppercase() }, MaterialTheme.colorScheme.tertiary)
+                            ZodiakMiniBadge(event.type.displayName, Color(0xFF4E0B8F))
                             if (event.xpDelta != 0) {
                                 ZodiakMiniBadge(
                                     "${if (event.xpDelta > 0) "+" else ""}${event.xpDelta} XP",

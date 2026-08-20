@@ -28,7 +28,7 @@ interface SaveKidsRepository {
     suspend fun updateProfile(name: String, avatarPokemonId: Int): Result<Unit>
     suspend fun addDeposit(amount: Double): Result<Unit>
     suspend fun createGoal(name: String, targetAmount: Double): Result<Unit>
-    suspend fun completeMission(id: Long): Result<Unit>
+    suspend fun completeMission(id: Long, targetGoalId: Long? = null): Result<Unit>
     suspend fun redeemReward(id: Long): Result<Unit>
     suspend fun refreshAvatar(): Result<PokemonAvatarModel>
     suspend fun withdrawMoney(amount: Double): Result<Unit>

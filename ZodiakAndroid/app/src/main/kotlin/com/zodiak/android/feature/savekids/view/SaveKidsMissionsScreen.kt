@@ -12,6 +12,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.AlertDialog
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
@@ -19,6 +20,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.zodiak.android.design_system.atoms.ZodiakButton
+import com.zodiak.android.design_system.atoms.ZodiakOutlinedButton
 import com.zodiak.android.design_system.organisms.ZodiakEmptyState
 import com.zodiak.android.design_system.organisms.ZodiakMiniBadge
 import com.zodiak.android.design_system.organisms.ZodiakSectionCard
@@ -99,4 +101,48 @@ fun SaveKidsMissionsScreen(
             }
         }
     }
+
+    if (state.isGoalSelectionOpen) {
+        MissionGoalSelectionModal(
+            goals = state.goals,
+            onGoalSelected = viewModel::confirmGoalSelection,
+            onDismiss = viewModel::dismissGoalSelection
+        )
+    }
+}
+
+@Composable
+fun MissionGoalSelectionModal(
+    goals: List<com.zodiak.android.feature.savekids.model.GoalModel>,
+    onGoalSelected: (Long) -> Unit,
+    onDismiss: () -> Unit,
+) {
+    AlertDialog(
+        onDismissRequest = onDismiss,
+        title = { Text("Escolha o destino da recompensa", style = MaterialTheme.typography.titleLarge) },
+        text = {
+            Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                Text(
+                    "Esta missão tem recompensa em dinheiro! Para qual meta você quer enviar?",
+                    style = MaterialTheme.typography.bodyMedium
+                )
+                val openGoals = goals.filter { !it.completed }
+                if (openGoals.isEmpty()) {
+                    Text("Nenhuma meta aberta encontrada. O dinheiro irá para o saldo geral.", color = MaterialTheme.colorScheme.error)
+                } else {
+                    openGoals.forEach { goal ->
+                        ZodiakOutlinedButton(
+                            text = goal.name,
+                            onClick = { onGoalSelected(goal.id) },
+                            modifier = Modifier.fillMaxWidth()
+                        )
+                    }
+                }
+            }
+        },
+        confirmButton = {},
+        dismissButton = {
+            ZodiakOutlinedButton(text = "Cancelar", onClick = onDismiss)
+        }
+    )
 }

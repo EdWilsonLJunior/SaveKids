@@ -6,16 +6,16 @@ enum class MissionStatus {
     COMPLETED,
 }
 
-enum class HistoryEventType {
-    LOGIN,
-    GOAL_CREATED,
-    GOAL_UPDATED,
-    GOAL_COMPLETED,
-    DEPOSIT_ADDED,
-    MISSION_STARTED,
-    MISSION_COMPLETED,
-    REWARD_REDEEMED,
-    LEVEL_UP,
+enum class HistoryEventType(val displayName: String) {
+    LOGIN("Login realizado"),
+    GOAL_CREATED("Objetivo criado"),
+    GOAL_UPDATED("Objetivo atualizado"),
+    GOAL_COMPLETED("Objetivo concluído"),
+    DEPOSIT_ADDED("Economia adicionada"),
+    MISSION_STARTED("Missão iniciada"),
+    MISSION_COMPLETED("Missão concluída"),
+    REWARD_REDEEMED("Recompensa resgatada"),
+    LEVEL_UP("Evolução de nível"),
 }
 
 data class SaveKidsSession(

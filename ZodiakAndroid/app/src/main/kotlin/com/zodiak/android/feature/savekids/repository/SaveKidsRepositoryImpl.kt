@@ -56,7 +56,6 @@ class SaveKidsRepositoryImpl @Inject constructor(
 ) : SaveKidsRepository {
 
     private val seedMutex = Mutex()
-    private val rewardRedemptionCostXp = 10
 
     override val session: Flow<SaveKidsSession> = sessionDataStore.session
 
@@ -206,7 +205,7 @@ class SaveKidsRepositoryImpl @Inject constructor(
                         SaveKidsGoalEntity(
                             name = "Bicicleta nova",
                             targetAmount = 350.0,
-                            currentAmount = 60.0,
+                            currentAmount = 0.0,
                             completed = false,
                         )
                     )
@@ -338,7 +337,7 @@ class SaveKidsRepositoryImpl @Inject constructor(
             )
         )
 
-        applyContributionToActiveGoal(amount)
+        applyContributionToGoal(amount)
 
         if (levelUp) {
             historyDao.insert(
@@ -393,7 +392,7 @@ class SaveKidsRepositoryImpl @Inject constructor(
         Result.success(Unit)
     }
 
-    override suspend fun completeMission(id: Long): Result<Unit> = withContext(Dispatchers.IO) {
+    override suspend fun completeMission(id: Long, targetGoalId: Long?): Result<Unit> = withContext(Dispatchers.IO) {
         val mission = missionDao.findById(id) ?: return@withContext Result.failure(IllegalArgumentException("Missão não encontrada."))
         if (mission.status == MissionStatus.COMPLETED) {
             return@withContext Result.failure(IllegalStateException("Missão já concluída."))
@@ -426,7 +425,7 @@ class SaveKidsRepositoryImpl @Inject constructor(
         )
 
         if (mission.rewardMoney > 0) {
-            applyContributionToActiveGoal(mission.rewardMoney)
+            applyContributionToGoal(mission.rewardMoney, targetGoalId)
         }
 
         Result.success(Unit)
@@ -438,15 +437,16 @@ class SaveKidsRepositoryImpl @Inject constructor(
         if (reward.redeemed) return@withContext Result.failure(IllegalStateException("Recompensa já resgatada."))
 
         val wallet = walletDao.getWallet() ?: return@withContext Result.failure(IllegalStateException("Carteira não inicializada."))
-        if (wallet.xp < reward.requiredXp) {
+        
+        // O custo é o XP exigido pela própria recompensa
+        val costXp = reward.requiredXp
+        
+        if (wallet.xp < costXp) {
             return@withContext Result.failure(IllegalStateException("XP insuficiente para resgatar."))
-        }
-        if (wallet.xp < rewardRedemptionCostXp) {
-            return@withContext Result.failure(IllegalStateException("XP insuficiente para concluir o resgate."))
         }
 
         rewardDao.update(reward.copy(redeemed = true))
-        val xpAfter = wallet.xp - rewardRedemptionCostXp
+        val xpAfter = wallet.xp - costXp
         val level = GamificationRules.levelForXp(xpAfter)
         walletDao.upsert(wallet.copy(xp = xpAfter, level = level.level, updatedAt = System.currentTimeMillis()))
 
@@ -456,7 +456,7 @@ class SaveKidsRepositoryImpl @Inject constructor(
                 details = reward.title,
                 type = HistoryEventType.REWARD_REDEEMED,
                 amount = 0.0,
-                xpDelta = -rewardRedemptionCostXp,
+                xpDelta = -costXp,
                 createdAt = System.currentTimeMillis(),
             )
         )
@@ -568,14 +568,19 @@ class SaveKidsRepositoryImpl @Inject constructor(
             ?: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png"
     }
 
-    private suspend fun applyContributionToActiveGoal(amount: Double) {
+    private suspend fun applyContributionToGoal(amount: Double, goalId: Long? = null) {
         if (amount <= 0) return
-        val firstOpenGoal = goalDao.observeGoals().first().firstOrNull { !it.completed } ?: return
+        val goals = goalDao.observeGoals().first()
+        val targetGoal = if (goalId != null) {
+            goals.firstOrNull { it.id == goalId }
+        } else {
+            goals.firstOrNull { !it.completed }
+        } ?: return
 
-        val nextAmount = firstOpenGoal.currentAmount + amount
-        val completed = nextAmount >= firstOpenGoal.targetAmount
-        val updatedGoal = firstOpenGoal.copy(
-            currentAmount = minOf(nextAmount, firstOpenGoal.targetAmount),
+        val nextAmount = targetGoal.currentAmount + amount
+        val completed = nextAmount >= targetGoal.targetAmount
+        val updatedGoal = targetGoal.copy(
+            currentAmount = minOf(nextAmount, targetGoal.targetAmount),
             completed = completed,
         )
         goalDao.update(updatedGoal)
@@ -591,7 +596,7 @@ class SaveKidsRepositoryImpl @Inject constructor(
             )
         )
 
-        if (completed && !firstOpenGoal.completed) {
+        if (completed && !targetGoal.completed) {
             val wallet = walletDao.getWallet()
             if (wallet != null) {
                 val xpAfterBonus = wallet.xp + GamificationRules.XP_COMPLETE_GOAL

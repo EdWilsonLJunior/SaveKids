@@ -135,6 +135,10 @@ class SaveKidsMvpCasesTest {
 
         val vm = com.zodiak.android.feature.savekids.viewmodel.SaveKidsMissionsViewModel(repository)
         vm.completeMission(1)
+        assertTrue(vm.uiState.value.isGoalSelectionOpen)
+        
+        val goalId = repository.goalsSnapshot().first().id
+        vm.confirmGoalSelection(goalId)
         advanceUntilIdle()
 
         val goal = repository.goalsSnapshot().first()
