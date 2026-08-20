@@ -17,6 +17,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -98,7 +99,7 @@ fun SaveKidsGoalsScreen(
                         Row(horizontalArrangement = Arrangement.spacedBy(ZodiakSpacing.s8)) {
                             ZodiakMiniBadge(
                                 if (goal.completed) "Concluída" else "Em andamento",
-                                if (goal.completed) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.tertiary,
+                                if (goal.completed) Color(0xFF165904) else Color(0xFF165904),
                             )
                         }
                         Text(
@@ -123,7 +124,7 @@ fun SaveKidsGoalsScreen(
                                 title = "Meta",
                                 value = goal.targetAmount.toMoneyLabel(),
                                 subtitle = "Objetivo",
-                                tint = MaterialTheme.colorScheme.tertiary,
+                                tint = Color(0xFF165904),
                                 modifier = Modifier.weight(1f),
                             )
                         }
