@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Zodiak</string>
+    <string name="app_name">SaveKids</string>
     <string name="feature_savekids_profile_edit_title">Editar perfil</string>
     <string name="feature_savekids_profile_name_label">Nome da criança</string>
     <string name="feature_savekids_profile_name_error">Informe um nome entre 3 e 30 caracteres.</string>
