@@ -141,7 +141,7 @@ class FakeSaveKidsRepository : SaveKidsRepository {
         val gainedXp = amount.toInt()
         dashboardState.value = current.copy(balance = current.balance + amount, xp = current.xp + gainedXp)
         pushHistory("Economia adicionada", "Depósito registrado", HistoryEventType.DEPOSIT_ADDED, amount, gainedXp)
-        applyContributionToActiveGoal(amount)
+        applyContributionToGoal(amount)
         return Result.success(Unit)
     }
 
@@ -161,7 +161,7 @@ class FakeSaveKidsRepository : SaveKidsRepository {
         return Result.success(Unit)
     }
 
-    override suspend fun completeMission(id: Long): Result<Unit> {
+    override suspend fun completeMission(id: Long, targetGoalId: Long?): Result<Unit> {
         val mission = missionsState.value.firstOrNull { it.id == id }
             ?: return Result.failure(IllegalArgumentException("Missão não encontrada."))
         if (mission.status == MissionStatus.COMPLETED) {
@@ -178,7 +178,7 @@ class FakeSaveKidsRepository : SaveKidsRepository {
         )
         pushHistory("Missão concluída", mission.title, HistoryEventType.MISSION_COMPLETED, mission.rewardMoney, mission.rewardXp)
         if (mission.rewardMoney > 0) {
-            applyContributionToActiveGoal(mission.rewardMoney)
+            applyContributionToGoal(mission.rewardMoney, targetGoalId)
         }
         return Result.success(Unit)
     }
@@ -261,10 +261,15 @@ class FakeSaveKidsRepository : SaveKidsRepository {
         ) + historyState.value
     }
 
-    private fun applyContributionToActiveGoal(amount: Double) {
+    private fun applyContributionToGoal(amount: Double, goalId: Long? = null) {
         if (amount <= 0) return
         val goals = goalsState.value
-        val activeGoal = goals.firstOrNull { !it.completed } ?: return
+        val activeGoal = if (goalId != null) {
+            goals.firstOrNull { it.id == goalId }
+        } else {
+            goals.firstOrNull { !it.completed }
+        } ?: return
+
         val nextAmount = activeGoal.currentAmount + amount
         val completed = nextAmount >= activeGoal.targetAmount
         val updatedGoal = activeGoal.copy(

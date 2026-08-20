@@ -22,6 +22,11 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -32,6 +37,7 @@ import com.zodiak.android.design_system.molecules.ZodiakChipGroup
 import com.zodiak.android.design_system.molecules.ZodiakInputField
 import com.zodiak.android.design_system.organisms.ZodiakHeroCard
 import com.zodiak.android.design_system.organisms.ZodiakLineChartPlaceholder
+import com.zodiak.android.design_system.organisms.ZodiakMiniBadge
 import com.zodiak.android.design_system.organisms.ZodiakSectionCard
 import com.zodiak.android.design_system.organisms.ZodiakStatTile
 import com.zodiak.android.feature.savekids.model.SaveKidsProfile
@@ -72,7 +78,7 @@ fun SaveKidsHomeScreen(
                     color = MaterialTheme.colorScheme.primary,
                 )
                 Text(
-                    "Educação financeira com evolução de Pokémon por XP.",
+                    "$childName, seu avatar evolui junto com suas economias.",
                     style = MaterialTheme.typography.titleMedium,
                 )
                 Spacer(Modifier.height(ZodiakSpacing.s8))
@@ -81,22 +87,66 @@ fun SaveKidsHomeScreen(
                 if (dashboard != null) {
                     val avatarDisplayName = state.avatar?.currentStageName
                         ?: (state.profile?.avatarTeamName ?: "Pikachu").removePrefix("Time ")
-                    ZodiakHeroCard(
-                        title = "$childName, seu avatar evolui junto com suas economias.",
-                        subtitle = "Guarde dinheiro, complete missões e ganhe XP para evoluir seu Pokémon.",
-                        phaseLabel = dashboard.levelTitle,
-                        avatarName = avatarDisplayName,
-                        avatarMeta = "${dashboard.xp} XP",
-                        actionLabel = "Editar",
-                        onActionClick = { isProfileEditorOpen = true },
-                        avatarVisual = {
-                            SaveKidsPokemonAvatar(
-                                imageUrl = state.avatar?.spriteUrl,
-                                contentDescription = state.avatar?.currentStageName ?: "Avatar atual",
-                                size = 72.dp,
-                            )
-                        },
-                    )
+//                    ZodiakHeroCard(
+//                        title = "$childName, seu avatar evolui junto com suas economias.",
+//                        subtitle = "Guarde dinheiro, complete missões e ganhe XP para evoluir seu Pokémon.",
+//                        phaseLabel = dashboard.levelTitle,
+//                        avatarName = avatarDisplayName,
+//                        avatarMeta = "${dashboard.xp} XP",
+//                        actionLabel = "Editar",
+//                        onActionClick = { isProfileEditorOpen = true },
+//                        avatarVisual = {
+//                            SaveKidsPokemonAvatar(
+//                                imageUrl = state.avatar?.spriteUrl,
+//                                contentDescription = state.avatar?.currentStageName ?: "Avatar atual",
+//                                size = 72.dp,
+//                            )
+//                        },
+//                    )
+                        ZodiakSectionCard(
+                            title = "Avatar atual",
+                            subtitle = "Pokémon evolui conforme o XP cresce.",
+                        ) {
+                            val avatar = state.avatar
+                            if (avatar == null) {
+                                Text("Avatar indisponível.")
+                            } else {
+                                Row(horizontalArrangement = Arrangement.spacedBy(ZodiakSpacing.s8)) {
+                                    ZodiakMiniBadge(avatar.teamName, MaterialTheme.colorScheme.primary)
+                                    ZodiakMiniBadge("${avatar.currentXp}/${avatar.nextLevelXp} XP", Color(0xFF4E0B8F))
+                                    ZodiakMiniBadge(dashboard.levelTitle, Color(0xFF165904))
+                                }
+                                Text(avatar.currentStageName, style = MaterialTheme.typography.headlineSmall)
+                                Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.Center) {
+                                    SaveKidsPokemonAvatar(
+                                        imageUrl = avatar.spriteUrl,
+                                        contentDescription = avatar.currentStageName,
+                                        size = 128.dp,
+                                    )
+                                }
+                                Text(
+                                    buildAnnotatedString {
+                                        withStyle(style = SpanStyle(fontWeight = FontWeight.Bold)) {
+                                            append("Tipo: ")
+                                        }
+                                        append(avatar.typeLabel)
+                                    }
+                                )
+                                Text(
+                                    buildAnnotatedString {
+                                        withStyle(style = SpanStyle(fontWeight = FontWeight.Bold)) {
+                                            append("Evolução: ")
+                                        }
+                                        append(avatar.evolutionNames.joinToString(" → "))
+                                    }
+                                )
+                                ZodiakButton(
+                                    text = "Editar",
+                                    onClick = { isProfileEditorOpen = true },
+                                    modifier = Modifier.fillMaxWidth(),
+                                )
+                            }
+                    }
                 }
             }
 
@@ -119,7 +169,7 @@ fun SaveKidsHomeScreen(
                             title = "XP acumulado",
                             value = "${dashboard.xp} XP",
                             subtitle = dashboard.levelTitle,
-                            tint = MaterialTheme.colorScheme.tertiary,
+                            tint = Color(0xFF165904),
                             modifier = Modifier.weight(1f),
                         )
                     }
@@ -202,7 +252,7 @@ fun SaveKidsHomeScreen(
                                     Column(
                                         modifier = Modifier
                                             .fillMaxWidth()
-                                                .padding(vertical = ZodiakSpacing.s4),
+                                            .padding(vertical = ZodiakSpacing.s4),
                                     ) {
                                         Text(event.title, style = MaterialTheme.typography.titleSmall)
                                         Text(

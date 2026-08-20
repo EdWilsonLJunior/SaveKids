@@ -48,37 +48,37 @@ fun SaveKidsAvatarRankingScreen(
 
             item { SaveKidsTabs(saveKidsTabs, SaveKidsAvatarRankingRoute, onNavigate) }
 
-            item {
-                ZodiakSectionCard(
-                    title = "Avatar atual",
-                    subtitle = "Pokémon evolui conforme o XP cresce.",
-                ) {
-                    val avatar = state.avatar
-                    if (avatar == null) {
-                        Text("Avatar indisponível.")
-                    } else {
-                        Row(horizontalArrangement = Arrangement.spacedBy(ZodiakSpacing.s8)) {
-                            ZodiakMiniBadge(avatar.teamName, MaterialTheme.colorScheme.primary)
-                            ZodiakMiniBadge("${avatar.currentXp}/${avatar.nextLevelXp} XP", MaterialTheme.colorScheme.tertiary)
-                        }
-                        Text(avatar.currentStageName, style = MaterialTheme.typography.headlineSmall)
-                        Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.Center) {
-                            SaveKidsPokemonAvatar(
-                                imageUrl = avatar.spriteUrl,
-                                contentDescription = avatar.currentStageName,
-                                size = 128.dp,
-                            )
-                        }
-                        Text("Tipo: ${avatar.typeLabel}")
-                        Text("Linha de evolução: ${avatar.evolutionNames.joinToString(" → ")}")
-                        ZodiakButton(
-                            text = "Atualizar Pokémon",
-                            onClick = viewModel::refreshAvatar,
-                            modifier = Modifier.fillMaxWidth(),
-                        )
-                    }
-                }
-            }
+//            item {
+//                ZodiakSectionCard(
+//                    title = "Avatar atual",
+//                    subtitle = "Pokémon evolui conforme o XP cresce.",
+//                ) {
+//                    val avatar = state.avatar
+//                    if (avatar == null) {
+//                        Text("Avatar indisponível.")
+//                    } else {
+//                        Row(horizontalArrangement = Arrangement.spacedBy(ZodiakSpacing.s8)) {
+//                            ZodiakMiniBadge(avatar.teamName, MaterialTheme.colorScheme.primary)
+//                            ZodiakMiniBadge("${avatar.currentXp}/${avatar.nextLevelXp} XP", MaterialTheme.colorScheme.tertiary)
+//                        }
+//                        Text(avatar.currentStageName, style = MaterialTheme.typography.headlineSmall)
+//                        Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.Center) {
+//                            SaveKidsPokemonAvatar(
+//                                imageUrl = avatar.spriteUrl,
+//                                contentDescription = avatar.currentStageName,
+//                                size = 128.dp,
+//                            )
+//                        }
+//                        Text("Tipo: ${avatar.typeLabel}")
+//                        Text("Linha de evolução: ${avatar.evolutionNames.joinToString(" → ")}")
+//                        ZodiakButton(
+//                            text = "Atualizar Pokémon",
+//                            onClick = viewModel::refreshAvatar,
+//                            modifier = Modifier.fillMaxWidth(),
+//                        )
+//                    }
+//                }
+//            }
 
             item {
                 Text("Ranking da família", style = MaterialTheme.typography.titleMedium)

@@ -14,6 +14,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -65,7 +66,7 @@ fun SaveKidsRewardsScreen(
                     ) {
                         Row(horizontalArrangement = Arrangement.spacedBy(ZodiakSpacing.s8)) {
                             ZodiakMiniBadge("Desbloqueia com ${reward.requiredXp} XP", MaterialTheme.colorScheme.primary)
-                            ZodiakMiniBadge(if (reward.requiredXp >= 150) "Troféu" else "Selo", MaterialTheme.colorScheme.tertiary)
+                            ZodiakMiniBadge(if (reward.requiredXp >= 150) "Troféu" else "Selo", Color(0xFF165904))
                         }
                         when {
                             reward.redeemed -> Text("Recompensa coletada", color = MaterialTheme.colorScheme.primary)

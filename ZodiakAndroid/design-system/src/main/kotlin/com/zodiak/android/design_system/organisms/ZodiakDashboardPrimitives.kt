@@ -106,7 +106,7 @@ fun ZodiakHeroCard(
             Column(modifier = Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(ZodiakSpacing.s8)) {
                 Row(horizontalArrangement = Arrangement.spacedBy(ZodiakSpacing.s8)) {
                     ZodiakMiniBadge("Save Kids", MaterialTheme.colorScheme.primary)
-                    ZodiakMiniBadge(phaseLabel, MaterialTheme.colorScheme.tertiary)
+                    ZodiakMiniBadge(phaseLabel, Color(0xFF165904))
                 }
                 Text(title, style = MaterialTheme.typography.titleMedium)
                 Text(
