@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="themeswitch_form_title_appearance">Appearance</string>
-    <string name="themeswitch_switch_label_dark_mode">Dark Mode active</string>
-    <string name="themeswitch_switch_label_light_mode">Light Mode active</string>
-    <string name="themeswitch_text_preference_saved">The preference is saved automatically and persists between sessions.</string>
+    <string name="themeswitch_form_title_appearance">Aparência</string>
+    <string name="themeswitch_switch_label_dark_mode">Modo escuro ativo</string>
+    <string name="themeswitch_switch_label_light_mode">Modo claro ativo</string>
+    <string name="themeswitch_text_preference_saved">A preferência é salva automaticamente e persiste entre as sessões.</string>
 </resources>

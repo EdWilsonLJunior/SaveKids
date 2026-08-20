@@ -1,7 +1,6 @@
 package com.zodiak.android.navigation
 
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.GridView
 import androidx.compose.material.icons.outlined.Home
 import androidx.compose.material.icons.outlined.Settings
 import androidx.compose.material3.MaterialTheme
@@ -18,7 +17,7 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.zodiak.android.design_system.atoms.ZodiakIconSize
 import com.zodiak.android.design_system.atoms.ZodiakIconView
-import com.zodiak.android.feature.catalog.CatalogRoute
+import com.zodiak.android.feature.savekids.navigation.SaveKidsHomeRoute
 import kotlinx.serialization.Serializable
 import kotlin.reflect.KClass
 
@@ -33,14 +32,12 @@ sealed class TopLevelDestination(
     val label: String,
     val icon: ImageVector,
 ) {
-    data object Home    : TopLevelDestination(HomeRoute,    HomeRoute::class,    "Início",   Icons.Outlined.Home)
-    data object Catalog : TopLevelDestination(CatalogRoute, CatalogRoute::class, "Catálogo", Icons.Outlined.GridView)
-    data object Settings: TopLevelDestination(SettingsRoute,SettingsRoute::class,"Config.",  Icons.Outlined.Settings)
+    data object Home : TopLevelDestination(SaveKidsHomeRoute, SaveKidsHomeRoute::class, "Início", Icons.Outlined.Home)
+    data object Settings : TopLevelDestination(SettingsRoute, SettingsRoute::class, "Config.", Icons.Outlined.Settings)
 }
 
 private val TOP_LEVEL_DESTINATIONS = listOf(
     TopLevelDestination.Home,
-    TopLevelDestination.Catalog,
     TopLevelDestination.Settings,
 )
 

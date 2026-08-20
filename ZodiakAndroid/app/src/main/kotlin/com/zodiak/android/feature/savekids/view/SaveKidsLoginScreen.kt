@@ -63,54 +63,6 @@ fun SaveKidsLoginScreen(
             item {
                 Card(
                     modifier = Modifier.fillMaxWidth(),
-                    shape = RoundedCornerShape(26.dp),
-                    colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
-                ) {
-                    Column(modifier = Modifier.padding(ZodiakSpacing.s16), verticalArrangement = Arrangement.spacedBy(10.dp)) {
-                        Text("Save Kids", style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.primary)
-                        Text("Guardar, evoluir, conquistar", style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
-                        Row(horizontalArrangement = Arrangement.spacedBy(ZodiakSpacing.s8)) {
-                            ZodiakMiniBadge("Pokémon evolui com XP", MaterialTheme.colorScheme.primary)
-                        }
-                        Text(
-                            "O cofrinho vira uma aventura divertida.",
-                            style = MaterialTheme.typography.headlineMedium,
-                        )
-                        Text(
-                            "Cada moedinha guardada ajuda a criança a subir de nível, completar missões e liberar prêmios.",
-                            style = MaterialTheme.typography.bodyLarge,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant,
-                        )
-                        Row(horizontalArrangement = Arrangement.spacedBy(ZodiakSpacing.s8), modifier = Modifier.fillMaxWidth()) {
-                            ZodiakStatTile(
-                                title = "Missões",
-                                value = "divertidas",
-                                subtitle = "",
-                                tint = MaterialTheme.colorScheme.primary,
-                                modifier = Modifier.weight(1f),
-                            )
-                            ZodiakStatTile(
-                                title = "Prêmios",
-                                value = "por XP",
-                                subtitle = "",
-                                tint = MaterialTheme.colorScheme.primary,
-                                modifier = Modifier.weight(1f),
-                            )
-                            ZodiakStatTile(
-                                title = "Meta",
-                                value = "cofrinho",
-                                subtitle = "",
-                                tint = MaterialTheme.colorScheme.primary,
-                                modifier = Modifier.weight(1f),
-                            )
-                        }
-                    }
-                }
-            }
-
-            item {
-                Card(
-                    modifier = Modifier.fillMaxWidth(),
                     shape = RoundedCornerShape(22.dp),
                     colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
                 ) {
@@ -125,51 +77,85 @@ fun SaveKidsLoginScreen(
                                     modifier = Modifier
                                         .weight(1f)
                                         .clip(RoundedCornerShape(14.dp))
-                                        .background(MaterialTheme.colorScheme.surface)
+                                        .background(if (state.isRegistrationMode) MaterialTheme.colorScheme.surfaceVariant else MaterialTheme.colorScheme.surface)
+                                        .clickable { if (state.isRegistrationMode) viewModel.onToggleRegistration() }
                                         .padding(vertical = 10.dp),
                                 ) {
-                                    Text("Entrar", modifier = Modifier.align(androidx.compose.ui.Alignment.Center), style = MaterialTheme.typography.labelLarge)
+                                    Text(
+                                        "Entrar",
+                                        modifier = Modifier.align(androidx.compose.ui.Alignment.Center),
+                                        style = MaterialTheme.typography.labelLarge,
+                                        color = if (state.isRegistrationMode) MaterialTheme.colorScheme.onSurfaceVariant else MaterialTheme.colorScheme.onSurface,
+                                    )
                                 }
                                 Box(
                                     modifier = Modifier
                                         .weight(1f)
                                         .clip(RoundedCornerShape(14.dp))
+                                        .background(if (state.isRegistrationMode) MaterialTheme.colorScheme.surface else MaterialTheme.colorScheme.surfaceVariant)
+                                        .clickable { if (!state.isRegistrationMode) viewModel.onToggleRegistration() }
                                         .padding(vertical = 10.dp),
                                 ) {
                                     Text(
                                         "Cadastro",
                                         modifier = Modifier.align(androidx.compose.ui.Alignment.Center),
                                         style = MaterialTheme.typography.labelLarge,
-                                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                        color = if (state.isRegistrationMode) MaterialTheme.colorScheme.onSurface else MaterialTheme.colorScheme.onSurfaceVariant,
                                     )
                                 }
                             }
                         }
 
                         if (!state.authStepDone) {
-                            Text("Entrar para acompanhar cada conquista", style = MaterialTheme.typography.headlineSmall)
-                            Text(
-                                "O responsável registra depósitos e acompanha a evolução junto com a criança.",
-                                style = MaterialTheme.typography.bodyMedium,
-                                color = MaterialTheme.colorScheme.onSurfaceVariant,
-                            )
-                            ZodiakInputField(
-                                value = state.username,
-                                onValueChange = viewModel::onUsernameChange,
-                                label = "E-mail da família",
-                            )
-                            ZodiakInputField(
-                                value = state.password,
-                                onValueChange = viewModel::onPasswordChange,
-                                label = "Senha ou PIN",
-                                keyboardType = KeyboardType.Password,
-                            )
-                            Text(
-                                "Dica: use teste no usuário e senha.",
-                                style = MaterialTheme.typography.bodySmall,
-                                color = MaterialTheme.colorScheme.onSurfaceVariant,
-                            )
-                            ZodiakButton("Entrar como responsável", viewModel::authenticate, Modifier.fillMaxWidth())
+                            if (state.isRegistrationMode) {
+                                Text("Crie a conta da sua família", style = MaterialTheme.typography.headlineSmall)
+                                Text(
+                                    "Cadastre o responsável e comece a acompanhar as conquistas da criança.",
+                                    style = MaterialTheme.typography.bodyMedium,
+                                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                )
+                                ZodiakInputField(
+                                    value = state.familyName,
+                                    onValueChange = viewModel::onFamilyNameChange,
+                                    label = "Nome da família",
+                                )
+                                ZodiakInputField(
+                                    value = state.username,
+                                    onValueChange = viewModel::onUsernameChange,
+                                    label = "E-mail da família",
+                                )
+                                ZodiakInputField(
+                                    value = state.password,
+                                    onValueChange = viewModel::onPasswordChange,
+                                    label = "Senha ou PIN",
+                                    keyboardType = KeyboardType.Password,
+                                )
+                                ZodiakButton("Criar conta", viewModel::registerAccount, Modifier.fillMaxWidth())
+                            } else {
+                                Text("Entrar para acompanhar cada conquista", style = MaterialTheme.typography.headlineSmall)
+                                Text(
+                                    "O responsável registra depósitos e acompanha a evolução junto com a criança.",
+                                    style = MaterialTheme.typography.bodyMedium,
+                                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                )
+                                ZodiakInputField(
+                                    value = state.username,
+                                    onValueChange = viewModel::onUsernameChange,
+                                    label = "E-mail da família",
+                                )
+                                ZodiakInputField(
+                                    value = state.password,
+                                    onValueChange = viewModel::onPasswordChange,
+                                    label = "Senha ou PIN",
+                                    keyboardType = KeyboardType.Password,
+                                )
+                                Text(
+                                    "Dica: use teste no usuário e senha.",
+                                    style = MaterialTheme.typography.bodySmall,
+                                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                )
+                                ZodiakButton("Entrar como responsável", viewModel::authenticate, Modifier.fillMaxWidth())
+                            }
                         }
                     }
                 }

@@ -19,6 +19,7 @@ import com.zodiak.android.feature.personmanager.personManagerScreen
 import com.zodiak.android.feature.pixdiscount.pixDiscountScreen
 import com.zodiak.android.feature.productmanager.productManagerScreen
 import com.zodiak.android.feature.quizgame.quizGameScreen
+import com.zodiak.android.feature.savekids.navigation.SaveKidsLoginRoute
 import com.zodiak.android.feature.savekids.navigation.saveKidsScreens
 import com.zodiak.android.feature.shopmaster.shopMasterScreen
 import com.zodiak.android.feature.studentgrades.studentGradesScreen
@@ -29,34 +30,9 @@ import com.zodiak.android.feature.voting.votingScreen
 
 @Composable
 fun ZodiakNavGraph(navController: NavHostController) {
-    NavHost(navController = navController, startDestination = HomeRoute) {
-        // Top-level
-        composable<HomeRoute>    { HomeScreen(navController) }
+    NavHost(navController = navController, startDestination = SaveKidsLoginRoute) {
         composable<SettingsRoute> { SettingsScreen(navController) }
-
-        // Catalog
-        catalogScreen(onNavigateToToken = { navController.navigate(ColorTokenDetailRoute(it)) })
-        colorTokenDetailScreen(onBack = { navController.popBackStack() })
-
-        // Features
-        gradesScreen()
-        pixDiscountScreen()
-        votingScreen()
-        palindromeScreen()
-        guessGameScreen()
-        multiplicationScreen()
-        personManagerScreen()
         themeSwitchScreen()
-        temperatureConverterScreen()
-        taskManagerScreen()
-        quizGameScreen()
-        studentGradesScreen()
-        productManagerScreen()
-        cardManagerScreen()
-        shopMasterScreen()
-        loginScreen()
-        bookReaderScreen()
-        currencyConverterScreen()
         saveKidsScreens(navController)
     }
 }
