@@ -11,14 +11,18 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.AlertDialog
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.zodiak.android.R
 import com.zodiak.android.design_system.atoms.ZodiakButton
+import com.zodiak.android.design_system.atoms.ZodiakOutlinedButton
 import com.zodiak.android.design_system.organisms.ZodiakEmptyState
 import com.zodiak.android.design_system.organisms.ZodiakMiniBadge
 import com.zodiak.android.design_system.organisms.ZodiakSectionCard
@@ -73,7 +77,7 @@ fun SaveKidsRewardsScreen(
                             state.currentXp < reward.requiredXp -> Text("Continue evoluindo", color = MaterialTheme.colorScheme.onSurfaceVariant)
                             else -> ZodiakButton(
                                 text = "Coletar recompensa",
-                                onClick = { viewModel.redeemReward(reward.id) },
+                                onClick = { viewModel.onRedeemClicked(reward) },
                                 modifier = Modifier.fillMaxWidth(),
                             )
                         }
@@ -87,5 +91,49 @@ fun SaveKidsRewardsScreen(
                 item { Text("Carregando recompensas...") }
             }
         }
+    }
+
+    if (state.showDevolutionWarning) {
+        AlertDialog(
+            onDismissRequest = { viewModel.dismissWarning() },
+            title = { Text("Aviso de Evolução") },
+            text = {
+                Text("Ao resgatar esta recompensa, seu XP diminuirá e seu Pokémon poderá voltar para uma forma anterior. Deseja continuar?")
+            },
+            confirmButton = {
+                ZodiakButton(
+                    text = "Confirmar Resgate",
+                    onClick = { viewModel.confirmRedeem() }
+                )
+            },
+            dismissButton = {
+                ZodiakOutlinedButton(
+                    text = stringResource(R.string.shared_action_cancel),
+                    onClick = { viewModel.dismissWarning() }
+                )
+            }
+        )
+    }
+
+    if (state.showSaveMoreWarning) {
+        AlertDialog(
+            onDismissRequest = { viewModel.dismissWarning() },
+            title = { Text("Confirmar Resgate") },
+            text = {
+                Text("Você deseja confirmar o resgate desta recompensa agora? Lembre-se que você também pode economizar seu XP para pegar recompensas ainda maiores depois!")
+            },
+            confirmButton = {
+                ZodiakButton(
+                    text = "Resgatar agora",
+                    onClick = { viewModel.confirmRedeem() }
+                )
+            },
+            dismissButton = {
+                ZodiakOutlinedButton(
+                    text = "Vou economizar",
+                    onClick = { viewModel.dismissWarning() }
+                )
+            }
+        )
     }
 }

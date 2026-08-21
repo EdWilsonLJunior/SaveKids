@@ -1,8 +1,8 @@
 package com.zodiak.android.feature.savekids.view
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -23,6 +23,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.input.KeyboardType
@@ -32,8 +33,6 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.zodiak.android.design_system.atoms.ZodiakButton
 import com.zodiak.android.design_system.molecules.ZodiakInputField
 import com.zodiak.android.design_system.organisms.ZodiakFormContainer
-import com.zodiak.android.design_system.organisms.ZodiakMiniBadge
-import com.zodiak.android.design_system.organisms.ZodiakStatTile
 import com.zodiak.android.design_system.theme.ZodiakSpacing
 import com.zodiak.android.feature.savekids.viewmodel.SaveKidsLoginViewModel
 
@@ -83,7 +82,7 @@ fun SaveKidsLoginScreen(
                                 ) {
                                     Text(
                                         "Entrar",
-                                        modifier = Modifier.align(androidx.compose.ui.Alignment.Center),
+                                        modifier = Modifier.align(Alignment.Center),
                                         style = MaterialTheme.typography.labelLarge,
                                         color = if (state.isRegistrationMode) MaterialTheme.colorScheme.onSurfaceVariant else MaterialTheme.colorScheme.onSurface,
                                     )
@@ -98,7 +97,7 @@ fun SaveKidsLoginScreen(
                                 ) {
                                     Text(
                                         "Cadastro",
-                                        modifier = Modifier.align(androidx.compose.ui.Alignment.Center),
+                                        modifier = Modifier.align(Alignment.Center),
                                         style = MaterialTheme.typography.labelLarge,
                                         color = if (state.isRegistrationMode) MaterialTheme.colorScheme.onSurface else MaterialTheme.colorScheme.onSurfaceVariant,
                                     )
@@ -187,12 +186,24 @@ fun SaveKidsLoginScreen(
                                         .clickable { viewModel.onAvatarSelected(avatar.pokemonId) }
                                         .padding(12.dp),
                                 ) {
-                                    Text(avatar.teamName, style = MaterialTheme.typography.titleSmall)
-                                    Text(
-                                        avatar.description,
-                                        style = MaterialTheme.typography.bodySmall,
-                                        color = MaterialTheme.colorScheme.onSurfaceVariant,
-                                    )
+                                    Row(
+                                        verticalAlignment = Alignment.CenterVertically,
+                                        horizontalArrangement = Arrangement.spacedBy(12.dp)
+                                    ) {
+                                        SaveKidsPokemonAvatar(
+                                            imageUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${avatar.pokemonId}.png",
+                                            contentDescription = avatar.teamName,
+                                            size = 64.dp,
+                                        )
+                                        Column(modifier = Modifier.weight(1f)) {
+                                            Text(avatar.teamName, style = MaterialTheme.typography.titleSmall)
+                                            Text(
+                                                avatar.description,
+                                                style = MaterialTheme.typography.bodySmall,
+                                                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                            )
+                                        }
+                                    }
                                 }
                             }
                         }

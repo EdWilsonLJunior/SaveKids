@@ -19,6 +19,9 @@ data class SaveKidsRewardsUiState(
     val isLoading: Boolean = true,
     val errorMessage: String? = null,
     val successMessage: String? = null,
+    val rewardToRedeem: RewardModel? = null,
+    val showDevolutionWarning: Boolean = false,
+    val showSaveMoreWarning: Boolean = false,
 )
 
 @HiltViewModel
@@ -46,7 +49,37 @@ class SaveKidsRewardsViewModel @Inject constructor(
         }
     }
 
-    fun redeemReward(id: Long) {
+    fun onRedeemClicked(reward: RewardModel) {
+        val xpAfter = uiState.value.currentXp - reward.requiredXp
+        val currentStage = getStage(uiState.value.currentXp)
+        val nextStage = getStage(xpAfter)
+
+        _uiState.update { it.copy(rewardToRedeem = reward) }
+
+        if (currentStage > nextStage) {
+            _uiState.update { it.copy(showDevolutionWarning = true) }
+        } else {
+            _uiState.update { it.copy(showSaveMoreWarning = true) }
+        }
+    }
+
+    private fun getStage(xp: Int): Int = when {
+        xp >= 500 -> 2
+        xp >= 100 -> 1
+        else -> 0
+    }
+
+    fun dismissWarning() {
+        _uiState.update { it.copy(rewardToRedeem = null, showDevolutionWarning = false, showSaveMoreWarning = false) }
+    }
+
+    fun confirmRedeem() {
+        val reward = uiState.value.rewardToRedeem ?: return
+        dismissWarning()
+        redeemReward(reward.id)
+    }
+
+    private fun redeemReward(id: Long) {
         viewModelScope.launch {
             val result = repository.redeemReward(id)
             if (result.isSuccess) {
