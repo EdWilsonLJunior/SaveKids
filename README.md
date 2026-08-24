@@ -131,3 +131,12 @@ app/src/main/kotlin/com/zodiak/android/feature/savekids/
 ## Evidencias visuais
 
 - Adicionar prints ou GIFs das telas para entrega final.
+
+## Integrantes
+
+- Cicero Diogo Lemos da Silva
+- Ed Wilson Luciano Junior
+- Deyvid Santos da Silva
+- Glauciany Brandao dos Santos
+- Rodrigo Eleuterio da Silva Santos
+- Jorge de Lima Rocha
