@@ -4,7 +4,7 @@ import kotlinx.serialization.Serializable
 
 @Serializable object SaveKidsLoginRoute
 @Serializable object SaveKidsHomeRoute
-@Serializable object SaveKidsPiggyBankRoute
+@Serializable data class SaveKidsPiggyBankRoute(val goalId: Long? = null)
 @Serializable object SaveKidsGoalsRoute
 @Serializable object SaveKidsMissionsRoute
 @Serializable object SaveKidsRewardsRoute

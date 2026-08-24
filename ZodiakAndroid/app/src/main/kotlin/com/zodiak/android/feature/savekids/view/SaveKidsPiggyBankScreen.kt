@@ -81,7 +81,7 @@ fun SaveKidsPiggyBankScreen(
             }
 
             item {
-                SaveKidsTabs(saveKidsTabs, SaveKidsPiggyBankRoute, onNavigate)
+                SaveKidsTabs(saveKidsTabs, SaveKidsPiggyBankRoute(), onNavigate)
             }
 
             item {
@@ -128,8 +128,8 @@ fun SaveKidsPiggyBankScreen(
 
             item {
                 ZodiakSectionCard(
-                    title = "Depósito personalizado",
-                    subtitle = "Simule novos depósitos para acelerar a evolução do Pokémon.",
+                    title = if (state.targetGoalName != null) "Guardar para ${state.targetGoalName}" else "Depósito personalizado",
+                    subtitle = if (state.targetGoalName != null) "O valor guardado irá direto para esta meta." else "Simule novos depósitos para acelerar a evolução do Pokémon.",
                 ) {
                     ZodiakInputField(
                         value = state.amountText,

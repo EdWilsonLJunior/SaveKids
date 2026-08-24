@@ -133,7 +133,7 @@ class FakeSaveKidsRepository : SaveKidsRepository {
         return Result.success(Unit)
     }
 
-    override suspend fun addDeposit(amount: Double): Result<Unit> {
+    override suspend fun addDeposit(amount: Double, goalId: Long?): Result<Unit> {
         if (amount <= 0.0 || amount > 10000.0) {
             return Result.failure(IllegalArgumentException("O valor deve ser maior que zero e até R$ 10.000."))
         }
@@ -141,7 +141,7 @@ class FakeSaveKidsRepository : SaveKidsRepository {
         val gainedXp = amount.toInt()
         dashboardState.value = current.copy(balance = current.balance + amount, xp = current.xp + gainedXp)
         pushHistory("Economia adicionada", "Depósito registrado", HistoryEventType.DEPOSIT_ADDED, amount, gainedXp)
-        applyContributionToGoal(amount)
+        applyContributionToGoal(amount, goalId)
         return Result.success(Unit)
     }
 
