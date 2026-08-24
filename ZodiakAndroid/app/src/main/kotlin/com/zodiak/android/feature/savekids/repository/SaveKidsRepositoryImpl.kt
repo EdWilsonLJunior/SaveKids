@@ -306,7 +306,7 @@ class SaveKidsRepositoryImpl @Inject constructor(
         )
     }
 
-    override suspend fun addDeposit(amount: Double): Result<Unit> = withContext(Dispatchers.IO) {
+    override suspend fun addDeposit(amount: Double, goalId: Long?): Result<Unit> = withContext(Dispatchers.IO) {
         if (amount <= 0.0 || amount > 10000.0) {
             return@withContext Result.failure(IllegalArgumentException("O valor deve ser maior que zero e até R$ 10.000."))
         }
@@ -337,7 +337,7 @@ class SaveKidsRepositoryImpl @Inject constructor(
             )
         )
 
-        applyContributionToGoal(amount)
+        applyContributionToGoal(amount, goalId)
 
         if (levelUp) {
             historyDao.insert(

@@ -1,8 +1,11 @@
 package com.zodiak.android.feature.savekids.viewmodel
 
+import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import androidx.navigation.toRoute
 import com.zodiak.android.feature.savekids.model.DashboardModel
+import com.zodiak.android.feature.savekids.navigation.SaveKidsPiggyBankRoute
 import com.zodiak.android.feature.savekids.repository.SaveKidsRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -23,12 +26,17 @@ data class SaveKidsPiggyBankUiState(
     val isProcessingWithdrawal: Boolean = false,
     val showDepositPixModal: Boolean = false,
     val isProcessingDeposit: Boolean = false,
+    val targetGoalName: String? = null,
 )
 
 @HiltViewModel
 class SaveKidsPiggyBankViewModel @Inject constructor(
     private val repository: SaveKidsRepository,
+    savedStateHandle: SavedStateHandle,
 ) : ViewModel() {
+
+    private val route = savedStateHandle.toRoute<SaveKidsPiggyBankRoute>()
+    private val goalId = route.goalId
 
     private val _uiState = MutableStateFlow(SaveKidsPiggyBankUiState())
     val uiState: StateFlow<SaveKidsPiggyBankUiState> = _uiState.asStateFlow()
@@ -36,8 +44,20 @@ class SaveKidsPiggyBankViewModel @Inject constructor(
     init {
         viewModelScope.launch {
             repository.ensureSeedData()
-            repository.dashboard.collect { dashboard ->
-                _uiState.update { it.copy(isLoading = false, dashboard = dashboard) }
+            
+            launch {
+                repository.dashboard.collect { dashboard ->
+                    _uiState.update { it.copy(isLoading = false, dashboard = dashboard) }
+                }
+            }
+
+            if (goalId != null) {
+                launch {
+                    repository.goals.collect { goals ->
+                        val goal = goals.firstOrNull { it.id == goalId }
+                        _uiState.update { it.copy(targetGoalName = goal?.name) }
+                    }
+                }
             }
         }
     }
@@ -69,7 +89,7 @@ class SaveKidsPiggyBankViewModel @Inject constructor(
             // Simular atraso de processamento do Pix
             kotlinx.coroutines.delay(1500)
             
-            val result = repository.addDeposit(amount)
+            val result = repository.addDeposit(amount, goalId)
             if (result.isSuccess) {
                 _uiState.update {
                     it.copy(

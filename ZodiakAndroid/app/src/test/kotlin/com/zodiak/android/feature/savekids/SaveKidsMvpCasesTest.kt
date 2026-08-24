@@ -1,5 +1,6 @@
 package com.zodiak.android.feature.savekids
 
+import androidx.lifecycle.SavedStateHandle
 import com.zodiak.android.core.testing.MainDispatcherExtension
 import com.zodiak.android.feature.savekids.viewmodel.SaveKidsGoalsViewModel
 import com.zodiak.android.feature.savekids.viewmodel.SaveKidsLoginViewModel
@@ -90,7 +91,7 @@ class SaveKidsMvpCasesTest {
         val initialBalance = repository.dashboardStateSnapshot().balance
         val initialXp = repository.dashboardStateSnapshot().xp
 
-        val vm = SaveKidsPiggyBankViewModel(repository)
+        val vm = SaveKidsPiggyBankViewModel(repository, SavedStateHandle())
         vm.onAmountChange("10")
         vm.submitDeposit()
         assertTrue(vm.uiState.value.showDepositPixModal)
@@ -185,7 +186,7 @@ class SaveKidsMvpCasesTest {
         }
         advanceUntilIdle()
         
-        val vm = SaveKidsPiggyBankViewModel(repository)
+        val vm = SaveKidsPiggyBankViewModel(repository, SavedStateHandle())
         vm.onWithdrawAmountChange("10")
         vm.requestWithdrawal()
         

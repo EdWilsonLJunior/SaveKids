@@ -219,7 +219,7 @@ fun SaveKidsHomeScreen(
                             )
                             ZodiakButton(
                                 text = "Abrir cofrinho",
-                                onClick = { onNavigate(SaveKidsPiggyBankRoute) },
+                                onClick = { onNavigate(SaveKidsPiggyBankRoute(goalId = goal.id)) },
                                 modifier = Modifier.fillMaxWidth(),
                             )
                         }
